@@ -1,0 +1,4 @@
+.section	hcpua.S	/^.section .boot,"ax"                     \/\/ new sec/
+boot	hcpua.S	/^boot:                                   \/\/ must be/
+hello	kinit.c	13
+kinit	kinit.c	/^void kinit (void)$/

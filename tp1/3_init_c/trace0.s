@@ -1,0 +1,9948 @@
+K    12:     <boot> ------------------------------------------------------- hcpua.S
+K    12:     0xbfc00000	0x3c1d8040 	lui	sp,0x8040
+K    13:     0xbfc00004	0x27bd0000 	addiu	sp,sp,0
+K    14:     0xbfc00008	0x3c1a8000 	lui	k0,0x8000
+K    15:     0xbfc0000c	0x275a0000 	addiu	k0,k0,0
+K    26:     0xbfc00010	0x03400008 	jr	k0
+K    27:     0xbfc00014	0x00000000 	nop
+K    37:     <kinit> ------------------------------------------------------ kinit.c
+K    37:     0x80000000	0x3c028002 	lui	v0,0x8002
+K    38:     0x80000004	0x80430000 	lb	v1,0(v0)
+K    39:     0x80000008	0x10600008 	beqz	v1,8000002c <kinit+0x2c>
+K    48:     --> READ  MEMORY @ 0x80020000 BE=---1 --> 0x6c6c6548
+K    50:     0x8000000c	0x00000000 	nop
+K    60:     0x80000010	0x24420000 	addiu	v0,v0,0
+K    61:     0x80000014	0x3c04d020 	lui	a0,0xd020
+K    62:     0x80000018	0x24420001 	addiu	v0,v0,1
+K    63:     0x8000001c	0xac830000 	sw	v1,0(a0)
+K    64:     <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x48
+K    73:     0x80000020	0x80430000 	lb	v1,0(v0)
+K    74:     --> READ  MEMORY @ 0x80020000 BE=--1- --> 0x6c6c6548
+K    74:     0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    76:     0x80000028	0x00000000 	nop
+K    77:     0x80000018	0x24420001 	addiu	v0,v0,1
+K    78:     0x8000001c	0xac830000 	sw	v1,0(a0)
+K    79:     <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x65
+K    79:     0x80000020	0x80430000 	lb	v1,0(v0)
+K    80:     --> READ  MEMORY @ 0x80020000 BE=-1-- --> 0x6c6c6548
+K    80:     0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    82:     0x80000028	0x00000000 	nop
+K    83:     0x80000018	0x24420001 	addiu	v0,v0,1
+K    84:     0x8000001c	0xac830000 	sw	v1,0(a0)
+K    85:     <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x6c
+K    85:     0x80000020	0x80430000 	lb	v1,0(v0)
+K    86:     --> READ  MEMORY @ 0x80020000 BE=1--- --> 0x6c6c6548
+K    86:     0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    88:     0x80000028	0x00000000 	nop
+K    89:     0x80000018	0x24420001 	addiu	v0,v0,1
+K    90:     0x8000001c	0xac830000 	sw	v1,0(a0)
+K    91:     <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x6c
+K    91:     0x80000020	0x80430000 	lb	v1,0(v0)
+K    92:     --> READ  MEMORY @ 0x80020004 BE=---1 --> 0x6f57206f
+K    92:     0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    94:     0x80000028	0x00000000 	nop
+K    95:     0x80000018	0x24420001 	addiu	v0,v0,1
+K    96:     0x8000001c	0xac830000 	sw	v1,0(a0)
+K    97:     <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x6f
+K    97:     0x80000020	0x80430000 	lb	v1,0(v0)
+K    98:     --> READ  MEMORY @ 0x80020004 BE=--1- --> 0x6f57206f
+K    98:     0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    100:    0x80000028	0x00000000 	nop
+K    101:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    102:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    103:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x20
+K    103:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    104:    --> READ  MEMORY @ 0x80020004 BE=-1-- --> 0x6f57206f
+K    104:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    106:    0x80000028	0x00000000 	nop
+K    107:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    108:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    109:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x57
+K    109:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    110:    --> READ  MEMORY @ 0x80020004 BE=1--- --> 0x6f57206f
+K    110:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    112:    0x80000028	0x00000000 	nop
+K    113:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    114:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    115:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x6f
+K    115:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    116:    --> READ  MEMORY @ 0x80020008 BE=---1 --> 0x21646c72
+K    116:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    118:    0x80000028	0x00000000 	nop
+K    119:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    120:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    121:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x72
+K    121:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    122:    --> READ  MEMORY @ 0x80020008 BE=--1- --> 0x21646c72
+K    122:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    124:    0x80000028	0x00000000 	nop
+K    125:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    126:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    127:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x6c
+K    127:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    128:    --> READ  MEMORY @ 0x80020008 BE=-1-- --> 0x21646c72
+K    128:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    130:    0x80000028	0x00000000 	nop
+K    131:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    132:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    133:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x64
+K    133:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    134:    --> READ  MEMORY @ 0x80020008 BE=1--- --> 0x21646c72
+K    134:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    136:    0x80000028	0x00000000 	nop
+K    137:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    138:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    139:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0x21
+K    139:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    140:    --> READ  MEMORY @ 0x8002000c BE=---1 --> 0xa
+K    140:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    142:    0x80000028	0x00000000 	nop
+K    143:    0x80000018	0x24420001 	addiu	v0,v0,1
+K    144:    0x8000001c	0xac830000 	sw	v1,0(a0)
+K    145:    <-- WRITE MEMORY @ 0xd0200000 BE=1111 <-- 0xa
+K    145:    0x80000020	0x80430000 	lb	v1,0(v0)
+K    146:    --> READ  MEMORY @ 0x8002000c BE=--1- --> 0xa
+K    146:    0x80000024	0x1460fffc 	bnez	v1,80000018 <kinit+0x18>
+K    148:    0x80000028	0x00000000 	nop
+K    149:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    159:    0x80000030	0x00000000 	nop
+K    160:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    161:    0x80000030	0x00000000 	nop
+K    162:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    163:    0x80000030	0x00000000 	nop
+K    164:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    165:    0x80000030	0x00000000 	nop
+K    166:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    167:    0x80000030	0x00000000 	nop
+K    168:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    169:    0x80000030	0x00000000 	nop
+K    170:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    171:    0x80000030	0x00000000 	nop
+K    172:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    173:    0x80000030	0x00000000 	nop
+K    174:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    175:    0x80000030	0x00000000 	nop
+K    176:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    177:    0x80000030	0x00000000 	nop
+K    178:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    179:    0x80000030	0x00000000 	nop
+K    180:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    181:    0x80000030	0x00000000 	nop
+K    182:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    183:    0x80000030	0x00000000 	nop
+K    184:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    185:    0x80000030	0x00000000 	nop
+K    186:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    187:    0x80000030	0x00000000 	nop
+K    188:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    189:    0x80000030	0x00000000 	nop
+K    190:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    191:    0x80000030	0x00000000 	nop
+K    192:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    193:    0x80000030	0x00000000 	nop
+K    194:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    195:    0x80000030	0x00000000 	nop
+K    196:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    197:    0x80000030	0x00000000 	nop
+K    198:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    199:    0x80000030	0x00000000 	nop
+K    200:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    201:    0x80000030	0x00000000 	nop
+K    202:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    203:    0x80000030	0x00000000 	nop
+K    204:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    205:    0x80000030	0x00000000 	nop
+K    206:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    207:    0x80000030	0x00000000 	nop
+K    208:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    209:    0x80000030	0x00000000 	nop
+K    210:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    211:    0x80000030	0x00000000 	nop
+K    212:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    213:    0x80000030	0x00000000 	nop
+K    214:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    215:    0x80000030	0x00000000 	nop
+K    216:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    217:    0x80000030	0x00000000 	nop
+K    218:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    219:    0x80000030	0x00000000 	nop
+K    220:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    221:    0x80000030	0x00000000 	nop
+K    222:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    223:    0x80000030	0x00000000 	nop
+K    224:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    225:    0x80000030	0x00000000 	nop
+K    226:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    227:    0x80000030	0x00000000 	nop
+K    228:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    229:    0x80000030	0x00000000 	nop
+K    230:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    231:    0x80000030	0x00000000 	nop
+K    232:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    233:    0x80000030	0x00000000 	nop
+K    234:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    235:    0x80000030	0x00000000 	nop
+K    236:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    237:    0x80000030	0x00000000 	nop
+K    238:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    239:    0x80000030	0x00000000 	nop
+K    240:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    241:    0x80000030	0x00000000 	nop
+K    242:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    243:    0x80000030	0x00000000 	nop
+K    244:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    245:    0x80000030	0x00000000 	nop
+K    246:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    247:    0x80000030	0x00000000 	nop
+K    248:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    249:    0x80000030	0x00000000 	nop
+K    250:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    251:    0x80000030	0x00000000 	nop
+K    252:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    253:    0x80000030	0x00000000 	nop
+K    254:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    255:    0x80000030	0x00000000 	nop
+K    256:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    257:    0x80000030	0x00000000 	nop
+K    258:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    259:    0x80000030	0x00000000 	nop
+K    260:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    261:    0x80000030	0x00000000 	nop
+K    262:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    263:    0x80000030	0x00000000 	nop
+K    264:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    265:    0x80000030	0x00000000 	nop
+K    266:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    267:    0x80000030	0x00000000 	nop
+K    268:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    269:    0x80000030	0x00000000 	nop
+K    270:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    271:    0x80000030	0x00000000 	nop
+K    272:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    273:    0x80000030	0x00000000 	nop
+K    274:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    275:    0x80000030	0x00000000 	nop
+K    276:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    277:    0x80000030	0x00000000 	nop
+K    278:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    279:    0x80000030	0x00000000 	nop
+K    280:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    281:    0x80000030	0x00000000 	nop
+K    282:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    283:    0x80000030	0x00000000 	nop
+K    284:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    285:    0x80000030	0x00000000 	nop
+K    286:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    287:    0x80000030	0x00000000 	nop
+K    288:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    289:    0x80000030	0x00000000 	nop
+K    290:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    291:    0x80000030	0x00000000 	nop
+K    292:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    293:    0x80000030	0x00000000 	nop
+K    294:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    295:    0x80000030	0x00000000 	nop
+K    296:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    297:    0x80000030	0x00000000 	nop
+K    298:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    299:    0x80000030	0x00000000 	nop
+K    300:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    301:    0x80000030	0x00000000 	nop
+K    302:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    303:    0x80000030	0x00000000 	nop
+K    304:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    305:    0x80000030	0x00000000 	nop
+K    306:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    307:    0x80000030	0x00000000 	nop
+K    308:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    309:    0x80000030	0x00000000 	nop
+K    310:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    311:    0x80000030	0x00000000 	nop
+K    312:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    313:    0x80000030	0x00000000 	nop
+K    314:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    315:    0x80000030	0x00000000 	nop
+K    316:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    317:    0x80000030	0x00000000 	nop
+K    318:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    319:    0x80000030	0x00000000 	nop
+K    320:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    321:    0x80000030	0x00000000 	nop
+K    322:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    323:    0x80000030	0x00000000 	nop
+K    324:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    325:    0x80000030	0x00000000 	nop
+K    326:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    327:    0x80000030	0x00000000 	nop
+K    328:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    329:    0x80000030	0x00000000 	nop
+K    330:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    331:    0x80000030	0x00000000 	nop
+K    332:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    333:    0x80000030	0x00000000 	nop
+K    334:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    335:    0x80000030	0x00000000 	nop
+K    336:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    337:    0x80000030	0x00000000 	nop
+K    338:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    339:    0x80000030	0x00000000 	nop
+K    340:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    341:    0x80000030	0x00000000 	nop
+K    342:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    343:    0x80000030	0x00000000 	nop
+K    344:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    345:    0x80000030	0x00000000 	nop
+K    346:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    347:    0x80000030	0x00000000 	nop
+K    348:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    349:    0x80000030	0x00000000 	nop
+K    350:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    351:    0x80000030	0x00000000 	nop
+K    352:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    353:    0x80000030	0x00000000 	nop
+K    354:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    355:    0x80000030	0x00000000 	nop
+K    356:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    357:    0x80000030	0x00000000 	nop
+K    358:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    359:    0x80000030	0x00000000 	nop
+K    360:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    361:    0x80000030	0x00000000 	nop
+K    362:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    363:    0x80000030	0x00000000 	nop
+K    364:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    365:    0x80000030	0x00000000 	nop
+K    366:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    367:    0x80000030	0x00000000 	nop
+K    368:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    369:    0x80000030	0x00000000 	nop
+K    370:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    371:    0x80000030	0x00000000 	nop
+K    372:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    373:    0x80000030	0x00000000 	nop
+K    374:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    375:    0x80000030	0x00000000 	nop
+K    376:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    377:    0x80000030	0x00000000 	nop
+K    378:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    379:    0x80000030	0x00000000 	nop
+K    380:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    381:    0x80000030	0x00000000 	nop
+K    382:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    383:    0x80000030	0x00000000 	nop
+K    384:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    385:    0x80000030	0x00000000 	nop
+K    386:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    387:    0x80000030	0x00000000 	nop
+K    388:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    389:    0x80000030	0x00000000 	nop
+K    390:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    391:    0x80000030	0x00000000 	nop
+K    392:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    393:    0x80000030	0x00000000 	nop
+K    394:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    395:    0x80000030	0x00000000 	nop
+K    396:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    397:    0x80000030	0x00000000 	nop
+K    398:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    399:    0x80000030	0x00000000 	nop
+K    400:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    401:    0x80000030	0x00000000 	nop
+K    402:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    403:    0x80000030	0x00000000 	nop
+K    404:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    405:    0x80000030	0x00000000 	nop
+K    406:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    407:    0x80000030	0x00000000 	nop
+K    408:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    409:    0x80000030	0x00000000 	nop
+K    410:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    411:    0x80000030	0x00000000 	nop
+K    412:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    413:    0x80000030	0x00000000 	nop
+K    414:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    415:    0x80000030	0x00000000 	nop
+K    416:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    417:    0x80000030	0x00000000 	nop
+K    418:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    419:    0x80000030	0x00000000 	nop
+K    420:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    421:    0x80000030	0x00000000 	nop
+K    422:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    423:    0x80000030	0x00000000 	nop
+K    424:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    425:    0x80000030	0x00000000 	nop
+K    426:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    427:    0x80000030	0x00000000 	nop
+K    428:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    429:    0x80000030	0x00000000 	nop
+K    430:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    431:    0x80000030	0x00000000 	nop
+K    432:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    433:    0x80000030	0x00000000 	nop
+K    434:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    435:    0x80000030	0x00000000 	nop
+K    436:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    437:    0x80000030	0x00000000 	nop
+K    438:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    439:    0x80000030	0x00000000 	nop
+K    440:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    441:    0x80000030	0x00000000 	nop
+K    442:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    443:    0x80000030	0x00000000 	nop
+K    444:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    445:    0x80000030	0x00000000 	nop
+K    446:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    447:    0x80000030	0x00000000 	nop
+K    448:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    449:    0x80000030	0x00000000 	nop
+K    450:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    451:    0x80000030	0x00000000 	nop
+K    452:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    453:    0x80000030	0x00000000 	nop
+K    454:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    455:    0x80000030	0x00000000 	nop
+K    456:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    457:    0x80000030	0x00000000 	nop
+K    458:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    459:    0x80000030	0x00000000 	nop
+K    460:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    461:    0x80000030	0x00000000 	nop
+K    462:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    463:    0x80000030	0x00000000 	nop
+K    464:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    465:    0x80000030	0x00000000 	nop
+K    466:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    467:    0x80000030	0x00000000 	nop
+K    468:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    469:    0x80000030	0x00000000 	nop
+K    470:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    471:    0x80000030	0x00000000 	nop
+K    472:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    473:    0x80000030	0x00000000 	nop
+K    474:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    475:    0x80000030	0x00000000 	nop
+K    476:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    477:    0x80000030	0x00000000 	nop
+K    478:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    479:    0x80000030	0x00000000 	nop
+K    480:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    481:    0x80000030	0x00000000 	nop
+K    482:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    483:    0x80000030	0x00000000 	nop
+K    484:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    485:    0x80000030	0x00000000 	nop
+K    486:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    487:    0x80000030	0x00000000 	nop
+K    488:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    489:    0x80000030	0x00000000 	nop
+K    490:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    491:    0x80000030	0x00000000 	nop
+K    492:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    493:    0x80000030	0x00000000 	nop
+K    494:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    495:    0x80000030	0x00000000 	nop
+K    496:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    497:    0x80000030	0x00000000 	nop
+K    498:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    499:    0x80000030	0x00000000 	nop
+K    500:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    501:    0x80000030	0x00000000 	nop
+K    502:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    503:    0x80000030	0x00000000 	nop
+K    504:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    505:    0x80000030	0x00000000 	nop
+K    506:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    507:    0x80000030	0x00000000 	nop
+K    508:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    509:    0x80000030	0x00000000 	nop
+K    510:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    511:    0x80000030	0x00000000 	nop
+K    512:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    513:    0x80000030	0x00000000 	nop
+K    514:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    515:    0x80000030	0x00000000 	nop
+K    516:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    517:    0x80000030	0x00000000 	nop
+K    518:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    519:    0x80000030	0x00000000 	nop
+K    520:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    521:    0x80000030	0x00000000 	nop
+K    522:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    523:    0x80000030	0x00000000 	nop
+K    524:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    525:    0x80000030	0x00000000 	nop
+K    526:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    527:    0x80000030	0x00000000 	nop
+K    528:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    529:    0x80000030	0x00000000 	nop
+K    530:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    531:    0x80000030	0x00000000 	nop
+K    532:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    533:    0x80000030	0x00000000 	nop
+K    534:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    535:    0x80000030	0x00000000 	nop
+K    536:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    537:    0x80000030	0x00000000 	nop
+K    538:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    539:    0x80000030	0x00000000 	nop
+K    540:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    541:    0x80000030	0x00000000 	nop
+K    542:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    543:    0x80000030	0x00000000 	nop
+K    544:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    545:    0x80000030	0x00000000 	nop
+K    546:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    547:    0x80000030	0x00000000 	nop
+K    548:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    549:    0x80000030	0x00000000 	nop
+K    550:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    551:    0x80000030	0x00000000 	nop
+K    552:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    553:    0x80000030	0x00000000 	nop
+K    554:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    555:    0x80000030	0x00000000 	nop
+K    556:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    557:    0x80000030	0x00000000 	nop
+K    558:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    559:    0x80000030	0x00000000 	nop
+K    560:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    561:    0x80000030	0x00000000 	nop
+K    562:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    563:    0x80000030	0x00000000 	nop
+K    564:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    565:    0x80000030	0x00000000 	nop
+K    566:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    567:    0x80000030	0x00000000 	nop
+K    568:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    569:    0x80000030	0x00000000 	nop
+K    570:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    571:    0x80000030	0x00000000 	nop
+K    572:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    573:    0x80000030	0x00000000 	nop
+K    574:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    575:    0x80000030	0x00000000 	nop
+K    576:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    577:    0x80000030	0x00000000 	nop
+K    578:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    579:    0x80000030	0x00000000 	nop
+K    580:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    581:    0x80000030	0x00000000 	nop
+K    582:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    583:    0x80000030	0x00000000 	nop
+K    584:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    585:    0x80000030	0x00000000 	nop
+K    586:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    587:    0x80000030	0x00000000 	nop
+K    588:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    589:    0x80000030	0x00000000 	nop
+K    590:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    591:    0x80000030	0x00000000 	nop
+K    592:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    593:    0x80000030	0x00000000 	nop
+K    594:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    595:    0x80000030	0x00000000 	nop
+K    596:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    597:    0x80000030	0x00000000 	nop
+K    598:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    599:    0x80000030	0x00000000 	nop
+K    600:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    601:    0x80000030	0x00000000 	nop
+K    602:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    603:    0x80000030	0x00000000 	nop
+K    604:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    605:    0x80000030	0x00000000 	nop
+K    606:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    607:    0x80000030	0x00000000 	nop
+K    608:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    609:    0x80000030	0x00000000 	nop
+K    610:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    611:    0x80000030	0x00000000 	nop
+K    612:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    613:    0x80000030	0x00000000 	nop
+K    614:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    615:    0x80000030	0x00000000 	nop
+K    616:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    617:    0x80000030	0x00000000 	nop
+K    618:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    619:    0x80000030	0x00000000 	nop
+K    620:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    621:    0x80000030	0x00000000 	nop
+K    622:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    623:    0x80000030	0x00000000 	nop
+K    624:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    625:    0x80000030	0x00000000 	nop
+K    626:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    627:    0x80000030	0x00000000 	nop
+K    628:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    629:    0x80000030	0x00000000 	nop
+K    630:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    631:    0x80000030	0x00000000 	nop
+K    632:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    633:    0x80000030	0x00000000 	nop
+K    634:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    635:    0x80000030	0x00000000 	nop
+K    636:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    637:    0x80000030	0x00000000 	nop
+K    638:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    639:    0x80000030	0x00000000 	nop
+K    640:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    641:    0x80000030	0x00000000 	nop
+K    642:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    643:    0x80000030	0x00000000 	nop
+K    644:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    645:    0x80000030	0x00000000 	nop
+K    646:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    647:    0x80000030	0x00000000 	nop
+K    648:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    649:    0x80000030	0x00000000 	nop
+K    650:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    651:    0x80000030	0x00000000 	nop
+K    652:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    653:    0x80000030	0x00000000 	nop
+K    654:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    655:    0x80000030	0x00000000 	nop
+K    656:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    657:    0x80000030	0x00000000 	nop
+K    658:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    659:    0x80000030	0x00000000 	nop
+K    660:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    661:    0x80000030	0x00000000 	nop
+K    662:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    663:    0x80000030	0x00000000 	nop
+K    664:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    665:    0x80000030	0x00000000 	nop
+K    666:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    667:    0x80000030	0x00000000 	nop
+K    668:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    669:    0x80000030	0x00000000 	nop
+K    670:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    671:    0x80000030	0x00000000 	nop
+K    672:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    673:    0x80000030	0x00000000 	nop
+K    674:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    675:    0x80000030	0x00000000 	nop
+K    676:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    677:    0x80000030	0x00000000 	nop
+K    678:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    679:    0x80000030	0x00000000 	nop
+K    680:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    681:    0x80000030	0x00000000 	nop
+K    682:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    683:    0x80000030	0x00000000 	nop
+K    684:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    685:    0x80000030	0x00000000 	nop
+K    686:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    687:    0x80000030	0x00000000 	nop
+K    688:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    689:    0x80000030	0x00000000 	nop
+K    690:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    691:    0x80000030	0x00000000 	nop
+K    692:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    693:    0x80000030	0x00000000 	nop
+K    694:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    695:    0x80000030	0x00000000 	nop
+K    696:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    697:    0x80000030	0x00000000 	nop
+K    698:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    699:    0x80000030	0x00000000 	nop
+K    700:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    701:    0x80000030	0x00000000 	nop
+K    702:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    703:    0x80000030	0x00000000 	nop
+K    704:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    705:    0x80000030	0x00000000 	nop
+K    706:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    707:    0x80000030	0x00000000 	nop
+K    708:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    709:    0x80000030	0x00000000 	nop
+K    710:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    711:    0x80000030	0x00000000 	nop
+K    712:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    713:    0x80000030	0x00000000 	nop
+K    714:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    715:    0x80000030	0x00000000 	nop
+K    716:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    717:    0x80000030	0x00000000 	nop
+K    718:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    719:    0x80000030	0x00000000 	nop
+K    720:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    721:    0x80000030	0x00000000 	nop
+K    722:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    723:    0x80000030	0x00000000 	nop
+K    724:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    725:    0x80000030	0x00000000 	nop
+K    726:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    727:    0x80000030	0x00000000 	nop
+K    728:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    729:    0x80000030	0x00000000 	nop
+K    730:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    731:    0x80000030	0x00000000 	nop
+K    732:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    733:    0x80000030	0x00000000 	nop
+K    734:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    735:    0x80000030	0x00000000 	nop
+K    736:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    737:    0x80000030	0x00000000 	nop
+K    738:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    739:    0x80000030	0x00000000 	nop
+K    740:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    741:    0x80000030	0x00000000 	nop
+K    742:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    743:    0x80000030	0x00000000 	nop
+K    744:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    745:    0x80000030	0x00000000 	nop
+K    746:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    747:    0x80000030	0x00000000 	nop
+K    748:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    749:    0x80000030	0x00000000 	nop
+K    750:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    751:    0x80000030	0x00000000 	nop
+K    752:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    753:    0x80000030	0x00000000 	nop
+K    754:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    755:    0x80000030	0x00000000 	nop
+K    756:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    757:    0x80000030	0x00000000 	nop
+K    758:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    759:    0x80000030	0x00000000 	nop
+K    760:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    761:    0x80000030	0x00000000 	nop
+K    762:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    763:    0x80000030	0x00000000 	nop
+K    764:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    765:    0x80000030	0x00000000 	nop
+K    766:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    767:    0x80000030	0x00000000 	nop
+K    768:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    769:    0x80000030	0x00000000 	nop
+K    770:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    771:    0x80000030	0x00000000 	nop
+K    772:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    773:    0x80000030	0x00000000 	nop
+K    774:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    775:    0x80000030	0x00000000 	nop
+K    776:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    777:    0x80000030	0x00000000 	nop
+K    778:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    779:    0x80000030	0x00000000 	nop
+K    780:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    781:    0x80000030	0x00000000 	nop
+K    782:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    783:    0x80000030	0x00000000 	nop
+K    784:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    785:    0x80000030	0x00000000 	nop
+K    786:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    787:    0x80000030	0x00000000 	nop
+K    788:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    789:    0x80000030	0x00000000 	nop
+K    790:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    791:    0x80000030	0x00000000 	nop
+K    792:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    793:    0x80000030	0x00000000 	nop
+K    794:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    795:    0x80000030	0x00000000 	nop
+K    796:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    797:    0x80000030	0x00000000 	nop
+K    798:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    799:    0x80000030	0x00000000 	nop
+K    800:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    801:    0x80000030	0x00000000 	nop
+K    802:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    803:    0x80000030	0x00000000 	nop
+K    804:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    805:    0x80000030	0x00000000 	nop
+K    806:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    807:    0x80000030	0x00000000 	nop
+K    808:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    809:    0x80000030	0x00000000 	nop
+K    810:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    811:    0x80000030	0x00000000 	nop
+K    812:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    813:    0x80000030	0x00000000 	nop
+K    814:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    815:    0x80000030	0x00000000 	nop
+K    816:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    817:    0x80000030	0x00000000 	nop
+K    818:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    819:    0x80000030	0x00000000 	nop
+K    820:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    821:    0x80000030	0x00000000 	nop
+K    822:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    823:    0x80000030	0x00000000 	nop
+K    824:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    825:    0x80000030	0x00000000 	nop
+K    826:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    827:    0x80000030	0x00000000 	nop
+K    828:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    829:    0x80000030	0x00000000 	nop
+K    830:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    831:    0x80000030	0x00000000 	nop
+K    832:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    833:    0x80000030	0x00000000 	nop
+K    834:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    835:    0x80000030	0x00000000 	nop
+K    836:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    837:    0x80000030	0x00000000 	nop
+K    838:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    839:    0x80000030	0x00000000 	nop
+K    840:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    841:    0x80000030	0x00000000 	nop
+K    842:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    843:    0x80000030	0x00000000 	nop
+K    844:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    845:    0x80000030	0x00000000 	nop
+K    846:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    847:    0x80000030	0x00000000 	nop
+K    848:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    849:    0x80000030	0x00000000 	nop
+K    850:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    851:    0x80000030	0x00000000 	nop
+K    852:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    853:    0x80000030	0x00000000 	nop
+K    854:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    855:    0x80000030	0x00000000 	nop
+K    856:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    857:    0x80000030	0x00000000 	nop
+K    858:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    859:    0x80000030	0x00000000 	nop
+K    860:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    861:    0x80000030	0x00000000 	nop
+K    862:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    863:    0x80000030	0x00000000 	nop
+K    864:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    865:    0x80000030	0x00000000 	nop
+K    866:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    867:    0x80000030	0x00000000 	nop
+K    868:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    869:    0x80000030	0x00000000 	nop
+K    870:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    871:    0x80000030	0x00000000 	nop
+K    872:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    873:    0x80000030	0x00000000 	nop
+K    874:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    875:    0x80000030	0x00000000 	nop
+K    876:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    877:    0x80000030	0x00000000 	nop
+K    878:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    879:    0x80000030	0x00000000 	nop
+K    880:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    881:    0x80000030	0x00000000 	nop
+K    882:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    883:    0x80000030	0x00000000 	nop
+K    884:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    885:    0x80000030	0x00000000 	nop
+K    886:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    887:    0x80000030	0x00000000 	nop
+K    888:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    889:    0x80000030	0x00000000 	nop
+K    890:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    891:    0x80000030	0x00000000 	nop
+K    892:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    893:    0x80000030	0x00000000 	nop
+K    894:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    895:    0x80000030	0x00000000 	nop
+K    896:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    897:    0x80000030	0x00000000 	nop
+K    898:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    899:    0x80000030	0x00000000 	nop
+K    900:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    901:    0x80000030	0x00000000 	nop
+K    902:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    903:    0x80000030	0x00000000 	nop
+K    904:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    905:    0x80000030	0x00000000 	nop
+K    906:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    907:    0x80000030	0x00000000 	nop
+K    908:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    909:    0x80000030	0x00000000 	nop
+K    910:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    911:    0x80000030	0x00000000 	nop
+K    912:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    913:    0x80000030	0x00000000 	nop
+K    914:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    915:    0x80000030	0x00000000 	nop
+K    916:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    917:    0x80000030	0x00000000 	nop
+K    918:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    919:    0x80000030	0x00000000 	nop
+K    920:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    921:    0x80000030	0x00000000 	nop
+K    922:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    923:    0x80000030	0x00000000 	nop
+K    924:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    925:    0x80000030	0x00000000 	nop
+K    926:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    927:    0x80000030	0x00000000 	nop
+K    928:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    929:    0x80000030	0x00000000 	nop
+K    930:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    931:    0x80000030	0x00000000 	nop
+K    932:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    933:    0x80000030	0x00000000 	nop
+K    934:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    935:    0x80000030	0x00000000 	nop
+K    936:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    937:    0x80000030	0x00000000 	nop
+K    938:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    939:    0x80000030	0x00000000 	nop
+K    940:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    941:    0x80000030	0x00000000 	nop
+K    942:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    943:    0x80000030	0x00000000 	nop
+K    944:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    945:    0x80000030	0x00000000 	nop
+K    946:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    947:    0x80000030	0x00000000 	nop
+K    948:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    949:    0x80000030	0x00000000 	nop
+K    950:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    951:    0x80000030	0x00000000 	nop
+K    952:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    953:    0x80000030	0x00000000 	nop
+K    954:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    955:    0x80000030	0x00000000 	nop
+K    956:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    957:    0x80000030	0x00000000 	nop
+K    958:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    959:    0x80000030	0x00000000 	nop
+K    960:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    961:    0x80000030	0x00000000 	nop
+K    962:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    963:    0x80000030	0x00000000 	nop
+K    964:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    965:    0x80000030	0x00000000 	nop
+K    966:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    967:    0x80000030	0x00000000 	nop
+K    968:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    969:    0x80000030	0x00000000 	nop
+K    970:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    971:    0x80000030	0x00000000 	nop
+K    972:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    973:    0x80000030	0x00000000 	nop
+K    974:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    975:    0x80000030	0x00000000 	nop
+K    976:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    977:    0x80000030	0x00000000 	nop
+K    978:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    979:    0x80000030	0x00000000 	nop
+K    980:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    981:    0x80000030	0x00000000 	nop
+K    982:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    983:    0x80000030	0x00000000 	nop
+K    984:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    985:    0x80000030	0x00000000 	nop
+K    986:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    987:    0x80000030	0x00000000 	nop
+K    988:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    989:    0x80000030	0x00000000 	nop
+K    990:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    991:    0x80000030	0x00000000 	nop
+K    992:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    993:    0x80000030	0x00000000 	nop
+K    994:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    995:    0x80000030	0x00000000 	nop
+K    996:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    997:    0x80000030	0x00000000 	nop
+K    998:    0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    999:    0x80000030	0x00000000 	nop
+K    1000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1001:   0x80000030	0x00000000 	nop
+K    1002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1003:   0x80000030	0x00000000 	nop
+K    1004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1005:   0x80000030	0x00000000 	nop
+K    1006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1007:   0x80000030	0x00000000 	nop
+K    1008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1009:   0x80000030	0x00000000 	nop
+K    1010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1011:   0x80000030	0x00000000 	nop
+K    1012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1013:   0x80000030	0x00000000 	nop
+K    1014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1015:   0x80000030	0x00000000 	nop
+K    1016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1017:   0x80000030	0x00000000 	nop
+K    1018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1019:   0x80000030	0x00000000 	nop
+K    1020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1021:   0x80000030	0x00000000 	nop
+K    1022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1023:   0x80000030	0x00000000 	nop
+K    1024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1025:   0x80000030	0x00000000 	nop
+K    1026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1027:   0x80000030	0x00000000 	nop
+K    1028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1029:   0x80000030	0x00000000 	nop
+K    1030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1031:   0x80000030	0x00000000 	nop
+K    1032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1033:   0x80000030	0x00000000 	nop
+K    1034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1035:   0x80000030	0x00000000 	nop
+K    1036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1037:   0x80000030	0x00000000 	nop
+K    1038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1039:   0x80000030	0x00000000 	nop
+K    1040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1041:   0x80000030	0x00000000 	nop
+K    1042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1043:   0x80000030	0x00000000 	nop
+K    1044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1045:   0x80000030	0x00000000 	nop
+K    1046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1047:   0x80000030	0x00000000 	nop
+K    1048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1049:   0x80000030	0x00000000 	nop
+K    1050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1051:   0x80000030	0x00000000 	nop
+K    1052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1053:   0x80000030	0x00000000 	nop
+K    1054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1055:   0x80000030	0x00000000 	nop
+K    1056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1057:   0x80000030	0x00000000 	nop
+K    1058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1059:   0x80000030	0x00000000 	nop
+K    1060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1061:   0x80000030	0x00000000 	nop
+K    1062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1063:   0x80000030	0x00000000 	nop
+K    1064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1065:   0x80000030	0x00000000 	nop
+K    1066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1067:   0x80000030	0x00000000 	nop
+K    1068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1069:   0x80000030	0x00000000 	nop
+K    1070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1071:   0x80000030	0x00000000 	nop
+K    1072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1073:   0x80000030	0x00000000 	nop
+K    1074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1075:   0x80000030	0x00000000 	nop
+K    1076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1077:   0x80000030	0x00000000 	nop
+K    1078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1079:   0x80000030	0x00000000 	nop
+K    1080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1081:   0x80000030	0x00000000 	nop
+K    1082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1083:   0x80000030	0x00000000 	nop
+K    1084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1085:   0x80000030	0x00000000 	nop
+K    1086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1087:   0x80000030	0x00000000 	nop
+K    1088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1089:   0x80000030	0x00000000 	nop
+K    1090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1091:   0x80000030	0x00000000 	nop
+K    1092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1093:   0x80000030	0x00000000 	nop
+K    1094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1095:   0x80000030	0x00000000 	nop
+K    1096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1097:   0x80000030	0x00000000 	nop
+K    1098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1099:   0x80000030	0x00000000 	nop
+K    1100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1101:   0x80000030	0x00000000 	nop
+K    1102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1103:   0x80000030	0x00000000 	nop
+K    1104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1105:   0x80000030	0x00000000 	nop
+K    1106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1107:   0x80000030	0x00000000 	nop
+K    1108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1109:   0x80000030	0x00000000 	nop
+K    1110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1111:   0x80000030	0x00000000 	nop
+K    1112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1113:   0x80000030	0x00000000 	nop
+K    1114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1115:   0x80000030	0x00000000 	nop
+K    1116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1117:   0x80000030	0x00000000 	nop
+K    1118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1119:   0x80000030	0x00000000 	nop
+K    1120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1121:   0x80000030	0x00000000 	nop
+K    1122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1123:   0x80000030	0x00000000 	nop
+K    1124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1125:   0x80000030	0x00000000 	nop
+K    1126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1127:   0x80000030	0x00000000 	nop
+K    1128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1129:   0x80000030	0x00000000 	nop
+K    1130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1131:   0x80000030	0x00000000 	nop
+K    1132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1133:   0x80000030	0x00000000 	nop
+K    1134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1135:   0x80000030	0x00000000 	nop
+K    1136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1137:   0x80000030	0x00000000 	nop
+K    1138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1139:   0x80000030	0x00000000 	nop
+K    1140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1141:   0x80000030	0x00000000 	nop
+K    1142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1143:   0x80000030	0x00000000 	nop
+K    1144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1145:   0x80000030	0x00000000 	nop
+K    1146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1147:   0x80000030	0x00000000 	nop
+K    1148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1149:   0x80000030	0x00000000 	nop
+K    1150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1151:   0x80000030	0x00000000 	nop
+K    1152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1153:   0x80000030	0x00000000 	nop
+K    1154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1155:   0x80000030	0x00000000 	nop
+K    1156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1157:   0x80000030	0x00000000 	nop
+K    1158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1159:   0x80000030	0x00000000 	nop
+K    1160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1161:   0x80000030	0x00000000 	nop
+K    1162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1163:   0x80000030	0x00000000 	nop
+K    1164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1165:   0x80000030	0x00000000 	nop
+K    1166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1167:   0x80000030	0x00000000 	nop
+K    1168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1169:   0x80000030	0x00000000 	nop
+K    1170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1171:   0x80000030	0x00000000 	nop
+K    1172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1173:   0x80000030	0x00000000 	nop
+K    1174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1175:   0x80000030	0x00000000 	nop
+K    1176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1177:   0x80000030	0x00000000 	nop
+K    1178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1179:   0x80000030	0x00000000 	nop
+K    1180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1181:   0x80000030	0x00000000 	nop
+K    1182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1183:   0x80000030	0x00000000 	nop
+K    1184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1185:   0x80000030	0x00000000 	nop
+K    1186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1187:   0x80000030	0x00000000 	nop
+K    1188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1189:   0x80000030	0x00000000 	nop
+K    1190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1191:   0x80000030	0x00000000 	nop
+K    1192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1193:   0x80000030	0x00000000 	nop
+K    1194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1195:   0x80000030	0x00000000 	nop
+K    1196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1197:   0x80000030	0x00000000 	nop
+K    1198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1199:   0x80000030	0x00000000 	nop
+K    1200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1201:   0x80000030	0x00000000 	nop
+K    1202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1203:   0x80000030	0x00000000 	nop
+K    1204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1205:   0x80000030	0x00000000 	nop
+K    1206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1207:   0x80000030	0x00000000 	nop
+K    1208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1209:   0x80000030	0x00000000 	nop
+K    1210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1211:   0x80000030	0x00000000 	nop
+K    1212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1213:   0x80000030	0x00000000 	nop
+K    1214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1215:   0x80000030	0x00000000 	nop
+K    1216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1217:   0x80000030	0x00000000 	nop
+K    1218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1219:   0x80000030	0x00000000 	nop
+K    1220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1221:   0x80000030	0x00000000 	nop
+K    1222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1223:   0x80000030	0x00000000 	nop
+K    1224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1225:   0x80000030	0x00000000 	nop
+K    1226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1227:   0x80000030	0x00000000 	nop
+K    1228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1229:   0x80000030	0x00000000 	nop
+K    1230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1231:   0x80000030	0x00000000 	nop
+K    1232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1233:   0x80000030	0x00000000 	nop
+K    1234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1235:   0x80000030	0x00000000 	nop
+K    1236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1237:   0x80000030	0x00000000 	nop
+K    1238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1239:   0x80000030	0x00000000 	nop
+K    1240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1241:   0x80000030	0x00000000 	nop
+K    1242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1243:   0x80000030	0x00000000 	nop
+K    1244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1245:   0x80000030	0x00000000 	nop
+K    1246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1247:   0x80000030	0x00000000 	nop
+K    1248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1249:   0x80000030	0x00000000 	nop
+K    1250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1251:   0x80000030	0x00000000 	nop
+K    1252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1253:   0x80000030	0x00000000 	nop
+K    1254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1255:   0x80000030	0x00000000 	nop
+K    1256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1257:   0x80000030	0x00000000 	nop
+K    1258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1259:   0x80000030	0x00000000 	nop
+K    1260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1261:   0x80000030	0x00000000 	nop
+K    1262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1263:   0x80000030	0x00000000 	nop
+K    1264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1265:   0x80000030	0x00000000 	nop
+K    1266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1267:   0x80000030	0x00000000 	nop
+K    1268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1269:   0x80000030	0x00000000 	nop
+K    1270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1271:   0x80000030	0x00000000 	nop
+K    1272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1273:   0x80000030	0x00000000 	nop
+K    1274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1275:   0x80000030	0x00000000 	nop
+K    1276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1277:   0x80000030	0x00000000 	nop
+K    1278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1279:   0x80000030	0x00000000 	nop
+K    1280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1281:   0x80000030	0x00000000 	nop
+K    1282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1283:   0x80000030	0x00000000 	nop
+K    1284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1285:   0x80000030	0x00000000 	nop
+K    1286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1287:   0x80000030	0x00000000 	nop
+K    1288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1289:   0x80000030	0x00000000 	nop
+K    1290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1291:   0x80000030	0x00000000 	nop
+K    1292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1293:   0x80000030	0x00000000 	nop
+K    1294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1295:   0x80000030	0x00000000 	nop
+K    1296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1297:   0x80000030	0x00000000 	nop
+K    1298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1299:   0x80000030	0x00000000 	nop
+K    1300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1301:   0x80000030	0x00000000 	nop
+K    1302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1303:   0x80000030	0x00000000 	nop
+K    1304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1305:   0x80000030	0x00000000 	nop
+K    1306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1307:   0x80000030	0x00000000 	nop
+K    1308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1309:   0x80000030	0x00000000 	nop
+K    1310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1311:   0x80000030	0x00000000 	nop
+K    1312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1313:   0x80000030	0x00000000 	nop
+K    1314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1315:   0x80000030	0x00000000 	nop
+K    1316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1317:   0x80000030	0x00000000 	nop
+K    1318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1319:   0x80000030	0x00000000 	nop
+K    1320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1321:   0x80000030	0x00000000 	nop
+K    1322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1323:   0x80000030	0x00000000 	nop
+K    1324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1325:   0x80000030	0x00000000 	nop
+K    1326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1327:   0x80000030	0x00000000 	nop
+K    1328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1329:   0x80000030	0x00000000 	nop
+K    1330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1331:   0x80000030	0x00000000 	nop
+K    1332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1333:   0x80000030	0x00000000 	nop
+K    1334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1335:   0x80000030	0x00000000 	nop
+K    1336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1337:   0x80000030	0x00000000 	nop
+K    1338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1339:   0x80000030	0x00000000 	nop
+K    1340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1341:   0x80000030	0x00000000 	nop
+K    1342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1343:   0x80000030	0x00000000 	nop
+K    1344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1345:   0x80000030	0x00000000 	nop
+K    1346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1347:   0x80000030	0x00000000 	nop
+K    1348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1349:   0x80000030	0x00000000 	nop
+K    1350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1351:   0x80000030	0x00000000 	nop
+K    1352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1353:   0x80000030	0x00000000 	nop
+K    1354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1355:   0x80000030	0x00000000 	nop
+K    1356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1357:   0x80000030	0x00000000 	nop
+K    1358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1359:   0x80000030	0x00000000 	nop
+K    1360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1361:   0x80000030	0x00000000 	nop
+K    1362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1363:   0x80000030	0x00000000 	nop
+K    1364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1365:   0x80000030	0x00000000 	nop
+K    1366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1367:   0x80000030	0x00000000 	nop
+K    1368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1369:   0x80000030	0x00000000 	nop
+K    1370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1371:   0x80000030	0x00000000 	nop
+K    1372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1373:   0x80000030	0x00000000 	nop
+K    1374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1375:   0x80000030	0x00000000 	nop
+K    1376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1377:   0x80000030	0x00000000 	nop
+K    1378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1379:   0x80000030	0x00000000 	nop
+K    1380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1381:   0x80000030	0x00000000 	nop
+K    1382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1383:   0x80000030	0x00000000 	nop
+K    1384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1385:   0x80000030	0x00000000 	nop
+K    1386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1387:   0x80000030	0x00000000 	nop
+K    1388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1389:   0x80000030	0x00000000 	nop
+K    1390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1391:   0x80000030	0x00000000 	nop
+K    1392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1393:   0x80000030	0x00000000 	nop
+K    1394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1395:   0x80000030	0x00000000 	nop
+K    1396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1397:   0x80000030	0x00000000 	nop
+K    1398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1399:   0x80000030	0x00000000 	nop
+K    1400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1401:   0x80000030	0x00000000 	nop
+K    1402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1403:   0x80000030	0x00000000 	nop
+K    1404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1405:   0x80000030	0x00000000 	nop
+K    1406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1407:   0x80000030	0x00000000 	nop
+K    1408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1409:   0x80000030	0x00000000 	nop
+K    1410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1411:   0x80000030	0x00000000 	nop
+K    1412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1413:   0x80000030	0x00000000 	nop
+K    1414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1415:   0x80000030	0x00000000 	nop
+K    1416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1417:   0x80000030	0x00000000 	nop
+K    1418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1419:   0x80000030	0x00000000 	nop
+K    1420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1421:   0x80000030	0x00000000 	nop
+K    1422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1423:   0x80000030	0x00000000 	nop
+K    1424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1425:   0x80000030	0x00000000 	nop
+K    1426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1427:   0x80000030	0x00000000 	nop
+K    1428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1429:   0x80000030	0x00000000 	nop
+K    1430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1431:   0x80000030	0x00000000 	nop
+K    1432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1433:   0x80000030	0x00000000 	nop
+K    1434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1435:   0x80000030	0x00000000 	nop
+K    1436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1437:   0x80000030	0x00000000 	nop
+K    1438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1439:   0x80000030	0x00000000 	nop
+K    1440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1441:   0x80000030	0x00000000 	nop
+K    1442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1443:   0x80000030	0x00000000 	nop
+K    1444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1445:   0x80000030	0x00000000 	nop
+K    1446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1447:   0x80000030	0x00000000 	nop
+K    1448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1449:   0x80000030	0x00000000 	nop
+K    1450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1451:   0x80000030	0x00000000 	nop
+K    1452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1453:   0x80000030	0x00000000 	nop
+K    1454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1455:   0x80000030	0x00000000 	nop
+K    1456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1457:   0x80000030	0x00000000 	nop
+K    1458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1459:   0x80000030	0x00000000 	nop
+K    1460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1461:   0x80000030	0x00000000 	nop
+K    1462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1463:   0x80000030	0x00000000 	nop
+K    1464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1465:   0x80000030	0x00000000 	nop
+K    1466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1467:   0x80000030	0x00000000 	nop
+K    1468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1469:   0x80000030	0x00000000 	nop
+K    1470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1471:   0x80000030	0x00000000 	nop
+K    1472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1473:   0x80000030	0x00000000 	nop
+K    1474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1475:   0x80000030	0x00000000 	nop
+K    1476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1477:   0x80000030	0x00000000 	nop
+K    1478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1479:   0x80000030	0x00000000 	nop
+K    1480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1481:   0x80000030	0x00000000 	nop
+K    1482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1483:   0x80000030	0x00000000 	nop
+K    1484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1485:   0x80000030	0x00000000 	nop
+K    1486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1487:   0x80000030	0x00000000 	nop
+K    1488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1489:   0x80000030	0x00000000 	nop
+K    1490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1491:   0x80000030	0x00000000 	nop
+K    1492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1493:   0x80000030	0x00000000 	nop
+K    1494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1495:   0x80000030	0x00000000 	nop
+K    1496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1497:   0x80000030	0x00000000 	nop
+K    1498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1499:   0x80000030	0x00000000 	nop
+K    1500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1501:   0x80000030	0x00000000 	nop
+K    1502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1503:   0x80000030	0x00000000 	nop
+K    1504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1505:   0x80000030	0x00000000 	nop
+K    1506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1507:   0x80000030	0x00000000 	nop
+K    1508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1509:   0x80000030	0x00000000 	nop
+K    1510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1511:   0x80000030	0x00000000 	nop
+K    1512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1513:   0x80000030	0x00000000 	nop
+K    1514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1515:   0x80000030	0x00000000 	nop
+K    1516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1517:   0x80000030	0x00000000 	nop
+K    1518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1519:   0x80000030	0x00000000 	nop
+K    1520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1521:   0x80000030	0x00000000 	nop
+K    1522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1523:   0x80000030	0x00000000 	nop
+K    1524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1525:   0x80000030	0x00000000 	nop
+K    1526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1527:   0x80000030	0x00000000 	nop
+K    1528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1529:   0x80000030	0x00000000 	nop
+K    1530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1531:   0x80000030	0x00000000 	nop
+K    1532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1533:   0x80000030	0x00000000 	nop
+K    1534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1535:   0x80000030	0x00000000 	nop
+K    1536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1537:   0x80000030	0x00000000 	nop
+K    1538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1539:   0x80000030	0x00000000 	nop
+K    1540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1541:   0x80000030	0x00000000 	nop
+K    1542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1543:   0x80000030	0x00000000 	nop
+K    1544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1545:   0x80000030	0x00000000 	nop
+K    1546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1547:   0x80000030	0x00000000 	nop
+K    1548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1549:   0x80000030	0x00000000 	nop
+K    1550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1551:   0x80000030	0x00000000 	nop
+K    1552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1553:   0x80000030	0x00000000 	nop
+K    1554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1555:   0x80000030	0x00000000 	nop
+K    1556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1557:   0x80000030	0x00000000 	nop
+K    1558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1559:   0x80000030	0x00000000 	nop
+K    1560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1561:   0x80000030	0x00000000 	nop
+K    1562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1563:   0x80000030	0x00000000 	nop
+K    1564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1565:   0x80000030	0x00000000 	nop
+K    1566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1567:   0x80000030	0x00000000 	nop
+K    1568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1569:   0x80000030	0x00000000 	nop
+K    1570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1571:   0x80000030	0x00000000 	nop
+K    1572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1573:   0x80000030	0x00000000 	nop
+K    1574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1575:   0x80000030	0x00000000 	nop
+K    1576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1577:   0x80000030	0x00000000 	nop
+K    1578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1579:   0x80000030	0x00000000 	nop
+K    1580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1581:   0x80000030	0x00000000 	nop
+K    1582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1583:   0x80000030	0x00000000 	nop
+K    1584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1585:   0x80000030	0x00000000 	nop
+K    1586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1587:   0x80000030	0x00000000 	nop
+K    1588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1589:   0x80000030	0x00000000 	nop
+K    1590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1591:   0x80000030	0x00000000 	nop
+K    1592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1593:   0x80000030	0x00000000 	nop
+K    1594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1595:   0x80000030	0x00000000 	nop
+K    1596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1597:   0x80000030	0x00000000 	nop
+K    1598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1599:   0x80000030	0x00000000 	nop
+K    1600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1601:   0x80000030	0x00000000 	nop
+K    1602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1603:   0x80000030	0x00000000 	nop
+K    1604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1605:   0x80000030	0x00000000 	nop
+K    1606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1607:   0x80000030	0x00000000 	nop
+K    1608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1609:   0x80000030	0x00000000 	nop
+K    1610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1611:   0x80000030	0x00000000 	nop
+K    1612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1613:   0x80000030	0x00000000 	nop
+K    1614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1615:   0x80000030	0x00000000 	nop
+K    1616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1617:   0x80000030	0x00000000 	nop
+K    1618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1619:   0x80000030	0x00000000 	nop
+K    1620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1621:   0x80000030	0x00000000 	nop
+K    1622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1623:   0x80000030	0x00000000 	nop
+K    1624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1625:   0x80000030	0x00000000 	nop
+K    1626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1627:   0x80000030	0x00000000 	nop
+K    1628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1629:   0x80000030	0x00000000 	nop
+K    1630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1631:   0x80000030	0x00000000 	nop
+K    1632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1633:   0x80000030	0x00000000 	nop
+K    1634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1635:   0x80000030	0x00000000 	nop
+K    1636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1637:   0x80000030	0x00000000 	nop
+K    1638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1639:   0x80000030	0x00000000 	nop
+K    1640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1641:   0x80000030	0x00000000 	nop
+K    1642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1643:   0x80000030	0x00000000 	nop
+K    1644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1645:   0x80000030	0x00000000 	nop
+K    1646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1647:   0x80000030	0x00000000 	nop
+K    1648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1649:   0x80000030	0x00000000 	nop
+K    1650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1651:   0x80000030	0x00000000 	nop
+K    1652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1653:   0x80000030	0x00000000 	nop
+K    1654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1655:   0x80000030	0x00000000 	nop
+K    1656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1657:   0x80000030	0x00000000 	nop
+K    1658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1659:   0x80000030	0x00000000 	nop
+K    1660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1661:   0x80000030	0x00000000 	nop
+K    1662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1663:   0x80000030	0x00000000 	nop
+K    1664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1665:   0x80000030	0x00000000 	nop
+K    1666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1667:   0x80000030	0x00000000 	nop
+K    1668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1669:   0x80000030	0x00000000 	nop
+K    1670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1671:   0x80000030	0x00000000 	nop
+K    1672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1673:   0x80000030	0x00000000 	nop
+K    1674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1675:   0x80000030	0x00000000 	nop
+K    1676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1677:   0x80000030	0x00000000 	nop
+K    1678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1679:   0x80000030	0x00000000 	nop
+K    1680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1681:   0x80000030	0x00000000 	nop
+K    1682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1683:   0x80000030	0x00000000 	nop
+K    1684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1685:   0x80000030	0x00000000 	nop
+K    1686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1687:   0x80000030	0x00000000 	nop
+K    1688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1689:   0x80000030	0x00000000 	nop
+K    1690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1691:   0x80000030	0x00000000 	nop
+K    1692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1693:   0x80000030	0x00000000 	nop
+K    1694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1695:   0x80000030	0x00000000 	nop
+K    1696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1697:   0x80000030	0x00000000 	nop
+K    1698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1699:   0x80000030	0x00000000 	nop
+K    1700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1701:   0x80000030	0x00000000 	nop
+K    1702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1703:   0x80000030	0x00000000 	nop
+K    1704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1705:   0x80000030	0x00000000 	nop
+K    1706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1707:   0x80000030	0x00000000 	nop
+K    1708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1709:   0x80000030	0x00000000 	nop
+K    1710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1711:   0x80000030	0x00000000 	nop
+K    1712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1713:   0x80000030	0x00000000 	nop
+K    1714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1715:   0x80000030	0x00000000 	nop
+K    1716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1717:   0x80000030	0x00000000 	nop
+K    1718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1719:   0x80000030	0x00000000 	nop
+K    1720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1721:   0x80000030	0x00000000 	nop
+K    1722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1723:   0x80000030	0x00000000 	nop
+K    1724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1725:   0x80000030	0x00000000 	nop
+K    1726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1727:   0x80000030	0x00000000 	nop
+K    1728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1729:   0x80000030	0x00000000 	nop
+K    1730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1731:   0x80000030	0x00000000 	nop
+K    1732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1733:   0x80000030	0x00000000 	nop
+K    1734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1735:   0x80000030	0x00000000 	nop
+K    1736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1737:   0x80000030	0x00000000 	nop
+K    1738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1739:   0x80000030	0x00000000 	nop
+K    1740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1741:   0x80000030	0x00000000 	nop
+K    1742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1743:   0x80000030	0x00000000 	nop
+K    1744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1745:   0x80000030	0x00000000 	nop
+K    1746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1747:   0x80000030	0x00000000 	nop
+K    1748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1749:   0x80000030	0x00000000 	nop
+K    1750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1751:   0x80000030	0x00000000 	nop
+K    1752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1753:   0x80000030	0x00000000 	nop
+K    1754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1755:   0x80000030	0x00000000 	nop
+K    1756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1757:   0x80000030	0x00000000 	nop
+K    1758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1759:   0x80000030	0x00000000 	nop
+K    1760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1761:   0x80000030	0x00000000 	nop
+K    1762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1763:   0x80000030	0x00000000 	nop
+K    1764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1765:   0x80000030	0x00000000 	nop
+K    1766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1767:   0x80000030	0x00000000 	nop
+K    1768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1769:   0x80000030	0x00000000 	nop
+K    1770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1771:   0x80000030	0x00000000 	nop
+K    1772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1773:   0x80000030	0x00000000 	nop
+K    1774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1775:   0x80000030	0x00000000 	nop
+K    1776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1777:   0x80000030	0x00000000 	nop
+K    1778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1779:   0x80000030	0x00000000 	nop
+K    1780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1781:   0x80000030	0x00000000 	nop
+K    1782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1783:   0x80000030	0x00000000 	nop
+K    1784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1785:   0x80000030	0x00000000 	nop
+K    1786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1787:   0x80000030	0x00000000 	nop
+K    1788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1789:   0x80000030	0x00000000 	nop
+K    1790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1791:   0x80000030	0x00000000 	nop
+K    1792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1793:   0x80000030	0x00000000 	nop
+K    1794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1795:   0x80000030	0x00000000 	nop
+K    1796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1797:   0x80000030	0x00000000 	nop
+K    1798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1799:   0x80000030	0x00000000 	nop
+K    1800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1801:   0x80000030	0x00000000 	nop
+K    1802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1803:   0x80000030	0x00000000 	nop
+K    1804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1805:   0x80000030	0x00000000 	nop
+K    1806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1807:   0x80000030	0x00000000 	nop
+K    1808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1809:   0x80000030	0x00000000 	nop
+K    1810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1811:   0x80000030	0x00000000 	nop
+K    1812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1813:   0x80000030	0x00000000 	nop
+K    1814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1815:   0x80000030	0x00000000 	nop
+K    1816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1817:   0x80000030	0x00000000 	nop
+K    1818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1819:   0x80000030	0x00000000 	nop
+K    1820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1821:   0x80000030	0x00000000 	nop
+K    1822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1823:   0x80000030	0x00000000 	nop
+K    1824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1825:   0x80000030	0x00000000 	nop
+K    1826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1827:   0x80000030	0x00000000 	nop
+K    1828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1829:   0x80000030	0x00000000 	nop
+K    1830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1831:   0x80000030	0x00000000 	nop
+K    1832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1833:   0x80000030	0x00000000 	nop
+K    1834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1835:   0x80000030	0x00000000 	nop
+K    1836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1837:   0x80000030	0x00000000 	nop
+K    1838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1839:   0x80000030	0x00000000 	nop
+K    1840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1841:   0x80000030	0x00000000 	nop
+K    1842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1843:   0x80000030	0x00000000 	nop
+K    1844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1845:   0x80000030	0x00000000 	nop
+K    1846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1847:   0x80000030	0x00000000 	nop
+K    1848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1849:   0x80000030	0x00000000 	nop
+K    1850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1851:   0x80000030	0x00000000 	nop
+K    1852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1853:   0x80000030	0x00000000 	nop
+K    1854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1855:   0x80000030	0x00000000 	nop
+K    1856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1857:   0x80000030	0x00000000 	nop
+K    1858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1859:   0x80000030	0x00000000 	nop
+K    1860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1861:   0x80000030	0x00000000 	nop
+K    1862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1863:   0x80000030	0x00000000 	nop
+K    1864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1865:   0x80000030	0x00000000 	nop
+K    1866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1867:   0x80000030	0x00000000 	nop
+K    1868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1869:   0x80000030	0x00000000 	nop
+K    1870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1871:   0x80000030	0x00000000 	nop
+K    1872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1873:   0x80000030	0x00000000 	nop
+K    1874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1875:   0x80000030	0x00000000 	nop
+K    1876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1877:   0x80000030	0x00000000 	nop
+K    1878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1879:   0x80000030	0x00000000 	nop
+K    1880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1881:   0x80000030	0x00000000 	nop
+K    1882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1883:   0x80000030	0x00000000 	nop
+K    1884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1885:   0x80000030	0x00000000 	nop
+K    1886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1887:   0x80000030	0x00000000 	nop
+K    1888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1889:   0x80000030	0x00000000 	nop
+K    1890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1891:   0x80000030	0x00000000 	nop
+K    1892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1893:   0x80000030	0x00000000 	nop
+K    1894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1895:   0x80000030	0x00000000 	nop
+K    1896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1897:   0x80000030	0x00000000 	nop
+K    1898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1899:   0x80000030	0x00000000 	nop
+K    1900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1901:   0x80000030	0x00000000 	nop
+K    1902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1903:   0x80000030	0x00000000 	nop
+K    1904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1905:   0x80000030	0x00000000 	nop
+K    1906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1907:   0x80000030	0x00000000 	nop
+K    1908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1909:   0x80000030	0x00000000 	nop
+K    1910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1911:   0x80000030	0x00000000 	nop
+K    1912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1913:   0x80000030	0x00000000 	nop
+K    1914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1915:   0x80000030	0x00000000 	nop
+K    1916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1917:   0x80000030	0x00000000 	nop
+K    1918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1919:   0x80000030	0x00000000 	nop
+K    1920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1921:   0x80000030	0x00000000 	nop
+K    1922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1923:   0x80000030	0x00000000 	nop
+K    1924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1925:   0x80000030	0x00000000 	nop
+K    1926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1927:   0x80000030	0x00000000 	nop
+K    1928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1929:   0x80000030	0x00000000 	nop
+K    1930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1931:   0x80000030	0x00000000 	nop
+K    1932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1933:   0x80000030	0x00000000 	nop
+K    1934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1935:   0x80000030	0x00000000 	nop
+K    1936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1937:   0x80000030	0x00000000 	nop
+K    1938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1939:   0x80000030	0x00000000 	nop
+K    1940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1941:   0x80000030	0x00000000 	nop
+K    1942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1943:   0x80000030	0x00000000 	nop
+K    1944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1945:   0x80000030	0x00000000 	nop
+K    1946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1947:   0x80000030	0x00000000 	nop
+K    1948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1949:   0x80000030	0x00000000 	nop
+K    1950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1951:   0x80000030	0x00000000 	nop
+K    1952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1953:   0x80000030	0x00000000 	nop
+K    1954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1955:   0x80000030	0x00000000 	nop
+K    1956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1957:   0x80000030	0x00000000 	nop
+K    1958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1959:   0x80000030	0x00000000 	nop
+K    1960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1961:   0x80000030	0x00000000 	nop
+K    1962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1963:   0x80000030	0x00000000 	nop
+K    1964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1965:   0x80000030	0x00000000 	nop
+K    1966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1967:   0x80000030	0x00000000 	nop
+K    1968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1969:   0x80000030	0x00000000 	nop
+K    1970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1971:   0x80000030	0x00000000 	nop
+K    1972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1973:   0x80000030	0x00000000 	nop
+K    1974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1975:   0x80000030	0x00000000 	nop
+K    1976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1977:   0x80000030	0x00000000 	nop
+K    1978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1979:   0x80000030	0x00000000 	nop
+K    1980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1981:   0x80000030	0x00000000 	nop
+K    1982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1983:   0x80000030	0x00000000 	nop
+K    1984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1985:   0x80000030	0x00000000 	nop
+K    1986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1987:   0x80000030	0x00000000 	nop
+K    1988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1989:   0x80000030	0x00000000 	nop
+K    1990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1991:   0x80000030	0x00000000 	nop
+K    1992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1993:   0x80000030	0x00000000 	nop
+K    1994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1995:   0x80000030	0x00000000 	nop
+K    1996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1997:   0x80000030	0x00000000 	nop
+K    1998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    1999:   0x80000030	0x00000000 	nop
+K    2000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2001:   0x80000030	0x00000000 	nop
+K    2002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2003:   0x80000030	0x00000000 	nop
+K    2004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2005:   0x80000030	0x00000000 	nop
+K    2006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2007:   0x80000030	0x00000000 	nop
+K    2008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2009:   0x80000030	0x00000000 	nop
+K    2010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2011:   0x80000030	0x00000000 	nop
+K    2012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2013:   0x80000030	0x00000000 	nop
+K    2014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2015:   0x80000030	0x00000000 	nop
+K    2016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2017:   0x80000030	0x00000000 	nop
+K    2018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2019:   0x80000030	0x00000000 	nop
+K    2020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2021:   0x80000030	0x00000000 	nop
+K    2022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2023:   0x80000030	0x00000000 	nop
+K    2024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2025:   0x80000030	0x00000000 	nop
+K    2026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2027:   0x80000030	0x00000000 	nop
+K    2028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2029:   0x80000030	0x00000000 	nop
+K    2030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2031:   0x80000030	0x00000000 	nop
+K    2032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2033:   0x80000030	0x00000000 	nop
+K    2034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2035:   0x80000030	0x00000000 	nop
+K    2036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2037:   0x80000030	0x00000000 	nop
+K    2038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2039:   0x80000030	0x00000000 	nop
+K    2040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2041:   0x80000030	0x00000000 	nop
+K    2042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2043:   0x80000030	0x00000000 	nop
+K    2044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2045:   0x80000030	0x00000000 	nop
+K    2046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2047:   0x80000030	0x00000000 	nop
+K    2048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2049:   0x80000030	0x00000000 	nop
+K    2050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2051:   0x80000030	0x00000000 	nop
+K    2052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2053:   0x80000030	0x00000000 	nop
+K    2054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2055:   0x80000030	0x00000000 	nop
+K    2056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2057:   0x80000030	0x00000000 	nop
+K    2058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2059:   0x80000030	0x00000000 	nop
+K    2060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2061:   0x80000030	0x00000000 	nop
+K    2062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2063:   0x80000030	0x00000000 	nop
+K    2064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2065:   0x80000030	0x00000000 	nop
+K    2066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2067:   0x80000030	0x00000000 	nop
+K    2068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2069:   0x80000030	0x00000000 	nop
+K    2070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2071:   0x80000030	0x00000000 	nop
+K    2072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2073:   0x80000030	0x00000000 	nop
+K    2074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2075:   0x80000030	0x00000000 	nop
+K    2076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2077:   0x80000030	0x00000000 	nop
+K    2078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2079:   0x80000030	0x00000000 	nop
+K    2080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2081:   0x80000030	0x00000000 	nop
+K    2082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2083:   0x80000030	0x00000000 	nop
+K    2084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2085:   0x80000030	0x00000000 	nop
+K    2086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2087:   0x80000030	0x00000000 	nop
+K    2088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2089:   0x80000030	0x00000000 	nop
+K    2090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2091:   0x80000030	0x00000000 	nop
+K    2092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2093:   0x80000030	0x00000000 	nop
+K    2094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2095:   0x80000030	0x00000000 	nop
+K    2096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2097:   0x80000030	0x00000000 	nop
+K    2098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2099:   0x80000030	0x00000000 	nop
+K    2100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2101:   0x80000030	0x00000000 	nop
+K    2102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2103:   0x80000030	0x00000000 	nop
+K    2104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2105:   0x80000030	0x00000000 	nop
+K    2106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2107:   0x80000030	0x00000000 	nop
+K    2108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2109:   0x80000030	0x00000000 	nop
+K    2110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2111:   0x80000030	0x00000000 	nop
+K    2112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2113:   0x80000030	0x00000000 	nop
+K    2114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2115:   0x80000030	0x00000000 	nop
+K    2116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2117:   0x80000030	0x00000000 	nop
+K    2118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2119:   0x80000030	0x00000000 	nop
+K    2120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2121:   0x80000030	0x00000000 	nop
+K    2122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2123:   0x80000030	0x00000000 	nop
+K    2124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2125:   0x80000030	0x00000000 	nop
+K    2126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2127:   0x80000030	0x00000000 	nop
+K    2128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2129:   0x80000030	0x00000000 	nop
+K    2130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2131:   0x80000030	0x00000000 	nop
+K    2132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2133:   0x80000030	0x00000000 	nop
+K    2134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2135:   0x80000030	0x00000000 	nop
+K    2136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2137:   0x80000030	0x00000000 	nop
+K    2138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2139:   0x80000030	0x00000000 	nop
+K    2140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2141:   0x80000030	0x00000000 	nop
+K    2142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2143:   0x80000030	0x00000000 	nop
+K    2144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2145:   0x80000030	0x00000000 	nop
+K    2146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2147:   0x80000030	0x00000000 	nop
+K    2148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2149:   0x80000030	0x00000000 	nop
+K    2150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2151:   0x80000030	0x00000000 	nop
+K    2152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2153:   0x80000030	0x00000000 	nop
+K    2154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2155:   0x80000030	0x00000000 	nop
+K    2156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2157:   0x80000030	0x00000000 	nop
+K    2158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2159:   0x80000030	0x00000000 	nop
+K    2160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2161:   0x80000030	0x00000000 	nop
+K    2162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2163:   0x80000030	0x00000000 	nop
+K    2164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2165:   0x80000030	0x00000000 	nop
+K    2166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2167:   0x80000030	0x00000000 	nop
+K    2168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2169:   0x80000030	0x00000000 	nop
+K    2170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2171:   0x80000030	0x00000000 	nop
+K    2172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2173:   0x80000030	0x00000000 	nop
+K    2174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2175:   0x80000030	0x00000000 	nop
+K    2176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2177:   0x80000030	0x00000000 	nop
+K    2178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2179:   0x80000030	0x00000000 	nop
+K    2180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2181:   0x80000030	0x00000000 	nop
+K    2182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2183:   0x80000030	0x00000000 	nop
+K    2184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2185:   0x80000030	0x00000000 	nop
+K    2186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2187:   0x80000030	0x00000000 	nop
+K    2188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2189:   0x80000030	0x00000000 	nop
+K    2190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2191:   0x80000030	0x00000000 	nop
+K    2192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2193:   0x80000030	0x00000000 	nop
+K    2194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2195:   0x80000030	0x00000000 	nop
+K    2196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2197:   0x80000030	0x00000000 	nop
+K    2198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2199:   0x80000030	0x00000000 	nop
+K    2200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2201:   0x80000030	0x00000000 	nop
+K    2202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2203:   0x80000030	0x00000000 	nop
+K    2204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2205:   0x80000030	0x00000000 	nop
+K    2206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2207:   0x80000030	0x00000000 	nop
+K    2208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2209:   0x80000030	0x00000000 	nop
+K    2210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2211:   0x80000030	0x00000000 	nop
+K    2212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2213:   0x80000030	0x00000000 	nop
+K    2214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2215:   0x80000030	0x00000000 	nop
+K    2216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2217:   0x80000030	0x00000000 	nop
+K    2218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2219:   0x80000030	0x00000000 	nop
+K    2220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2221:   0x80000030	0x00000000 	nop
+K    2222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2223:   0x80000030	0x00000000 	nop
+K    2224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2225:   0x80000030	0x00000000 	nop
+K    2226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2227:   0x80000030	0x00000000 	nop
+K    2228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2229:   0x80000030	0x00000000 	nop
+K    2230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2231:   0x80000030	0x00000000 	nop
+K    2232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2233:   0x80000030	0x00000000 	nop
+K    2234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2235:   0x80000030	0x00000000 	nop
+K    2236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2237:   0x80000030	0x00000000 	nop
+K    2238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2239:   0x80000030	0x00000000 	nop
+K    2240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2241:   0x80000030	0x00000000 	nop
+K    2242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2243:   0x80000030	0x00000000 	nop
+K    2244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2245:   0x80000030	0x00000000 	nop
+K    2246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2247:   0x80000030	0x00000000 	nop
+K    2248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2249:   0x80000030	0x00000000 	nop
+K    2250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2251:   0x80000030	0x00000000 	nop
+K    2252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2253:   0x80000030	0x00000000 	nop
+K    2254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2255:   0x80000030	0x00000000 	nop
+K    2256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2257:   0x80000030	0x00000000 	nop
+K    2258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2259:   0x80000030	0x00000000 	nop
+K    2260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2261:   0x80000030	0x00000000 	nop
+K    2262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2263:   0x80000030	0x00000000 	nop
+K    2264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2265:   0x80000030	0x00000000 	nop
+K    2266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2267:   0x80000030	0x00000000 	nop
+K    2268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2269:   0x80000030	0x00000000 	nop
+K    2270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2271:   0x80000030	0x00000000 	nop
+K    2272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2273:   0x80000030	0x00000000 	nop
+K    2274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2275:   0x80000030	0x00000000 	nop
+K    2276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2277:   0x80000030	0x00000000 	nop
+K    2278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2279:   0x80000030	0x00000000 	nop
+K    2280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2281:   0x80000030	0x00000000 	nop
+K    2282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2283:   0x80000030	0x00000000 	nop
+K    2284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2285:   0x80000030	0x00000000 	nop
+K    2286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2287:   0x80000030	0x00000000 	nop
+K    2288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2289:   0x80000030	0x00000000 	nop
+K    2290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2291:   0x80000030	0x00000000 	nop
+K    2292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2293:   0x80000030	0x00000000 	nop
+K    2294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2295:   0x80000030	0x00000000 	nop
+K    2296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2297:   0x80000030	0x00000000 	nop
+K    2298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2299:   0x80000030	0x00000000 	nop
+K    2300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2301:   0x80000030	0x00000000 	nop
+K    2302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2303:   0x80000030	0x00000000 	nop
+K    2304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2305:   0x80000030	0x00000000 	nop
+K    2306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2307:   0x80000030	0x00000000 	nop
+K    2308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2309:   0x80000030	0x00000000 	nop
+K    2310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2311:   0x80000030	0x00000000 	nop
+K    2312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2313:   0x80000030	0x00000000 	nop
+K    2314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2315:   0x80000030	0x00000000 	nop
+K    2316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2317:   0x80000030	0x00000000 	nop
+K    2318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2319:   0x80000030	0x00000000 	nop
+K    2320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2321:   0x80000030	0x00000000 	nop
+K    2322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2323:   0x80000030	0x00000000 	nop
+K    2324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2325:   0x80000030	0x00000000 	nop
+K    2326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2327:   0x80000030	0x00000000 	nop
+K    2328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2329:   0x80000030	0x00000000 	nop
+K    2330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2331:   0x80000030	0x00000000 	nop
+K    2332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2333:   0x80000030	0x00000000 	nop
+K    2334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2335:   0x80000030	0x00000000 	nop
+K    2336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2337:   0x80000030	0x00000000 	nop
+K    2338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2339:   0x80000030	0x00000000 	nop
+K    2340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2341:   0x80000030	0x00000000 	nop
+K    2342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2343:   0x80000030	0x00000000 	nop
+K    2344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2345:   0x80000030	0x00000000 	nop
+K    2346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2347:   0x80000030	0x00000000 	nop
+K    2348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2349:   0x80000030	0x00000000 	nop
+K    2350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2351:   0x80000030	0x00000000 	nop
+K    2352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2353:   0x80000030	0x00000000 	nop
+K    2354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2355:   0x80000030	0x00000000 	nop
+K    2356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2357:   0x80000030	0x00000000 	nop
+K    2358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2359:   0x80000030	0x00000000 	nop
+K    2360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2361:   0x80000030	0x00000000 	nop
+K    2362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2363:   0x80000030	0x00000000 	nop
+K    2364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2365:   0x80000030	0x00000000 	nop
+K    2366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2367:   0x80000030	0x00000000 	nop
+K    2368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2369:   0x80000030	0x00000000 	nop
+K    2370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2371:   0x80000030	0x00000000 	nop
+K    2372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2373:   0x80000030	0x00000000 	nop
+K    2374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2375:   0x80000030	0x00000000 	nop
+K    2376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2377:   0x80000030	0x00000000 	nop
+K    2378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2379:   0x80000030	0x00000000 	nop
+K    2380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2381:   0x80000030	0x00000000 	nop
+K    2382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2383:   0x80000030	0x00000000 	nop
+K    2384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2385:   0x80000030	0x00000000 	nop
+K    2386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2387:   0x80000030	0x00000000 	nop
+K    2388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2389:   0x80000030	0x00000000 	nop
+K    2390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2391:   0x80000030	0x00000000 	nop
+K    2392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2393:   0x80000030	0x00000000 	nop
+K    2394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2395:   0x80000030	0x00000000 	nop
+K    2396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2397:   0x80000030	0x00000000 	nop
+K    2398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2399:   0x80000030	0x00000000 	nop
+K    2400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2401:   0x80000030	0x00000000 	nop
+K    2402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2403:   0x80000030	0x00000000 	nop
+K    2404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2405:   0x80000030	0x00000000 	nop
+K    2406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2407:   0x80000030	0x00000000 	nop
+K    2408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2409:   0x80000030	0x00000000 	nop
+K    2410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2411:   0x80000030	0x00000000 	nop
+K    2412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2413:   0x80000030	0x00000000 	nop
+K    2414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2415:   0x80000030	0x00000000 	nop
+K    2416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2417:   0x80000030	0x00000000 	nop
+K    2418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2419:   0x80000030	0x00000000 	nop
+K    2420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2421:   0x80000030	0x00000000 	nop
+K    2422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2423:   0x80000030	0x00000000 	nop
+K    2424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2425:   0x80000030	0x00000000 	nop
+K    2426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2427:   0x80000030	0x00000000 	nop
+K    2428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2429:   0x80000030	0x00000000 	nop
+K    2430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2431:   0x80000030	0x00000000 	nop
+K    2432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2433:   0x80000030	0x00000000 	nop
+K    2434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2435:   0x80000030	0x00000000 	nop
+K    2436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2437:   0x80000030	0x00000000 	nop
+K    2438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2439:   0x80000030	0x00000000 	nop
+K    2440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2441:   0x80000030	0x00000000 	nop
+K    2442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2443:   0x80000030	0x00000000 	nop
+K    2444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2445:   0x80000030	0x00000000 	nop
+K    2446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2447:   0x80000030	0x00000000 	nop
+K    2448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2449:   0x80000030	0x00000000 	nop
+K    2450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2451:   0x80000030	0x00000000 	nop
+K    2452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2453:   0x80000030	0x00000000 	nop
+K    2454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2455:   0x80000030	0x00000000 	nop
+K    2456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2457:   0x80000030	0x00000000 	nop
+K    2458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2459:   0x80000030	0x00000000 	nop
+K    2460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2461:   0x80000030	0x00000000 	nop
+K    2462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2463:   0x80000030	0x00000000 	nop
+K    2464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2465:   0x80000030	0x00000000 	nop
+K    2466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2467:   0x80000030	0x00000000 	nop
+K    2468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2469:   0x80000030	0x00000000 	nop
+K    2470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2471:   0x80000030	0x00000000 	nop
+K    2472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2473:   0x80000030	0x00000000 	nop
+K    2474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2475:   0x80000030	0x00000000 	nop
+K    2476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2477:   0x80000030	0x00000000 	nop
+K    2478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2479:   0x80000030	0x00000000 	nop
+K    2480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2481:   0x80000030	0x00000000 	nop
+K    2482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2483:   0x80000030	0x00000000 	nop
+K    2484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2485:   0x80000030	0x00000000 	nop
+K    2486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2487:   0x80000030	0x00000000 	nop
+K    2488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2489:   0x80000030	0x00000000 	nop
+K    2490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2491:   0x80000030	0x00000000 	nop
+K    2492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2493:   0x80000030	0x00000000 	nop
+K    2494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2495:   0x80000030	0x00000000 	nop
+K    2496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2497:   0x80000030	0x00000000 	nop
+K    2498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2499:   0x80000030	0x00000000 	nop
+K    2500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2501:   0x80000030	0x00000000 	nop
+K    2502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2503:   0x80000030	0x00000000 	nop
+K    2504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2505:   0x80000030	0x00000000 	nop
+K    2506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2507:   0x80000030	0x00000000 	nop
+K    2508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2509:   0x80000030	0x00000000 	nop
+K    2510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2511:   0x80000030	0x00000000 	nop
+K    2512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2513:   0x80000030	0x00000000 	nop
+K    2514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2515:   0x80000030	0x00000000 	nop
+K    2516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2517:   0x80000030	0x00000000 	nop
+K    2518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2519:   0x80000030	0x00000000 	nop
+K    2520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2521:   0x80000030	0x00000000 	nop
+K    2522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2523:   0x80000030	0x00000000 	nop
+K    2524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2525:   0x80000030	0x00000000 	nop
+K    2526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2527:   0x80000030	0x00000000 	nop
+K    2528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2529:   0x80000030	0x00000000 	nop
+K    2530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2531:   0x80000030	0x00000000 	nop
+K    2532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2533:   0x80000030	0x00000000 	nop
+K    2534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2535:   0x80000030	0x00000000 	nop
+K    2536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2537:   0x80000030	0x00000000 	nop
+K    2538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2539:   0x80000030	0x00000000 	nop
+K    2540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2541:   0x80000030	0x00000000 	nop
+K    2542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2543:   0x80000030	0x00000000 	nop
+K    2544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2545:   0x80000030	0x00000000 	nop
+K    2546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2547:   0x80000030	0x00000000 	nop
+K    2548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2549:   0x80000030	0x00000000 	nop
+K    2550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2551:   0x80000030	0x00000000 	nop
+K    2552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2553:   0x80000030	0x00000000 	nop
+K    2554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2555:   0x80000030	0x00000000 	nop
+K    2556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2557:   0x80000030	0x00000000 	nop
+K    2558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2559:   0x80000030	0x00000000 	nop
+K    2560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2561:   0x80000030	0x00000000 	nop
+K    2562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2563:   0x80000030	0x00000000 	nop
+K    2564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2565:   0x80000030	0x00000000 	nop
+K    2566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2567:   0x80000030	0x00000000 	nop
+K    2568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2569:   0x80000030	0x00000000 	nop
+K    2570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2571:   0x80000030	0x00000000 	nop
+K    2572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2573:   0x80000030	0x00000000 	nop
+K    2574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2575:   0x80000030	0x00000000 	nop
+K    2576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2577:   0x80000030	0x00000000 	nop
+K    2578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2579:   0x80000030	0x00000000 	nop
+K    2580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2581:   0x80000030	0x00000000 	nop
+K    2582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2583:   0x80000030	0x00000000 	nop
+K    2584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2585:   0x80000030	0x00000000 	nop
+K    2586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2587:   0x80000030	0x00000000 	nop
+K    2588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2589:   0x80000030	0x00000000 	nop
+K    2590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2591:   0x80000030	0x00000000 	nop
+K    2592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2593:   0x80000030	0x00000000 	nop
+K    2594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2595:   0x80000030	0x00000000 	nop
+K    2596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2597:   0x80000030	0x00000000 	nop
+K    2598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2599:   0x80000030	0x00000000 	nop
+K    2600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2601:   0x80000030	0x00000000 	nop
+K    2602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2603:   0x80000030	0x00000000 	nop
+K    2604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2605:   0x80000030	0x00000000 	nop
+K    2606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2607:   0x80000030	0x00000000 	nop
+K    2608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2609:   0x80000030	0x00000000 	nop
+K    2610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2611:   0x80000030	0x00000000 	nop
+K    2612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2613:   0x80000030	0x00000000 	nop
+K    2614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2615:   0x80000030	0x00000000 	nop
+K    2616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2617:   0x80000030	0x00000000 	nop
+K    2618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2619:   0x80000030	0x00000000 	nop
+K    2620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2621:   0x80000030	0x00000000 	nop
+K    2622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2623:   0x80000030	0x00000000 	nop
+K    2624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2625:   0x80000030	0x00000000 	nop
+K    2626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2627:   0x80000030	0x00000000 	nop
+K    2628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2629:   0x80000030	0x00000000 	nop
+K    2630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2631:   0x80000030	0x00000000 	nop
+K    2632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2633:   0x80000030	0x00000000 	nop
+K    2634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2635:   0x80000030	0x00000000 	nop
+K    2636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2637:   0x80000030	0x00000000 	nop
+K    2638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2639:   0x80000030	0x00000000 	nop
+K    2640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2641:   0x80000030	0x00000000 	nop
+K    2642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2643:   0x80000030	0x00000000 	nop
+K    2644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2645:   0x80000030	0x00000000 	nop
+K    2646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2647:   0x80000030	0x00000000 	nop
+K    2648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2649:   0x80000030	0x00000000 	nop
+K    2650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2651:   0x80000030	0x00000000 	nop
+K    2652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2653:   0x80000030	0x00000000 	nop
+K    2654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2655:   0x80000030	0x00000000 	nop
+K    2656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2657:   0x80000030	0x00000000 	nop
+K    2658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2659:   0x80000030	0x00000000 	nop
+K    2660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2661:   0x80000030	0x00000000 	nop
+K    2662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2663:   0x80000030	0x00000000 	nop
+K    2664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2665:   0x80000030	0x00000000 	nop
+K    2666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2667:   0x80000030	0x00000000 	nop
+K    2668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2669:   0x80000030	0x00000000 	nop
+K    2670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2671:   0x80000030	0x00000000 	nop
+K    2672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2673:   0x80000030	0x00000000 	nop
+K    2674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2675:   0x80000030	0x00000000 	nop
+K    2676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2677:   0x80000030	0x00000000 	nop
+K    2678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2679:   0x80000030	0x00000000 	nop
+K    2680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2681:   0x80000030	0x00000000 	nop
+K    2682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2683:   0x80000030	0x00000000 	nop
+K    2684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2685:   0x80000030	0x00000000 	nop
+K    2686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2687:   0x80000030	0x00000000 	nop
+K    2688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2689:   0x80000030	0x00000000 	nop
+K    2690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2691:   0x80000030	0x00000000 	nop
+K    2692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2693:   0x80000030	0x00000000 	nop
+K    2694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2695:   0x80000030	0x00000000 	nop
+K    2696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2697:   0x80000030	0x00000000 	nop
+K    2698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2699:   0x80000030	0x00000000 	nop
+K    2700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2701:   0x80000030	0x00000000 	nop
+K    2702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2703:   0x80000030	0x00000000 	nop
+K    2704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2705:   0x80000030	0x00000000 	nop
+K    2706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2707:   0x80000030	0x00000000 	nop
+K    2708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2709:   0x80000030	0x00000000 	nop
+K    2710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2711:   0x80000030	0x00000000 	nop
+K    2712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2713:   0x80000030	0x00000000 	nop
+K    2714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2715:   0x80000030	0x00000000 	nop
+K    2716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2717:   0x80000030	0x00000000 	nop
+K    2718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2719:   0x80000030	0x00000000 	nop
+K    2720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2721:   0x80000030	0x00000000 	nop
+K    2722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2723:   0x80000030	0x00000000 	nop
+K    2724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2725:   0x80000030	0x00000000 	nop
+K    2726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2727:   0x80000030	0x00000000 	nop
+K    2728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2729:   0x80000030	0x00000000 	nop
+K    2730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2731:   0x80000030	0x00000000 	nop
+K    2732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2733:   0x80000030	0x00000000 	nop
+K    2734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2735:   0x80000030	0x00000000 	nop
+K    2736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2737:   0x80000030	0x00000000 	nop
+K    2738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2739:   0x80000030	0x00000000 	nop
+K    2740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2741:   0x80000030	0x00000000 	nop
+K    2742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2743:   0x80000030	0x00000000 	nop
+K    2744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2745:   0x80000030	0x00000000 	nop
+K    2746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2747:   0x80000030	0x00000000 	nop
+K    2748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2749:   0x80000030	0x00000000 	nop
+K    2750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2751:   0x80000030	0x00000000 	nop
+K    2752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2753:   0x80000030	0x00000000 	nop
+K    2754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2755:   0x80000030	0x00000000 	nop
+K    2756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2757:   0x80000030	0x00000000 	nop
+K    2758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2759:   0x80000030	0x00000000 	nop
+K    2760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2761:   0x80000030	0x00000000 	nop
+K    2762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2763:   0x80000030	0x00000000 	nop
+K    2764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2765:   0x80000030	0x00000000 	nop
+K    2766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2767:   0x80000030	0x00000000 	nop
+K    2768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2769:   0x80000030	0x00000000 	nop
+K    2770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2771:   0x80000030	0x00000000 	nop
+K    2772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2773:   0x80000030	0x00000000 	nop
+K    2774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2775:   0x80000030	0x00000000 	nop
+K    2776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2777:   0x80000030	0x00000000 	nop
+K    2778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2779:   0x80000030	0x00000000 	nop
+K    2780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2781:   0x80000030	0x00000000 	nop
+K    2782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2783:   0x80000030	0x00000000 	nop
+K    2784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2785:   0x80000030	0x00000000 	nop
+K    2786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2787:   0x80000030	0x00000000 	nop
+K    2788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2789:   0x80000030	0x00000000 	nop
+K    2790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2791:   0x80000030	0x00000000 	nop
+K    2792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2793:   0x80000030	0x00000000 	nop
+K    2794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2795:   0x80000030	0x00000000 	nop
+K    2796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2797:   0x80000030	0x00000000 	nop
+K    2798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2799:   0x80000030	0x00000000 	nop
+K    2800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2801:   0x80000030	0x00000000 	nop
+K    2802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2803:   0x80000030	0x00000000 	nop
+K    2804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2805:   0x80000030	0x00000000 	nop
+K    2806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2807:   0x80000030	0x00000000 	nop
+K    2808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2809:   0x80000030	0x00000000 	nop
+K    2810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2811:   0x80000030	0x00000000 	nop
+K    2812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2813:   0x80000030	0x00000000 	nop
+K    2814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2815:   0x80000030	0x00000000 	nop
+K    2816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2817:   0x80000030	0x00000000 	nop
+K    2818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2819:   0x80000030	0x00000000 	nop
+K    2820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2821:   0x80000030	0x00000000 	nop
+K    2822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2823:   0x80000030	0x00000000 	nop
+K    2824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2825:   0x80000030	0x00000000 	nop
+K    2826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2827:   0x80000030	0x00000000 	nop
+K    2828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2829:   0x80000030	0x00000000 	nop
+K    2830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2831:   0x80000030	0x00000000 	nop
+K    2832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2833:   0x80000030	0x00000000 	nop
+K    2834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2835:   0x80000030	0x00000000 	nop
+K    2836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2837:   0x80000030	0x00000000 	nop
+K    2838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2839:   0x80000030	0x00000000 	nop
+K    2840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2841:   0x80000030	0x00000000 	nop
+K    2842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2843:   0x80000030	0x00000000 	nop
+K    2844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2845:   0x80000030	0x00000000 	nop
+K    2846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2847:   0x80000030	0x00000000 	nop
+K    2848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2849:   0x80000030	0x00000000 	nop
+K    2850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2851:   0x80000030	0x00000000 	nop
+K    2852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2853:   0x80000030	0x00000000 	nop
+K    2854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2855:   0x80000030	0x00000000 	nop
+K    2856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2857:   0x80000030	0x00000000 	nop
+K    2858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2859:   0x80000030	0x00000000 	nop
+K    2860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2861:   0x80000030	0x00000000 	nop
+K    2862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2863:   0x80000030	0x00000000 	nop
+K    2864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2865:   0x80000030	0x00000000 	nop
+K    2866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2867:   0x80000030	0x00000000 	nop
+K    2868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2869:   0x80000030	0x00000000 	nop
+K    2870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2871:   0x80000030	0x00000000 	nop
+K    2872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2873:   0x80000030	0x00000000 	nop
+K    2874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2875:   0x80000030	0x00000000 	nop
+K    2876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2877:   0x80000030	0x00000000 	nop
+K    2878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2879:   0x80000030	0x00000000 	nop
+K    2880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2881:   0x80000030	0x00000000 	nop
+K    2882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2883:   0x80000030	0x00000000 	nop
+K    2884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2885:   0x80000030	0x00000000 	nop
+K    2886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2887:   0x80000030	0x00000000 	nop
+K    2888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2889:   0x80000030	0x00000000 	nop
+K    2890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2891:   0x80000030	0x00000000 	nop
+K    2892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2893:   0x80000030	0x00000000 	nop
+K    2894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2895:   0x80000030	0x00000000 	nop
+K    2896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2897:   0x80000030	0x00000000 	nop
+K    2898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2899:   0x80000030	0x00000000 	nop
+K    2900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2901:   0x80000030	0x00000000 	nop
+K    2902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2903:   0x80000030	0x00000000 	nop
+K    2904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2905:   0x80000030	0x00000000 	nop
+K    2906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2907:   0x80000030	0x00000000 	nop
+K    2908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2909:   0x80000030	0x00000000 	nop
+K    2910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2911:   0x80000030	0x00000000 	nop
+K    2912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2913:   0x80000030	0x00000000 	nop
+K    2914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2915:   0x80000030	0x00000000 	nop
+K    2916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2917:   0x80000030	0x00000000 	nop
+K    2918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2919:   0x80000030	0x00000000 	nop
+K    2920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2921:   0x80000030	0x00000000 	nop
+K    2922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2923:   0x80000030	0x00000000 	nop
+K    2924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2925:   0x80000030	0x00000000 	nop
+K    2926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2927:   0x80000030	0x00000000 	nop
+K    2928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2929:   0x80000030	0x00000000 	nop
+K    2930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2931:   0x80000030	0x00000000 	nop
+K    2932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2933:   0x80000030	0x00000000 	nop
+K    2934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2935:   0x80000030	0x00000000 	nop
+K    2936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2937:   0x80000030	0x00000000 	nop
+K    2938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2939:   0x80000030	0x00000000 	nop
+K    2940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2941:   0x80000030	0x00000000 	nop
+K    2942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2943:   0x80000030	0x00000000 	nop
+K    2944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2945:   0x80000030	0x00000000 	nop
+K    2946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2947:   0x80000030	0x00000000 	nop
+K    2948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2949:   0x80000030	0x00000000 	nop
+K    2950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2951:   0x80000030	0x00000000 	nop
+K    2952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2953:   0x80000030	0x00000000 	nop
+K    2954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2955:   0x80000030	0x00000000 	nop
+K    2956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2957:   0x80000030	0x00000000 	nop
+K    2958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2959:   0x80000030	0x00000000 	nop
+K    2960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2961:   0x80000030	0x00000000 	nop
+K    2962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2963:   0x80000030	0x00000000 	nop
+K    2964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2965:   0x80000030	0x00000000 	nop
+K    2966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2967:   0x80000030	0x00000000 	nop
+K    2968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2969:   0x80000030	0x00000000 	nop
+K    2970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2971:   0x80000030	0x00000000 	nop
+K    2972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2973:   0x80000030	0x00000000 	nop
+K    2974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2975:   0x80000030	0x00000000 	nop
+K    2976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2977:   0x80000030	0x00000000 	nop
+K    2978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2979:   0x80000030	0x00000000 	nop
+K    2980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2981:   0x80000030	0x00000000 	nop
+K    2982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2983:   0x80000030	0x00000000 	nop
+K    2984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2985:   0x80000030	0x00000000 	nop
+K    2986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2987:   0x80000030	0x00000000 	nop
+K    2988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2989:   0x80000030	0x00000000 	nop
+K    2990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2991:   0x80000030	0x00000000 	nop
+K    2992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2993:   0x80000030	0x00000000 	nop
+K    2994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2995:   0x80000030	0x00000000 	nop
+K    2996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2997:   0x80000030	0x00000000 	nop
+K    2998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    2999:   0x80000030	0x00000000 	nop
+K    3000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3001:   0x80000030	0x00000000 	nop
+K    3002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3003:   0x80000030	0x00000000 	nop
+K    3004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3005:   0x80000030	0x00000000 	nop
+K    3006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3007:   0x80000030	0x00000000 	nop
+K    3008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3009:   0x80000030	0x00000000 	nop
+K    3010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3011:   0x80000030	0x00000000 	nop
+K    3012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3013:   0x80000030	0x00000000 	nop
+K    3014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3015:   0x80000030	0x00000000 	nop
+K    3016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3017:   0x80000030	0x00000000 	nop
+K    3018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3019:   0x80000030	0x00000000 	nop
+K    3020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3021:   0x80000030	0x00000000 	nop
+K    3022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3023:   0x80000030	0x00000000 	nop
+K    3024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3025:   0x80000030	0x00000000 	nop
+K    3026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3027:   0x80000030	0x00000000 	nop
+K    3028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3029:   0x80000030	0x00000000 	nop
+K    3030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3031:   0x80000030	0x00000000 	nop
+K    3032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3033:   0x80000030	0x00000000 	nop
+K    3034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3035:   0x80000030	0x00000000 	nop
+K    3036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3037:   0x80000030	0x00000000 	nop
+K    3038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3039:   0x80000030	0x00000000 	nop
+K    3040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3041:   0x80000030	0x00000000 	nop
+K    3042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3043:   0x80000030	0x00000000 	nop
+K    3044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3045:   0x80000030	0x00000000 	nop
+K    3046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3047:   0x80000030	0x00000000 	nop
+K    3048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3049:   0x80000030	0x00000000 	nop
+K    3050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3051:   0x80000030	0x00000000 	nop
+K    3052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3053:   0x80000030	0x00000000 	nop
+K    3054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3055:   0x80000030	0x00000000 	nop
+K    3056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3057:   0x80000030	0x00000000 	nop
+K    3058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3059:   0x80000030	0x00000000 	nop
+K    3060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3061:   0x80000030	0x00000000 	nop
+K    3062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3063:   0x80000030	0x00000000 	nop
+K    3064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3065:   0x80000030	0x00000000 	nop
+K    3066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3067:   0x80000030	0x00000000 	nop
+K    3068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3069:   0x80000030	0x00000000 	nop
+K    3070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3071:   0x80000030	0x00000000 	nop
+K    3072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3073:   0x80000030	0x00000000 	nop
+K    3074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3075:   0x80000030	0x00000000 	nop
+K    3076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3077:   0x80000030	0x00000000 	nop
+K    3078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3079:   0x80000030	0x00000000 	nop
+K    3080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3081:   0x80000030	0x00000000 	nop
+K    3082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3083:   0x80000030	0x00000000 	nop
+K    3084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3085:   0x80000030	0x00000000 	nop
+K    3086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3087:   0x80000030	0x00000000 	nop
+K    3088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3089:   0x80000030	0x00000000 	nop
+K    3090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3091:   0x80000030	0x00000000 	nop
+K    3092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3093:   0x80000030	0x00000000 	nop
+K    3094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3095:   0x80000030	0x00000000 	nop
+K    3096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3097:   0x80000030	0x00000000 	nop
+K    3098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3099:   0x80000030	0x00000000 	nop
+K    3100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3101:   0x80000030	0x00000000 	nop
+K    3102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3103:   0x80000030	0x00000000 	nop
+K    3104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3105:   0x80000030	0x00000000 	nop
+K    3106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3107:   0x80000030	0x00000000 	nop
+K    3108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3109:   0x80000030	0x00000000 	nop
+K    3110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3111:   0x80000030	0x00000000 	nop
+K    3112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3113:   0x80000030	0x00000000 	nop
+K    3114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3115:   0x80000030	0x00000000 	nop
+K    3116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3117:   0x80000030	0x00000000 	nop
+K    3118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3119:   0x80000030	0x00000000 	nop
+K    3120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3121:   0x80000030	0x00000000 	nop
+K    3122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3123:   0x80000030	0x00000000 	nop
+K    3124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3125:   0x80000030	0x00000000 	nop
+K    3126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3127:   0x80000030	0x00000000 	nop
+K    3128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3129:   0x80000030	0x00000000 	nop
+K    3130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3131:   0x80000030	0x00000000 	nop
+K    3132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3133:   0x80000030	0x00000000 	nop
+K    3134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3135:   0x80000030	0x00000000 	nop
+K    3136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3137:   0x80000030	0x00000000 	nop
+K    3138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3139:   0x80000030	0x00000000 	nop
+K    3140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3141:   0x80000030	0x00000000 	nop
+K    3142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3143:   0x80000030	0x00000000 	nop
+K    3144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3145:   0x80000030	0x00000000 	nop
+K    3146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3147:   0x80000030	0x00000000 	nop
+K    3148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3149:   0x80000030	0x00000000 	nop
+K    3150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3151:   0x80000030	0x00000000 	nop
+K    3152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3153:   0x80000030	0x00000000 	nop
+K    3154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3155:   0x80000030	0x00000000 	nop
+K    3156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3157:   0x80000030	0x00000000 	nop
+K    3158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3159:   0x80000030	0x00000000 	nop
+K    3160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3161:   0x80000030	0x00000000 	nop
+K    3162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3163:   0x80000030	0x00000000 	nop
+K    3164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3165:   0x80000030	0x00000000 	nop
+K    3166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3167:   0x80000030	0x00000000 	nop
+K    3168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3169:   0x80000030	0x00000000 	nop
+K    3170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3171:   0x80000030	0x00000000 	nop
+K    3172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3173:   0x80000030	0x00000000 	nop
+K    3174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3175:   0x80000030	0x00000000 	nop
+K    3176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3177:   0x80000030	0x00000000 	nop
+K    3178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3179:   0x80000030	0x00000000 	nop
+K    3180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3181:   0x80000030	0x00000000 	nop
+K    3182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3183:   0x80000030	0x00000000 	nop
+K    3184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3185:   0x80000030	0x00000000 	nop
+K    3186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3187:   0x80000030	0x00000000 	nop
+K    3188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3189:   0x80000030	0x00000000 	nop
+K    3190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3191:   0x80000030	0x00000000 	nop
+K    3192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3193:   0x80000030	0x00000000 	nop
+K    3194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3195:   0x80000030	0x00000000 	nop
+K    3196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3197:   0x80000030	0x00000000 	nop
+K    3198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3199:   0x80000030	0x00000000 	nop
+K    3200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3201:   0x80000030	0x00000000 	nop
+K    3202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3203:   0x80000030	0x00000000 	nop
+K    3204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3205:   0x80000030	0x00000000 	nop
+K    3206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3207:   0x80000030	0x00000000 	nop
+K    3208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3209:   0x80000030	0x00000000 	nop
+K    3210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3211:   0x80000030	0x00000000 	nop
+K    3212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3213:   0x80000030	0x00000000 	nop
+K    3214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3215:   0x80000030	0x00000000 	nop
+K    3216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3217:   0x80000030	0x00000000 	nop
+K    3218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3219:   0x80000030	0x00000000 	nop
+K    3220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3221:   0x80000030	0x00000000 	nop
+K    3222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3223:   0x80000030	0x00000000 	nop
+K    3224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3225:   0x80000030	0x00000000 	nop
+K    3226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3227:   0x80000030	0x00000000 	nop
+K    3228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3229:   0x80000030	0x00000000 	nop
+K    3230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3231:   0x80000030	0x00000000 	nop
+K    3232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3233:   0x80000030	0x00000000 	nop
+K    3234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3235:   0x80000030	0x00000000 	nop
+K    3236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3237:   0x80000030	0x00000000 	nop
+K    3238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3239:   0x80000030	0x00000000 	nop
+K    3240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3241:   0x80000030	0x00000000 	nop
+K    3242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3243:   0x80000030	0x00000000 	nop
+K    3244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3245:   0x80000030	0x00000000 	nop
+K    3246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3247:   0x80000030	0x00000000 	nop
+K    3248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3249:   0x80000030	0x00000000 	nop
+K    3250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3251:   0x80000030	0x00000000 	nop
+K    3252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3253:   0x80000030	0x00000000 	nop
+K    3254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3255:   0x80000030	0x00000000 	nop
+K    3256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3257:   0x80000030	0x00000000 	nop
+K    3258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3259:   0x80000030	0x00000000 	nop
+K    3260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3261:   0x80000030	0x00000000 	nop
+K    3262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3263:   0x80000030	0x00000000 	nop
+K    3264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3265:   0x80000030	0x00000000 	nop
+K    3266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3267:   0x80000030	0x00000000 	nop
+K    3268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3269:   0x80000030	0x00000000 	nop
+K    3270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3271:   0x80000030	0x00000000 	nop
+K    3272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3273:   0x80000030	0x00000000 	nop
+K    3274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3275:   0x80000030	0x00000000 	nop
+K    3276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3277:   0x80000030	0x00000000 	nop
+K    3278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3279:   0x80000030	0x00000000 	nop
+K    3280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3281:   0x80000030	0x00000000 	nop
+K    3282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3283:   0x80000030	0x00000000 	nop
+K    3284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3285:   0x80000030	0x00000000 	nop
+K    3286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3287:   0x80000030	0x00000000 	nop
+K    3288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3289:   0x80000030	0x00000000 	nop
+K    3290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3291:   0x80000030	0x00000000 	nop
+K    3292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3293:   0x80000030	0x00000000 	nop
+K    3294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3295:   0x80000030	0x00000000 	nop
+K    3296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3297:   0x80000030	0x00000000 	nop
+K    3298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3299:   0x80000030	0x00000000 	nop
+K    3300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3301:   0x80000030	0x00000000 	nop
+K    3302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3303:   0x80000030	0x00000000 	nop
+K    3304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3305:   0x80000030	0x00000000 	nop
+K    3306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3307:   0x80000030	0x00000000 	nop
+K    3308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3309:   0x80000030	0x00000000 	nop
+K    3310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3311:   0x80000030	0x00000000 	nop
+K    3312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3313:   0x80000030	0x00000000 	nop
+K    3314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3315:   0x80000030	0x00000000 	nop
+K    3316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3317:   0x80000030	0x00000000 	nop
+K    3318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3319:   0x80000030	0x00000000 	nop
+K    3320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3321:   0x80000030	0x00000000 	nop
+K    3322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3323:   0x80000030	0x00000000 	nop
+K    3324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3325:   0x80000030	0x00000000 	nop
+K    3326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3327:   0x80000030	0x00000000 	nop
+K    3328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3329:   0x80000030	0x00000000 	nop
+K    3330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3331:   0x80000030	0x00000000 	nop
+K    3332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3333:   0x80000030	0x00000000 	nop
+K    3334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3335:   0x80000030	0x00000000 	nop
+K    3336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3337:   0x80000030	0x00000000 	nop
+K    3338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3339:   0x80000030	0x00000000 	nop
+K    3340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3341:   0x80000030	0x00000000 	nop
+K    3342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3343:   0x80000030	0x00000000 	nop
+K    3344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3345:   0x80000030	0x00000000 	nop
+K    3346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3347:   0x80000030	0x00000000 	nop
+K    3348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3349:   0x80000030	0x00000000 	nop
+K    3350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3351:   0x80000030	0x00000000 	nop
+K    3352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3353:   0x80000030	0x00000000 	nop
+K    3354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3355:   0x80000030	0x00000000 	nop
+K    3356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3357:   0x80000030	0x00000000 	nop
+K    3358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3359:   0x80000030	0x00000000 	nop
+K    3360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3361:   0x80000030	0x00000000 	nop
+K    3362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3363:   0x80000030	0x00000000 	nop
+K    3364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3365:   0x80000030	0x00000000 	nop
+K    3366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3367:   0x80000030	0x00000000 	nop
+K    3368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3369:   0x80000030	0x00000000 	nop
+K    3370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3371:   0x80000030	0x00000000 	nop
+K    3372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3373:   0x80000030	0x00000000 	nop
+K    3374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3375:   0x80000030	0x00000000 	nop
+K    3376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3377:   0x80000030	0x00000000 	nop
+K    3378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3379:   0x80000030	0x00000000 	nop
+K    3380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3381:   0x80000030	0x00000000 	nop
+K    3382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3383:   0x80000030	0x00000000 	nop
+K    3384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3385:   0x80000030	0x00000000 	nop
+K    3386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3387:   0x80000030	0x00000000 	nop
+K    3388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3389:   0x80000030	0x00000000 	nop
+K    3390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3391:   0x80000030	0x00000000 	nop
+K    3392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3393:   0x80000030	0x00000000 	nop
+K    3394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3395:   0x80000030	0x00000000 	nop
+K    3396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3397:   0x80000030	0x00000000 	nop
+K    3398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3399:   0x80000030	0x00000000 	nop
+K    3400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3401:   0x80000030	0x00000000 	nop
+K    3402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3403:   0x80000030	0x00000000 	nop
+K    3404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3405:   0x80000030	0x00000000 	nop
+K    3406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3407:   0x80000030	0x00000000 	nop
+K    3408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3409:   0x80000030	0x00000000 	nop
+K    3410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3411:   0x80000030	0x00000000 	nop
+K    3412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3413:   0x80000030	0x00000000 	nop
+K    3414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3415:   0x80000030	0x00000000 	nop
+K    3416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3417:   0x80000030	0x00000000 	nop
+K    3418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3419:   0x80000030	0x00000000 	nop
+K    3420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3421:   0x80000030	0x00000000 	nop
+K    3422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3423:   0x80000030	0x00000000 	nop
+K    3424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3425:   0x80000030	0x00000000 	nop
+K    3426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3427:   0x80000030	0x00000000 	nop
+K    3428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3429:   0x80000030	0x00000000 	nop
+K    3430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3431:   0x80000030	0x00000000 	nop
+K    3432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3433:   0x80000030	0x00000000 	nop
+K    3434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3435:   0x80000030	0x00000000 	nop
+K    3436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3437:   0x80000030	0x00000000 	nop
+K    3438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3439:   0x80000030	0x00000000 	nop
+K    3440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3441:   0x80000030	0x00000000 	nop
+K    3442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3443:   0x80000030	0x00000000 	nop
+K    3444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3445:   0x80000030	0x00000000 	nop
+K    3446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3447:   0x80000030	0x00000000 	nop
+K    3448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3449:   0x80000030	0x00000000 	nop
+K    3450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3451:   0x80000030	0x00000000 	nop
+K    3452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3453:   0x80000030	0x00000000 	nop
+K    3454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3455:   0x80000030	0x00000000 	nop
+K    3456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3457:   0x80000030	0x00000000 	nop
+K    3458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3459:   0x80000030	0x00000000 	nop
+K    3460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3461:   0x80000030	0x00000000 	nop
+K    3462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3463:   0x80000030	0x00000000 	nop
+K    3464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3465:   0x80000030	0x00000000 	nop
+K    3466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3467:   0x80000030	0x00000000 	nop
+K    3468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3469:   0x80000030	0x00000000 	nop
+K    3470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3471:   0x80000030	0x00000000 	nop
+K    3472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3473:   0x80000030	0x00000000 	nop
+K    3474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3475:   0x80000030	0x00000000 	nop
+K    3476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3477:   0x80000030	0x00000000 	nop
+K    3478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3479:   0x80000030	0x00000000 	nop
+K    3480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3481:   0x80000030	0x00000000 	nop
+K    3482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3483:   0x80000030	0x00000000 	nop
+K    3484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3485:   0x80000030	0x00000000 	nop
+K    3486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3487:   0x80000030	0x00000000 	nop
+K    3488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3489:   0x80000030	0x00000000 	nop
+K    3490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3491:   0x80000030	0x00000000 	nop
+K    3492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3493:   0x80000030	0x00000000 	nop
+K    3494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3495:   0x80000030	0x00000000 	nop
+K    3496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3497:   0x80000030	0x00000000 	nop
+K    3498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3499:   0x80000030	0x00000000 	nop
+K    3500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3501:   0x80000030	0x00000000 	nop
+K    3502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3503:   0x80000030	0x00000000 	nop
+K    3504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3505:   0x80000030	0x00000000 	nop
+K    3506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3507:   0x80000030	0x00000000 	nop
+K    3508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3509:   0x80000030	0x00000000 	nop
+K    3510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3511:   0x80000030	0x00000000 	nop
+K    3512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3513:   0x80000030	0x00000000 	nop
+K    3514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3515:   0x80000030	0x00000000 	nop
+K    3516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3517:   0x80000030	0x00000000 	nop
+K    3518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3519:   0x80000030	0x00000000 	nop
+K    3520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3521:   0x80000030	0x00000000 	nop
+K    3522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3523:   0x80000030	0x00000000 	nop
+K    3524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3525:   0x80000030	0x00000000 	nop
+K    3526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3527:   0x80000030	0x00000000 	nop
+K    3528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3529:   0x80000030	0x00000000 	nop
+K    3530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3531:   0x80000030	0x00000000 	nop
+K    3532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3533:   0x80000030	0x00000000 	nop
+K    3534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3535:   0x80000030	0x00000000 	nop
+K    3536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3537:   0x80000030	0x00000000 	nop
+K    3538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3539:   0x80000030	0x00000000 	nop
+K    3540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3541:   0x80000030	0x00000000 	nop
+K    3542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3543:   0x80000030	0x00000000 	nop
+K    3544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3545:   0x80000030	0x00000000 	nop
+K    3546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3547:   0x80000030	0x00000000 	nop
+K    3548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3549:   0x80000030	0x00000000 	nop
+K    3550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3551:   0x80000030	0x00000000 	nop
+K    3552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3553:   0x80000030	0x00000000 	nop
+K    3554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3555:   0x80000030	0x00000000 	nop
+K    3556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3557:   0x80000030	0x00000000 	nop
+K    3558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3559:   0x80000030	0x00000000 	nop
+K    3560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3561:   0x80000030	0x00000000 	nop
+K    3562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3563:   0x80000030	0x00000000 	nop
+K    3564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3565:   0x80000030	0x00000000 	nop
+K    3566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3567:   0x80000030	0x00000000 	nop
+K    3568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3569:   0x80000030	0x00000000 	nop
+K    3570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3571:   0x80000030	0x00000000 	nop
+K    3572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3573:   0x80000030	0x00000000 	nop
+K    3574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3575:   0x80000030	0x00000000 	nop
+K    3576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3577:   0x80000030	0x00000000 	nop
+K    3578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3579:   0x80000030	0x00000000 	nop
+K    3580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3581:   0x80000030	0x00000000 	nop
+K    3582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3583:   0x80000030	0x00000000 	nop
+K    3584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3585:   0x80000030	0x00000000 	nop
+K    3586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3587:   0x80000030	0x00000000 	nop
+K    3588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3589:   0x80000030	0x00000000 	nop
+K    3590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3591:   0x80000030	0x00000000 	nop
+K    3592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3593:   0x80000030	0x00000000 	nop
+K    3594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3595:   0x80000030	0x00000000 	nop
+K    3596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3597:   0x80000030	0x00000000 	nop
+K    3598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3599:   0x80000030	0x00000000 	nop
+K    3600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3601:   0x80000030	0x00000000 	nop
+K    3602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3603:   0x80000030	0x00000000 	nop
+K    3604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3605:   0x80000030	0x00000000 	nop
+K    3606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3607:   0x80000030	0x00000000 	nop
+K    3608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3609:   0x80000030	0x00000000 	nop
+K    3610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3611:   0x80000030	0x00000000 	nop
+K    3612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3613:   0x80000030	0x00000000 	nop
+K    3614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3615:   0x80000030	0x00000000 	nop
+K    3616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3617:   0x80000030	0x00000000 	nop
+K    3618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3619:   0x80000030	0x00000000 	nop
+K    3620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3621:   0x80000030	0x00000000 	nop
+K    3622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3623:   0x80000030	0x00000000 	nop
+K    3624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3625:   0x80000030	0x00000000 	nop
+K    3626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3627:   0x80000030	0x00000000 	nop
+K    3628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3629:   0x80000030	0x00000000 	nop
+K    3630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3631:   0x80000030	0x00000000 	nop
+K    3632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3633:   0x80000030	0x00000000 	nop
+K    3634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3635:   0x80000030	0x00000000 	nop
+K    3636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3637:   0x80000030	0x00000000 	nop
+K    3638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3639:   0x80000030	0x00000000 	nop
+K    3640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3641:   0x80000030	0x00000000 	nop
+K    3642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3643:   0x80000030	0x00000000 	nop
+K    3644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3645:   0x80000030	0x00000000 	nop
+K    3646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3647:   0x80000030	0x00000000 	nop
+K    3648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3649:   0x80000030	0x00000000 	nop
+K    3650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3651:   0x80000030	0x00000000 	nop
+K    3652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3653:   0x80000030	0x00000000 	nop
+K    3654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3655:   0x80000030	0x00000000 	nop
+K    3656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3657:   0x80000030	0x00000000 	nop
+K    3658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3659:   0x80000030	0x00000000 	nop
+K    3660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3661:   0x80000030	0x00000000 	nop
+K    3662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3663:   0x80000030	0x00000000 	nop
+K    3664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3665:   0x80000030	0x00000000 	nop
+K    3666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3667:   0x80000030	0x00000000 	nop
+K    3668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3669:   0x80000030	0x00000000 	nop
+K    3670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3671:   0x80000030	0x00000000 	nop
+K    3672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3673:   0x80000030	0x00000000 	nop
+K    3674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3675:   0x80000030	0x00000000 	nop
+K    3676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3677:   0x80000030	0x00000000 	nop
+K    3678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3679:   0x80000030	0x00000000 	nop
+K    3680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3681:   0x80000030	0x00000000 	nop
+K    3682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3683:   0x80000030	0x00000000 	nop
+K    3684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3685:   0x80000030	0x00000000 	nop
+K    3686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3687:   0x80000030	0x00000000 	nop
+K    3688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3689:   0x80000030	0x00000000 	nop
+K    3690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3691:   0x80000030	0x00000000 	nop
+K    3692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3693:   0x80000030	0x00000000 	nop
+K    3694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3695:   0x80000030	0x00000000 	nop
+K    3696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3697:   0x80000030	0x00000000 	nop
+K    3698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3699:   0x80000030	0x00000000 	nop
+K    3700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3701:   0x80000030	0x00000000 	nop
+K    3702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3703:   0x80000030	0x00000000 	nop
+K    3704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3705:   0x80000030	0x00000000 	nop
+K    3706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3707:   0x80000030	0x00000000 	nop
+K    3708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3709:   0x80000030	0x00000000 	nop
+K    3710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3711:   0x80000030	0x00000000 	nop
+K    3712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3713:   0x80000030	0x00000000 	nop
+K    3714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3715:   0x80000030	0x00000000 	nop
+K    3716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3717:   0x80000030	0x00000000 	nop
+K    3718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3719:   0x80000030	0x00000000 	nop
+K    3720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3721:   0x80000030	0x00000000 	nop
+K    3722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3723:   0x80000030	0x00000000 	nop
+K    3724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3725:   0x80000030	0x00000000 	nop
+K    3726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3727:   0x80000030	0x00000000 	nop
+K    3728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3729:   0x80000030	0x00000000 	nop
+K    3730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3731:   0x80000030	0x00000000 	nop
+K    3732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3733:   0x80000030	0x00000000 	nop
+K    3734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3735:   0x80000030	0x00000000 	nop
+K    3736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3737:   0x80000030	0x00000000 	nop
+K    3738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3739:   0x80000030	0x00000000 	nop
+K    3740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3741:   0x80000030	0x00000000 	nop
+K    3742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3743:   0x80000030	0x00000000 	nop
+K    3744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3745:   0x80000030	0x00000000 	nop
+K    3746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3747:   0x80000030	0x00000000 	nop
+K    3748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3749:   0x80000030	0x00000000 	nop
+K    3750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3751:   0x80000030	0x00000000 	nop
+K    3752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3753:   0x80000030	0x00000000 	nop
+K    3754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3755:   0x80000030	0x00000000 	nop
+K    3756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3757:   0x80000030	0x00000000 	nop
+K    3758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3759:   0x80000030	0x00000000 	nop
+K    3760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3761:   0x80000030	0x00000000 	nop
+K    3762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3763:   0x80000030	0x00000000 	nop
+K    3764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3765:   0x80000030	0x00000000 	nop
+K    3766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3767:   0x80000030	0x00000000 	nop
+K    3768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3769:   0x80000030	0x00000000 	nop
+K    3770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3771:   0x80000030	0x00000000 	nop
+K    3772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3773:   0x80000030	0x00000000 	nop
+K    3774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3775:   0x80000030	0x00000000 	nop
+K    3776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3777:   0x80000030	0x00000000 	nop
+K    3778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3779:   0x80000030	0x00000000 	nop
+K    3780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3781:   0x80000030	0x00000000 	nop
+K    3782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3783:   0x80000030	0x00000000 	nop
+K    3784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3785:   0x80000030	0x00000000 	nop
+K    3786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3787:   0x80000030	0x00000000 	nop
+K    3788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3789:   0x80000030	0x00000000 	nop
+K    3790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3791:   0x80000030	0x00000000 	nop
+K    3792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3793:   0x80000030	0x00000000 	nop
+K    3794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3795:   0x80000030	0x00000000 	nop
+K    3796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3797:   0x80000030	0x00000000 	nop
+K    3798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3799:   0x80000030	0x00000000 	nop
+K    3800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3801:   0x80000030	0x00000000 	nop
+K    3802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3803:   0x80000030	0x00000000 	nop
+K    3804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3805:   0x80000030	0x00000000 	nop
+K    3806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3807:   0x80000030	0x00000000 	nop
+K    3808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3809:   0x80000030	0x00000000 	nop
+K    3810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3811:   0x80000030	0x00000000 	nop
+K    3812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3813:   0x80000030	0x00000000 	nop
+K    3814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3815:   0x80000030	0x00000000 	nop
+K    3816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3817:   0x80000030	0x00000000 	nop
+K    3818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3819:   0x80000030	0x00000000 	nop
+K    3820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3821:   0x80000030	0x00000000 	nop
+K    3822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3823:   0x80000030	0x00000000 	nop
+K    3824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3825:   0x80000030	0x00000000 	nop
+K    3826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3827:   0x80000030	0x00000000 	nop
+K    3828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3829:   0x80000030	0x00000000 	nop
+K    3830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3831:   0x80000030	0x00000000 	nop
+K    3832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3833:   0x80000030	0x00000000 	nop
+K    3834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3835:   0x80000030	0x00000000 	nop
+K    3836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3837:   0x80000030	0x00000000 	nop
+K    3838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3839:   0x80000030	0x00000000 	nop
+K    3840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3841:   0x80000030	0x00000000 	nop
+K    3842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3843:   0x80000030	0x00000000 	nop
+K    3844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3845:   0x80000030	0x00000000 	nop
+K    3846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3847:   0x80000030	0x00000000 	nop
+K    3848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3849:   0x80000030	0x00000000 	nop
+K    3850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3851:   0x80000030	0x00000000 	nop
+K    3852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3853:   0x80000030	0x00000000 	nop
+K    3854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3855:   0x80000030	0x00000000 	nop
+K    3856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3857:   0x80000030	0x00000000 	nop
+K    3858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3859:   0x80000030	0x00000000 	nop
+K    3860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3861:   0x80000030	0x00000000 	nop
+K    3862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3863:   0x80000030	0x00000000 	nop
+K    3864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3865:   0x80000030	0x00000000 	nop
+K    3866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3867:   0x80000030	0x00000000 	nop
+K    3868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3869:   0x80000030	0x00000000 	nop
+K    3870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3871:   0x80000030	0x00000000 	nop
+K    3872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3873:   0x80000030	0x00000000 	nop
+K    3874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3875:   0x80000030	0x00000000 	nop
+K    3876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3877:   0x80000030	0x00000000 	nop
+K    3878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3879:   0x80000030	0x00000000 	nop
+K    3880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3881:   0x80000030	0x00000000 	nop
+K    3882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3883:   0x80000030	0x00000000 	nop
+K    3884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3885:   0x80000030	0x00000000 	nop
+K    3886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3887:   0x80000030	0x00000000 	nop
+K    3888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3889:   0x80000030	0x00000000 	nop
+K    3890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3891:   0x80000030	0x00000000 	nop
+K    3892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3893:   0x80000030	0x00000000 	nop
+K    3894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3895:   0x80000030	0x00000000 	nop
+K    3896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3897:   0x80000030	0x00000000 	nop
+K    3898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3899:   0x80000030	0x00000000 	nop
+K    3900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3901:   0x80000030	0x00000000 	nop
+K    3902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3903:   0x80000030	0x00000000 	nop
+K    3904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3905:   0x80000030	0x00000000 	nop
+K    3906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3907:   0x80000030	0x00000000 	nop
+K    3908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3909:   0x80000030	0x00000000 	nop
+K    3910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3911:   0x80000030	0x00000000 	nop
+K    3912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3913:   0x80000030	0x00000000 	nop
+K    3914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3915:   0x80000030	0x00000000 	nop
+K    3916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3917:   0x80000030	0x00000000 	nop
+K    3918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3919:   0x80000030	0x00000000 	nop
+K    3920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3921:   0x80000030	0x00000000 	nop
+K    3922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3923:   0x80000030	0x00000000 	nop
+K    3924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3925:   0x80000030	0x00000000 	nop
+K    3926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3927:   0x80000030	0x00000000 	nop
+K    3928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3929:   0x80000030	0x00000000 	nop
+K    3930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3931:   0x80000030	0x00000000 	nop
+K    3932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3933:   0x80000030	0x00000000 	nop
+K    3934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3935:   0x80000030	0x00000000 	nop
+K    3936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3937:   0x80000030	0x00000000 	nop
+K    3938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3939:   0x80000030	0x00000000 	nop
+K    3940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3941:   0x80000030	0x00000000 	nop
+K    3942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3943:   0x80000030	0x00000000 	nop
+K    3944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3945:   0x80000030	0x00000000 	nop
+K    3946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3947:   0x80000030	0x00000000 	nop
+K    3948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3949:   0x80000030	0x00000000 	nop
+K    3950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3951:   0x80000030	0x00000000 	nop
+K    3952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3953:   0x80000030	0x00000000 	nop
+K    3954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3955:   0x80000030	0x00000000 	nop
+K    3956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3957:   0x80000030	0x00000000 	nop
+K    3958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3959:   0x80000030	0x00000000 	nop
+K    3960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3961:   0x80000030	0x00000000 	nop
+K    3962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3963:   0x80000030	0x00000000 	nop
+K    3964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3965:   0x80000030	0x00000000 	nop
+K    3966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3967:   0x80000030	0x00000000 	nop
+K    3968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3969:   0x80000030	0x00000000 	nop
+K    3970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3971:   0x80000030	0x00000000 	nop
+K    3972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3973:   0x80000030	0x00000000 	nop
+K    3974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3975:   0x80000030	0x00000000 	nop
+K    3976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3977:   0x80000030	0x00000000 	nop
+K    3978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3979:   0x80000030	0x00000000 	nop
+K    3980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3981:   0x80000030	0x00000000 	nop
+K    3982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3983:   0x80000030	0x00000000 	nop
+K    3984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3985:   0x80000030	0x00000000 	nop
+K    3986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3987:   0x80000030	0x00000000 	nop
+K    3988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3989:   0x80000030	0x00000000 	nop
+K    3990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3991:   0x80000030	0x00000000 	nop
+K    3992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3993:   0x80000030	0x00000000 	nop
+K    3994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3995:   0x80000030	0x00000000 	nop
+K    3996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3997:   0x80000030	0x00000000 	nop
+K    3998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    3999:   0x80000030	0x00000000 	nop
+K    4000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4001:   0x80000030	0x00000000 	nop
+K    4002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4003:   0x80000030	0x00000000 	nop
+K    4004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4005:   0x80000030	0x00000000 	nop
+K    4006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4007:   0x80000030	0x00000000 	nop
+K    4008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4009:   0x80000030	0x00000000 	nop
+K    4010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4011:   0x80000030	0x00000000 	nop
+K    4012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4013:   0x80000030	0x00000000 	nop
+K    4014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4015:   0x80000030	0x00000000 	nop
+K    4016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4017:   0x80000030	0x00000000 	nop
+K    4018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4019:   0x80000030	0x00000000 	nop
+K    4020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4021:   0x80000030	0x00000000 	nop
+K    4022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4023:   0x80000030	0x00000000 	nop
+K    4024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4025:   0x80000030	0x00000000 	nop
+K    4026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4027:   0x80000030	0x00000000 	nop
+K    4028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4029:   0x80000030	0x00000000 	nop
+K    4030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4031:   0x80000030	0x00000000 	nop
+K    4032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4033:   0x80000030	0x00000000 	nop
+K    4034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4035:   0x80000030	0x00000000 	nop
+K    4036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4037:   0x80000030	0x00000000 	nop
+K    4038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4039:   0x80000030	0x00000000 	nop
+K    4040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4041:   0x80000030	0x00000000 	nop
+K    4042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4043:   0x80000030	0x00000000 	nop
+K    4044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4045:   0x80000030	0x00000000 	nop
+K    4046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4047:   0x80000030	0x00000000 	nop
+K    4048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4049:   0x80000030	0x00000000 	nop
+K    4050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4051:   0x80000030	0x00000000 	nop
+K    4052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4053:   0x80000030	0x00000000 	nop
+K    4054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4055:   0x80000030	0x00000000 	nop
+K    4056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4057:   0x80000030	0x00000000 	nop
+K    4058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4059:   0x80000030	0x00000000 	nop
+K    4060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4061:   0x80000030	0x00000000 	nop
+K    4062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4063:   0x80000030	0x00000000 	nop
+K    4064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4065:   0x80000030	0x00000000 	nop
+K    4066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4067:   0x80000030	0x00000000 	nop
+K    4068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4069:   0x80000030	0x00000000 	nop
+K    4070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4071:   0x80000030	0x00000000 	nop
+K    4072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4073:   0x80000030	0x00000000 	nop
+K    4074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4075:   0x80000030	0x00000000 	nop
+K    4076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4077:   0x80000030	0x00000000 	nop
+K    4078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4079:   0x80000030	0x00000000 	nop
+K    4080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4081:   0x80000030	0x00000000 	nop
+K    4082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4083:   0x80000030	0x00000000 	nop
+K    4084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4085:   0x80000030	0x00000000 	nop
+K    4086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4087:   0x80000030	0x00000000 	nop
+K    4088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4089:   0x80000030	0x00000000 	nop
+K    4090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4091:   0x80000030	0x00000000 	nop
+K    4092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4093:   0x80000030	0x00000000 	nop
+K    4094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4095:   0x80000030	0x00000000 	nop
+K    4096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4097:   0x80000030	0x00000000 	nop
+K    4098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4099:   0x80000030	0x00000000 	nop
+K    4100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4101:   0x80000030	0x00000000 	nop
+K    4102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4103:   0x80000030	0x00000000 	nop
+K    4104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4105:   0x80000030	0x00000000 	nop
+K    4106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4107:   0x80000030	0x00000000 	nop
+K    4108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4109:   0x80000030	0x00000000 	nop
+K    4110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4111:   0x80000030	0x00000000 	nop
+K    4112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4113:   0x80000030	0x00000000 	nop
+K    4114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4115:   0x80000030	0x00000000 	nop
+K    4116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4117:   0x80000030	0x00000000 	nop
+K    4118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4119:   0x80000030	0x00000000 	nop
+K    4120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4121:   0x80000030	0x00000000 	nop
+K    4122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4123:   0x80000030	0x00000000 	nop
+K    4124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4125:   0x80000030	0x00000000 	nop
+K    4126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4127:   0x80000030	0x00000000 	nop
+K    4128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4129:   0x80000030	0x00000000 	nop
+K    4130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4131:   0x80000030	0x00000000 	nop
+K    4132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4133:   0x80000030	0x00000000 	nop
+K    4134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4135:   0x80000030	0x00000000 	nop
+K    4136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4137:   0x80000030	0x00000000 	nop
+K    4138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4139:   0x80000030	0x00000000 	nop
+K    4140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4141:   0x80000030	0x00000000 	nop
+K    4142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4143:   0x80000030	0x00000000 	nop
+K    4144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4145:   0x80000030	0x00000000 	nop
+K    4146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4147:   0x80000030	0x00000000 	nop
+K    4148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4149:   0x80000030	0x00000000 	nop
+K    4150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4151:   0x80000030	0x00000000 	nop
+K    4152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4153:   0x80000030	0x00000000 	nop
+K    4154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4155:   0x80000030	0x00000000 	nop
+K    4156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4157:   0x80000030	0x00000000 	nop
+K    4158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4159:   0x80000030	0x00000000 	nop
+K    4160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4161:   0x80000030	0x00000000 	nop
+K    4162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4163:   0x80000030	0x00000000 	nop
+K    4164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4165:   0x80000030	0x00000000 	nop
+K    4166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4167:   0x80000030	0x00000000 	nop
+K    4168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4169:   0x80000030	0x00000000 	nop
+K    4170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4171:   0x80000030	0x00000000 	nop
+K    4172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4173:   0x80000030	0x00000000 	nop
+K    4174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4175:   0x80000030	0x00000000 	nop
+K    4176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4177:   0x80000030	0x00000000 	nop
+K    4178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4179:   0x80000030	0x00000000 	nop
+K    4180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4181:   0x80000030	0x00000000 	nop
+K    4182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4183:   0x80000030	0x00000000 	nop
+K    4184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4185:   0x80000030	0x00000000 	nop
+K    4186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4187:   0x80000030	0x00000000 	nop
+K    4188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4189:   0x80000030	0x00000000 	nop
+K    4190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4191:   0x80000030	0x00000000 	nop
+K    4192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4193:   0x80000030	0x00000000 	nop
+K    4194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4195:   0x80000030	0x00000000 	nop
+K    4196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4197:   0x80000030	0x00000000 	nop
+K    4198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4199:   0x80000030	0x00000000 	nop
+K    4200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4201:   0x80000030	0x00000000 	nop
+K    4202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4203:   0x80000030	0x00000000 	nop
+K    4204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4205:   0x80000030	0x00000000 	nop
+K    4206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4207:   0x80000030	0x00000000 	nop
+K    4208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4209:   0x80000030	0x00000000 	nop
+K    4210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4211:   0x80000030	0x00000000 	nop
+K    4212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4213:   0x80000030	0x00000000 	nop
+K    4214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4215:   0x80000030	0x00000000 	nop
+K    4216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4217:   0x80000030	0x00000000 	nop
+K    4218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4219:   0x80000030	0x00000000 	nop
+K    4220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4221:   0x80000030	0x00000000 	nop
+K    4222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4223:   0x80000030	0x00000000 	nop
+K    4224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4225:   0x80000030	0x00000000 	nop
+K    4226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4227:   0x80000030	0x00000000 	nop
+K    4228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4229:   0x80000030	0x00000000 	nop
+K    4230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4231:   0x80000030	0x00000000 	nop
+K    4232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4233:   0x80000030	0x00000000 	nop
+K    4234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4235:   0x80000030	0x00000000 	nop
+K    4236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4237:   0x80000030	0x00000000 	nop
+K    4238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4239:   0x80000030	0x00000000 	nop
+K    4240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4241:   0x80000030	0x00000000 	nop
+K    4242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4243:   0x80000030	0x00000000 	nop
+K    4244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4245:   0x80000030	0x00000000 	nop
+K    4246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4247:   0x80000030	0x00000000 	nop
+K    4248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4249:   0x80000030	0x00000000 	nop
+K    4250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4251:   0x80000030	0x00000000 	nop
+K    4252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4253:   0x80000030	0x00000000 	nop
+K    4254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4255:   0x80000030	0x00000000 	nop
+K    4256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4257:   0x80000030	0x00000000 	nop
+K    4258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4259:   0x80000030	0x00000000 	nop
+K    4260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4261:   0x80000030	0x00000000 	nop
+K    4262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4263:   0x80000030	0x00000000 	nop
+K    4264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4265:   0x80000030	0x00000000 	nop
+K    4266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4267:   0x80000030	0x00000000 	nop
+K    4268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4269:   0x80000030	0x00000000 	nop
+K    4270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4271:   0x80000030	0x00000000 	nop
+K    4272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4273:   0x80000030	0x00000000 	nop
+K    4274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4275:   0x80000030	0x00000000 	nop
+K    4276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4277:   0x80000030	0x00000000 	nop
+K    4278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4279:   0x80000030	0x00000000 	nop
+K    4280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4281:   0x80000030	0x00000000 	nop
+K    4282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4283:   0x80000030	0x00000000 	nop
+K    4284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4285:   0x80000030	0x00000000 	nop
+K    4286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4287:   0x80000030	0x00000000 	nop
+K    4288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4289:   0x80000030	0x00000000 	nop
+K    4290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4291:   0x80000030	0x00000000 	nop
+K    4292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4293:   0x80000030	0x00000000 	nop
+K    4294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4295:   0x80000030	0x00000000 	nop
+K    4296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4297:   0x80000030	0x00000000 	nop
+K    4298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4299:   0x80000030	0x00000000 	nop
+K    4300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4301:   0x80000030	0x00000000 	nop
+K    4302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4303:   0x80000030	0x00000000 	nop
+K    4304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4305:   0x80000030	0x00000000 	nop
+K    4306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4307:   0x80000030	0x00000000 	nop
+K    4308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4309:   0x80000030	0x00000000 	nop
+K    4310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4311:   0x80000030	0x00000000 	nop
+K    4312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4313:   0x80000030	0x00000000 	nop
+K    4314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4315:   0x80000030	0x00000000 	nop
+K    4316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4317:   0x80000030	0x00000000 	nop
+K    4318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4319:   0x80000030	0x00000000 	nop
+K    4320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4321:   0x80000030	0x00000000 	nop
+K    4322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4323:   0x80000030	0x00000000 	nop
+K    4324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4325:   0x80000030	0x00000000 	nop
+K    4326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4327:   0x80000030	0x00000000 	nop
+K    4328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4329:   0x80000030	0x00000000 	nop
+K    4330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4331:   0x80000030	0x00000000 	nop
+K    4332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4333:   0x80000030	0x00000000 	nop
+K    4334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4335:   0x80000030	0x00000000 	nop
+K    4336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4337:   0x80000030	0x00000000 	nop
+K    4338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4339:   0x80000030	0x00000000 	nop
+K    4340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4341:   0x80000030	0x00000000 	nop
+K    4342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4343:   0x80000030	0x00000000 	nop
+K    4344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4345:   0x80000030	0x00000000 	nop
+K    4346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4347:   0x80000030	0x00000000 	nop
+K    4348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4349:   0x80000030	0x00000000 	nop
+K    4350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4351:   0x80000030	0x00000000 	nop
+K    4352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4353:   0x80000030	0x00000000 	nop
+K    4354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4355:   0x80000030	0x00000000 	nop
+K    4356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4357:   0x80000030	0x00000000 	nop
+K    4358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4359:   0x80000030	0x00000000 	nop
+K    4360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4361:   0x80000030	0x00000000 	nop
+K    4362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4363:   0x80000030	0x00000000 	nop
+K    4364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4365:   0x80000030	0x00000000 	nop
+K    4366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4367:   0x80000030	0x00000000 	nop
+K    4368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4369:   0x80000030	0x00000000 	nop
+K    4370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4371:   0x80000030	0x00000000 	nop
+K    4372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4373:   0x80000030	0x00000000 	nop
+K    4374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4375:   0x80000030	0x00000000 	nop
+K    4376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4377:   0x80000030	0x00000000 	nop
+K    4378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4379:   0x80000030	0x00000000 	nop
+K    4380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4381:   0x80000030	0x00000000 	nop
+K    4382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4383:   0x80000030	0x00000000 	nop
+K    4384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4385:   0x80000030	0x00000000 	nop
+K    4386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4387:   0x80000030	0x00000000 	nop
+K    4388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4389:   0x80000030	0x00000000 	nop
+K    4390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4391:   0x80000030	0x00000000 	nop
+K    4392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4393:   0x80000030	0x00000000 	nop
+K    4394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4395:   0x80000030	0x00000000 	nop
+K    4396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4397:   0x80000030	0x00000000 	nop
+K    4398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4399:   0x80000030	0x00000000 	nop
+K    4400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4401:   0x80000030	0x00000000 	nop
+K    4402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4403:   0x80000030	0x00000000 	nop
+K    4404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4405:   0x80000030	0x00000000 	nop
+K    4406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4407:   0x80000030	0x00000000 	nop
+K    4408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4409:   0x80000030	0x00000000 	nop
+K    4410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4411:   0x80000030	0x00000000 	nop
+K    4412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4413:   0x80000030	0x00000000 	nop
+K    4414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4415:   0x80000030	0x00000000 	nop
+K    4416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4417:   0x80000030	0x00000000 	nop
+K    4418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4419:   0x80000030	0x00000000 	nop
+K    4420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4421:   0x80000030	0x00000000 	nop
+K    4422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4423:   0x80000030	0x00000000 	nop
+K    4424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4425:   0x80000030	0x00000000 	nop
+K    4426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4427:   0x80000030	0x00000000 	nop
+K    4428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4429:   0x80000030	0x00000000 	nop
+K    4430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4431:   0x80000030	0x00000000 	nop
+K    4432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4433:   0x80000030	0x00000000 	nop
+K    4434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4435:   0x80000030	0x00000000 	nop
+K    4436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4437:   0x80000030	0x00000000 	nop
+K    4438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4439:   0x80000030	0x00000000 	nop
+K    4440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4441:   0x80000030	0x00000000 	nop
+K    4442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4443:   0x80000030	0x00000000 	nop
+K    4444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4445:   0x80000030	0x00000000 	nop
+K    4446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4447:   0x80000030	0x00000000 	nop
+K    4448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4449:   0x80000030	0x00000000 	nop
+K    4450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4451:   0x80000030	0x00000000 	nop
+K    4452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4453:   0x80000030	0x00000000 	nop
+K    4454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4455:   0x80000030	0x00000000 	nop
+K    4456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4457:   0x80000030	0x00000000 	nop
+K    4458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4459:   0x80000030	0x00000000 	nop
+K    4460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4461:   0x80000030	0x00000000 	nop
+K    4462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4463:   0x80000030	0x00000000 	nop
+K    4464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4465:   0x80000030	0x00000000 	nop
+K    4466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4467:   0x80000030	0x00000000 	nop
+K    4468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4469:   0x80000030	0x00000000 	nop
+K    4470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4471:   0x80000030	0x00000000 	nop
+K    4472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4473:   0x80000030	0x00000000 	nop
+K    4474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4475:   0x80000030	0x00000000 	nop
+K    4476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4477:   0x80000030	0x00000000 	nop
+K    4478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4479:   0x80000030	0x00000000 	nop
+K    4480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4481:   0x80000030	0x00000000 	nop
+K    4482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4483:   0x80000030	0x00000000 	nop
+K    4484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4485:   0x80000030	0x00000000 	nop
+K    4486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4487:   0x80000030	0x00000000 	nop
+K    4488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4489:   0x80000030	0x00000000 	nop
+K    4490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4491:   0x80000030	0x00000000 	nop
+K    4492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4493:   0x80000030	0x00000000 	nop
+K    4494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4495:   0x80000030	0x00000000 	nop
+K    4496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4497:   0x80000030	0x00000000 	nop
+K    4498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4499:   0x80000030	0x00000000 	nop
+K    4500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4501:   0x80000030	0x00000000 	nop
+K    4502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4503:   0x80000030	0x00000000 	nop
+K    4504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4505:   0x80000030	0x00000000 	nop
+K    4506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4507:   0x80000030	0x00000000 	nop
+K    4508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4509:   0x80000030	0x00000000 	nop
+K    4510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4511:   0x80000030	0x00000000 	nop
+K    4512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4513:   0x80000030	0x00000000 	nop
+K    4514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4515:   0x80000030	0x00000000 	nop
+K    4516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4517:   0x80000030	0x00000000 	nop
+K    4518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4519:   0x80000030	0x00000000 	nop
+K    4520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4521:   0x80000030	0x00000000 	nop
+K    4522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4523:   0x80000030	0x00000000 	nop
+K    4524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4525:   0x80000030	0x00000000 	nop
+K    4526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4527:   0x80000030	0x00000000 	nop
+K    4528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4529:   0x80000030	0x00000000 	nop
+K    4530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4531:   0x80000030	0x00000000 	nop
+K    4532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4533:   0x80000030	0x00000000 	nop
+K    4534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4535:   0x80000030	0x00000000 	nop
+K    4536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4537:   0x80000030	0x00000000 	nop
+K    4538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4539:   0x80000030	0x00000000 	nop
+K    4540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4541:   0x80000030	0x00000000 	nop
+K    4542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4543:   0x80000030	0x00000000 	nop
+K    4544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4545:   0x80000030	0x00000000 	nop
+K    4546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4547:   0x80000030	0x00000000 	nop
+K    4548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4549:   0x80000030	0x00000000 	nop
+K    4550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4551:   0x80000030	0x00000000 	nop
+K    4552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4553:   0x80000030	0x00000000 	nop
+K    4554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4555:   0x80000030	0x00000000 	nop
+K    4556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4557:   0x80000030	0x00000000 	nop
+K    4558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4559:   0x80000030	0x00000000 	nop
+K    4560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4561:   0x80000030	0x00000000 	nop
+K    4562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4563:   0x80000030	0x00000000 	nop
+K    4564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4565:   0x80000030	0x00000000 	nop
+K    4566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4567:   0x80000030	0x00000000 	nop
+K    4568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4569:   0x80000030	0x00000000 	nop
+K    4570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4571:   0x80000030	0x00000000 	nop
+K    4572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4573:   0x80000030	0x00000000 	nop
+K    4574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4575:   0x80000030	0x00000000 	nop
+K    4576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4577:   0x80000030	0x00000000 	nop
+K    4578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4579:   0x80000030	0x00000000 	nop
+K    4580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4581:   0x80000030	0x00000000 	nop
+K    4582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4583:   0x80000030	0x00000000 	nop
+K    4584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4585:   0x80000030	0x00000000 	nop
+K    4586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4587:   0x80000030	0x00000000 	nop
+K    4588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4589:   0x80000030	0x00000000 	nop
+K    4590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4591:   0x80000030	0x00000000 	nop
+K    4592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4593:   0x80000030	0x00000000 	nop
+K    4594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4595:   0x80000030	0x00000000 	nop
+K    4596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4597:   0x80000030	0x00000000 	nop
+K    4598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4599:   0x80000030	0x00000000 	nop
+K    4600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4601:   0x80000030	0x00000000 	nop
+K    4602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4603:   0x80000030	0x00000000 	nop
+K    4604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4605:   0x80000030	0x00000000 	nop
+K    4606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4607:   0x80000030	0x00000000 	nop
+K    4608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4609:   0x80000030	0x00000000 	nop
+K    4610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4611:   0x80000030	0x00000000 	nop
+K    4612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4613:   0x80000030	0x00000000 	nop
+K    4614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4615:   0x80000030	0x00000000 	nop
+K    4616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4617:   0x80000030	0x00000000 	nop
+K    4618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4619:   0x80000030	0x00000000 	nop
+K    4620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4621:   0x80000030	0x00000000 	nop
+K    4622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4623:   0x80000030	0x00000000 	nop
+K    4624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4625:   0x80000030	0x00000000 	nop
+K    4626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4627:   0x80000030	0x00000000 	nop
+K    4628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4629:   0x80000030	0x00000000 	nop
+K    4630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4631:   0x80000030	0x00000000 	nop
+K    4632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4633:   0x80000030	0x00000000 	nop
+K    4634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4635:   0x80000030	0x00000000 	nop
+K    4636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4637:   0x80000030	0x00000000 	nop
+K    4638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4639:   0x80000030	0x00000000 	nop
+K    4640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4641:   0x80000030	0x00000000 	nop
+K    4642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4643:   0x80000030	0x00000000 	nop
+K    4644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4645:   0x80000030	0x00000000 	nop
+K    4646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4647:   0x80000030	0x00000000 	nop
+K    4648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4649:   0x80000030	0x00000000 	nop
+K    4650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4651:   0x80000030	0x00000000 	nop
+K    4652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4653:   0x80000030	0x00000000 	nop
+K    4654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4655:   0x80000030	0x00000000 	nop
+K    4656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4657:   0x80000030	0x00000000 	nop
+K    4658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4659:   0x80000030	0x00000000 	nop
+K    4660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4661:   0x80000030	0x00000000 	nop
+K    4662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4663:   0x80000030	0x00000000 	nop
+K    4664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4665:   0x80000030	0x00000000 	nop
+K    4666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4667:   0x80000030	0x00000000 	nop
+K    4668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4669:   0x80000030	0x00000000 	nop
+K    4670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4671:   0x80000030	0x00000000 	nop
+K    4672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4673:   0x80000030	0x00000000 	nop
+K    4674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4675:   0x80000030	0x00000000 	nop
+K    4676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4677:   0x80000030	0x00000000 	nop
+K    4678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4679:   0x80000030	0x00000000 	nop
+K    4680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4681:   0x80000030	0x00000000 	nop
+K    4682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4683:   0x80000030	0x00000000 	nop
+K    4684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4685:   0x80000030	0x00000000 	nop
+K    4686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4687:   0x80000030	0x00000000 	nop
+K    4688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4689:   0x80000030	0x00000000 	nop
+K    4690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4691:   0x80000030	0x00000000 	nop
+K    4692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4693:   0x80000030	0x00000000 	nop
+K    4694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4695:   0x80000030	0x00000000 	nop
+K    4696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4697:   0x80000030	0x00000000 	nop
+K    4698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4699:   0x80000030	0x00000000 	nop
+K    4700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4701:   0x80000030	0x00000000 	nop
+K    4702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4703:   0x80000030	0x00000000 	nop
+K    4704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4705:   0x80000030	0x00000000 	nop
+K    4706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4707:   0x80000030	0x00000000 	nop
+K    4708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4709:   0x80000030	0x00000000 	nop
+K    4710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4711:   0x80000030	0x00000000 	nop
+K    4712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4713:   0x80000030	0x00000000 	nop
+K    4714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4715:   0x80000030	0x00000000 	nop
+K    4716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4717:   0x80000030	0x00000000 	nop
+K    4718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4719:   0x80000030	0x00000000 	nop
+K    4720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4721:   0x80000030	0x00000000 	nop
+K    4722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4723:   0x80000030	0x00000000 	nop
+K    4724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4725:   0x80000030	0x00000000 	nop
+K    4726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4727:   0x80000030	0x00000000 	nop
+K    4728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4729:   0x80000030	0x00000000 	nop
+K    4730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4731:   0x80000030	0x00000000 	nop
+K    4732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4733:   0x80000030	0x00000000 	nop
+K    4734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4735:   0x80000030	0x00000000 	nop
+K    4736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4737:   0x80000030	0x00000000 	nop
+K    4738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4739:   0x80000030	0x00000000 	nop
+K    4740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4741:   0x80000030	0x00000000 	nop
+K    4742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4743:   0x80000030	0x00000000 	nop
+K    4744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4745:   0x80000030	0x00000000 	nop
+K    4746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4747:   0x80000030	0x00000000 	nop
+K    4748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4749:   0x80000030	0x00000000 	nop
+K    4750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4751:   0x80000030	0x00000000 	nop
+K    4752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4753:   0x80000030	0x00000000 	nop
+K    4754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4755:   0x80000030	0x00000000 	nop
+K    4756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4757:   0x80000030	0x00000000 	nop
+K    4758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4759:   0x80000030	0x00000000 	nop
+K    4760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4761:   0x80000030	0x00000000 	nop
+K    4762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4763:   0x80000030	0x00000000 	nop
+K    4764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4765:   0x80000030	0x00000000 	nop
+K    4766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4767:   0x80000030	0x00000000 	nop
+K    4768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4769:   0x80000030	0x00000000 	nop
+K    4770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4771:   0x80000030	0x00000000 	nop
+K    4772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4773:   0x80000030	0x00000000 	nop
+K    4774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4775:   0x80000030	0x00000000 	nop
+K    4776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4777:   0x80000030	0x00000000 	nop
+K    4778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4779:   0x80000030	0x00000000 	nop
+K    4780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4781:   0x80000030	0x00000000 	nop
+K    4782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4783:   0x80000030	0x00000000 	nop
+K    4784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4785:   0x80000030	0x00000000 	nop
+K    4786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4787:   0x80000030	0x00000000 	nop
+K    4788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4789:   0x80000030	0x00000000 	nop
+K    4790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4791:   0x80000030	0x00000000 	nop
+K    4792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4793:   0x80000030	0x00000000 	nop
+K    4794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4795:   0x80000030	0x00000000 	nop
+K    4796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4797:   0x80000030	0x00000000 	nop
+K    4798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4799:   0x80000030	0x00000000 	nop
+K    4800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4801:   0x80000030	0x00000000 	nop
+K    4802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4803:   0x80000030	0x00000000 	nop
+K    4804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4805:   0x80000030	0x00000000 	nop
+K    4806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4807:   0x80000030	0x00000000 	nop
+K    4808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4809:   0x80000030	0x00000000 	nop
+K    4810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4811:   0x80000030	0x00000000 	nop
+K    4812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4813:   0x80000030	0x00000000 	nop
+K    4814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4815:   0x80000030	0x00000000 	nop
+K    4816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4817:   0x80000030	0x00000000 	nop
+K    4818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4819:   0x80000030	0x00000000 	nop
+K    4820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4821:   0x80000030	0x00000000 	nop
+K    4822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4823:   0x80000030	0x00000000 	nop
+K    4824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4825:   0x80000030	0x00000000 	nop
+K    4826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4827:   0x80000030	0x00000000 	nop
+K    4828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4829:   0x80000030	0x00000000 	nop
+K    4830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4831:   0x80000030	0x00000000 	nop
+K    4832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4833:   0x80000030	0x00000000 	nop
+K    4834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4835:   0x80000030	0x00000000 	nop
+K    4836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4837:   0x80000030	0x00000000 	nop
+K    4838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4839:   0x80000030	0x00000000 	nop
+K    4840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4841:   0x80000030	0x00000000 	nop
+K    4842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4843:   0x80000030	0x00000000 	nop
+K    4844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4845:   0x80000030	0x00000000 	nop
+K    4846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4847:   0x80000030	0x00000000 	nop
+K    4848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4849:   0x80000030	0x00000000 	nop
+K    4850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4851:   0x80000030	0x00000000 	nop
+K    4852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4853:   0x80000030	0x00000000 	nop
+K    4854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4855:   0x80000030	0x00000000 	nop
+K    4856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4857:   0x80000030	0x00000000 	nop
+K    4858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4859:   0x80000030	0x00000000 	nop
+K    4860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4861:   0x80000030	0x00000000 	nop
+K    4862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4863:   0x80000030	0x00000000 	nop
+K    4864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4865:   0x80000030	0x00000000 	nop
+K    4866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4867:   0x80000030	0x00000000 	nop
+K    4868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4869:   0x80000030	0x00000000 	nop
+K    4870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4871:   0x80000030	0x00000000 	nop
+K    4872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4873:   0x80000030	0x00000000 	nop
+K    4874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4875:   0x80000030	0x00000000 	nop
+K    4876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4877:   0x80000030	0x00000000 	nop
+K    4878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4879:   0x80000030	0x00000000 	nop
+K    4880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4881:   0x80000030	0x00000000 	nop
+K    4882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4883:   0x80000030	0x00000000 	nop
+K    4884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4885:   0x80000030	0x00000000 	nop
+K    4886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4887:   0x80000030	0x00000000 	nop
+K    4888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4889:   0x80000030	0x00000000 	nop
+K    4890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4891:   0x80000030	0x00000000 	nop
+K    4892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4893:   0x80000030	0x00000000 	nop
+K    4894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4895:   0x80000030	0x00000000 	nop
+K    4896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4897:   0x80000030	0x00000000 	nop
+K    4898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4899:   0x80000030	0x00000000 	nop
+K    4900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4901:   0x80000030	0x00000000 	nop
+K    4902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4903:   0x80000030	0x00000000 	nop
+K    4904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4905:   0x80000030	0x00000000 	nop
+K    4906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4907:   0x80000030	0x00000000 	nop
+K    4908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4909:   0x80000030	0x00000000 	nop
+K    4910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4911:   0x80000030	0x00000000 	nop
+K    4912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4913:   0x80000030	0x00000000 	nop
+K    4914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4915:   0x80000030	0x00000000 	nop
+K    4916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4917:   0x80000030	0x00000000 	nop
+K    4918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4919:   0x80000030	0x00000000 	nop
+K    4920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4921:   0x80000030	0x00000000 	nop
+K    4922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4923:   0x80000030	0x00000000 	nop
+K    4924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4925:   0x80000030	0x00000000 	nop
+K    4926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4927:   0x80000030	0x00000000 	nop
+K    4928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4929:   0x80000030	0x00000000 	nop
+K    4930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4931:   0x80000030	0x00000000 	nop
+K    4932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4933:   0x80000030	0x00000000 	nop
+K    4934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4935:   0x80000030	0x00000000 	nop
+K    4936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4937:   0x80000030	0x00000000 	nop
+K    4938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4939:   0x80000030	0x00000000 	nop
+K    4940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4941:   0x80000030	0x00000000 	nop
+K    4942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4943:   0x80000030	0x00000000 	nop
+K    4944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4945:   0x80000030	0x00000000 	nop
+K    4946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4947:   0x80000030	0x00000000 	nop
+K    4948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4949:   0x80000030	0x00000000 	nop
+K    4950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4951:   0x80000030	0x00000000 	nop
+K    4952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4953:   0x80000030	0x00000000 	nop
+K    4954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4955:   0x80000030	0x00000000 	nop
+K    4956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4957:   0x80000030	0x00000000 	nop
+K    4958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4959:   0x80000030	0x00000000 	nop
+K    4960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4961:   0x80000030	0x00000000 	nop
+K    4962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4963:   0x80000030	0x00000000 	nop
+K    4964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4965:   0x80000030	0x00000000 	nop
+K    4966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4967:   0x80000030	0x00000000 	nop
+K    4968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4969:   0x80000030	0x00000000 	nop
+K    4970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4971:   0x80000030	0x00000000 	nop
+K    4972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4973:   0x80000030	0x00000000 	nop
+K    4974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4975:   0x80000030	0x00000000 	nop
+K    4976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4977:   0x80000030	0x00000000 	nop
+K    4978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4979:   0x80000030	0x00000000 	nop
+K    4980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4981:   0x80000030	0x00000000 	nop
+K    4982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4983:   0x80000030	0x00000000 	nop
+K    4984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4985:   0x80000030	0x00000000 	nop
+K    4986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4987:   0x80000030	0x00000000 	nop
+K    4988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4989:   0x80000030	0x00000000 	nop
+K    4990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4991:   0x80000030	0x00000000 	nop
+K    4992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4993:   0x80000030	0x00000000 	nop
+K    4994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4995:   0x80000030	0x00000000 	nop
+K    4996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4997:   0x80000030	0x00000000 	nop
+K    4998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    4999:   0x80000030	0x00000000 	nop
+K    5000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5001:   0x80000030	0x00000000 	nop
+K    5002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5003:   0x80000030	0x00000000 	nop
+K    5004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5005:   0x80000030	0x00000000 	nop
+K    5006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5007:   0x80000030	0x00000000 	nop
+K    5008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5009:   0x80000030	0x00000000 	nop
+K    5010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5011:   0x80000030	0x00000000 	nop
+K    5012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5013:   0x80000030	0x00000000 	nop
+K    5014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5015:   0x80000030	0x00000000 	nop
+K    5016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5017:   0x80000030	0x00000000 	nop
+K    5018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5019:   0x80000030	0x00000000 	nop
+K    5020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5021:   0x80000030	0x00000000 	nop
+K    5022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5023:   0x80000030	0x00000000 	nop
+K    5024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5025:   0x80000030	0x00000000 	nop
+K    5026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5027:   0x80000030	0x00000000 	nop
+K    5028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5029:   0x80000030	0x00000000 	nop
+K    5030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5031:   0x80000030	0x00000000 	nop
+K    5032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5033:   0x80000030	0x00000000 	nop
+K    5034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5035:   0x80000030	0x00000000 	nop
+K    5036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5037:   0x80000030	0x00000000 	nop
+K    5038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5039:   0x80000030	0x00000000 	nop
+K    5040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5041:   0x80000030	0x00000000 	nop
+K    5042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5043:   0x80000030	0x00000000 	nop
+K    5044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5045:   0x80000030	0x00000000 	nop
+K    5046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5047:   0x80000030	0x00000000 	nop
+K    5048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5049:   0x80000030	0x00000000 	nop
+K    5050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5051:   0x80000030	0x00000000 	nop
+K    5052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5053:   0x80000030	0x00000000 	nop
+K    5054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5055:   0x80000030	0x00000000 	nop
+K    5056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5057:   0x80000030	0x00000000 	nop
+K    5058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5059:   0x80000030	0x00000000 	nop
+K    5060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5061:   0x80000030	0x00000000 	nop
+K    5062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5063:   0x80000030	0x00000000 	nop
+K    5064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5065:   0x80000030	0x00000000 	nop
+K    5066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5067:   0x80000030	0x00000000 	nop
+K    5068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5069:   0x80000030	0x00000000 	nop
+K    5070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5071:   0x80000030	0x00000000 	nop
+K    5072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5073:   0x80000030	0x00000000 	nop
+K    5074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5075:   0x80000030	0x00000000 	nop
+K    5076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5077:   0x80000030	0x00000000 	nop
+K    5078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5079:   0x80000030	0x00000000 	nop
+K    5080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5081:   0x80000030	0x00000000 	nop
+K    5082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5083:   0x80000030	0x00000000 	nop
+K    5084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5085:   0x80000030	0x00000000 	nop
+K    5086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5087:   0x80000030	0x00000000 	nop
+K    5088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5089:   0x80000030	0x00000000 	nop
+K    5090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5091:   0x80000030	0x00000000 	nop
+K    5092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5093:   0x80000030	0x00000000 	nop
+K    5094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5095:   0x80000030	0x00000000 	nop
+K    5096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5097:   0x80000030	0x00000000 	nop
+K    5098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5099:   0x80000030	0x00000000 	nop
+K    5100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5101:   0x80000030	0x00000000 	nop
+K    5102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5103:   0x80000030	0x00000000 	nop
+K    5104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5105:   0x80000030	0x00000000 	nop
+K    5106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5107:   0x80000030	0x00000000 	nop
+K    5108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5109:   0x80000030	0x00000000 	nop
+K    5110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5111:   0x80000030	0x00000000 	nop
+K    5112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5113:   0x80000030	0x00000000 	nop
+K    5114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5115:   0x80000030	0x00000000 	nop
+K    5116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5117:   0x80000030	0x00000000 	nop
+K    5118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5119:   0x80000030	0x00000000 	nop
+K    5120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5121:   0x80000030	0x00000000 	nop
+K    5122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5123:   0x80000030	0x00000000 	nop
+K    5124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5125:   0x80000030	0x00000000 	nop
+K    5126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5127:   0x80000030	0x00000000 	nop
+K    5128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5129:   0x80000030	0x00000000 	nop
+K    5130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5131:   0x80000030	0x00000000 	nop
+K    5132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5133:   0x80000030	0x00000000 	nop
+K    5134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5135:   0x80000030	0x00000000 	nop
+K    5136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5137:   0x80000030	0x00000000 	nop
+K    5138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5139:   0x80000030	0x00000000 	nop
+K    5140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5141:   0x80000030	0x00000000 	nop
+K    5142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5143:   0x80000030	0x00000000 	nop
+K    5144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5145:   0x80000030	0x00000000 	nop
+K    5146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5147:   0x80000030	0x00000000 	nop
+K    5148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5149:   0x80000030	0x00000000 	nop
+K    5150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5151:   0x80000030	0x00000000 	nop
+K    5152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5153:   0x80000030	0x00000000 	nop
+K    5154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5155:   0x80000030	0x00000000 	nop
+K    5156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5157:   0x80000030	0x00000000 	nop
+K    5158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5159:   0x80000030	0x00000000 	nop
+K    5160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5161:   0x80000030	0x00000000 	nop
+K    5162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5163:   0x80000030	0x00000000 	nop
+K    5164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5165:   0x80000030	0x00000000 	nop
+K    5166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5167:   0x80000030	0x00000000 	nop
+K    5168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5169:   0x80000030	0x00000000 	nop
+K    5170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5171:   0x80000030	0x00000000 	nop
+K    5172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5173:   0x80000030	0x00000000 	nop
+K    5174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5175:   0x80000030	0x00000000 	nop
+K    5176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5177:   0x80000030	0x00000000 	nop
+K    5178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5179:   0x80000030	0x00000000 	nop
+K    5180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5181:   0x80000030	0x00000000 	nop
+K    5182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5183:   0x80000030	0x00000000 	nop
+K    5184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5185:   0x80000030	0x00000000 	nop
+K    5186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5187:   0x80000030	0x00000000 	nop
+K    5188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5189:   0x80000030	0x00000000 	nop
+K    5190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5191:   0x80000030	0x00000000 	nop
+K    5192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5193:   0x80000030	0x00000000 	nop
+K    5194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5195:   0x80000030	0x00000000 	nop
+K    5196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5197:   0x80000030	0x00000000 	nop
+K    5198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5199:   0x80000030	0x00000000 	nop
+K    5200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5201:   0x80000030	0x00000000 	nop
+K    5202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5203:   0x80000030	0x00000000 	nop
+K    5204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5205:   0x80000030	0x00000000 	nop
+K    5206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5207:   0x80000030	0x00000000 	nop
+K    5208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5209:   0x80000030	0x00000000 	nop
+K    5210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5211:   0x80000030	0x00000000 	nop
+K    5212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5213:   0x80000030	0x00000000 	nop
+K    5214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5215:   0x80000030	0x00000000 	nop
+K    5216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5217:   0x80000030	0x00000000 	nop
+K    5218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5219:   0x80000030	0x00000000 	nop
+K    5220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5221:   0x80000030	0x00000000 	nop
+K    5222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5223:   0x80000030	0x00000000 	nop
+K    5224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5225:   0x80000030	0x00000000 	nop
+K    5226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5227:   0x80000030	0x00000000 	nop
+K    5228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5229:   0x80000030	0x00000000 	nop
+K    5230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5231:   0x80000030	0x00000000 	nop
+K    5232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5233:   0x80000030	0x00000000 	nop
+K    5234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5235:   0x80000030	0x00000000 	nop
+K    5236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5237:   0x80000030	0x00000000 	nop
+K    5238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5239:   0x80000030	0x00000000 	nop
+K    5240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5241:   0x80000030	0x00000000 	nop
+K    5242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5243:   0x80000030	0x00000000 	nop
+K    5244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5245:   0x80000030	0x00000000 	nop
+K    5246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5247:   0x80000030	0x00000000 	nop
+K    5248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5249:   0x80000030	0x00000000 	nop
+K    5250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5251:   0x80000030	0x00000000 	nop
+K    5252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5253:   0x80000030	0x00000000 	nop
+K    5254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5255:   0x80000030	0x00000000 	nop
+K    5256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5257:   0x80000030	0x00000000 	nop
+K    5258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5259:   0x80000030	0x00000000 	nop
+K    5260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5261:   0x80000030	0x00000000 	nop
+K    5262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5263:   0x80000030	0x00000000 	nop
+K    5264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5265:   0x80000030	0x00000000 	nop
+K    5266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5267:   0x80000030	0x00000000 	nop
+K    5268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5269:   0x80000030	0x00000000 	nop
+K    5270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5271:   0x80000030	0x00000000 	nop
+K    5272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5273:   0x80000030	0x00000000 	nop
+K    5274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5275:   0x80000030	0x00000000 	nop
+K    5276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5277:   0x80000030	0x00000000 	nop
+K    5278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5279:   0x80000030	0x00000000 	nop
+K    5280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5281:   0x80000030	0x00000000 	nop
+K    5282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5283:   0x80000030	0x00000000 	nop
+K    5284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5285:   0x80000030	0x00000000 	nop
+K    5286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5287:   0x80000030	0x00000000 	nop
+K    5288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5289:   0x80000030	0x00000000 	nop
+K    5290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5291:   0x80000030	0x00000000 	nop
+K    5292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5293:   0x80000030	0x00000000 	nop
+K    5294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5295:   0x80000030	0x00000000 	nop
+K    5296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5297:   0x80000030	0x00000000 	nop
+K    5298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5299:   0x80000030	0x00000000 	nop
+K    5300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5301:   0x80000030	0x00000000 	nop
+K    5302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5303:   0x80000030	0x00000000 	nop
+K    5304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5305:   0x80000030	0x00000000 	nop
+K    5306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5307:   0x80000030	0x00000000 	nop
+K    5308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5309:   0x80000030	0x00000000 	nop
+K    5310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5311:   0x80000030	0x00000000 	nop
+K    5312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5313:   0x80000030	0x00000000 	nop
+K    5314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5315:   0x80000030	0x00000000 	nop
+K    5316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5317:   0x80000030	0x00000000 	nop
+K    5318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5319:   0x80000030	0x00000000 	nop
+K    5320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5321:   0x80000030	0x00000000 	nop
+K    5322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5323:   0x80000030	0x00000000 	nop
+K    5324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5325:   0x80000030	0x00000000 	nop
+K    5326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5327:   0x80000030	0x00000000 	nop
+K    5328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5329:   0x80000030	0x00000000 	nop
+K    5330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5331:   0x80000030	0x00000000 	nop
+K    5332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5333:   0x80000030	0x00000000 	nop
+K    5334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5335:   0x80000030	0x00000000 	nop
+K    5336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5337:   0x80000030	0x00000000 	nop
+K    5338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5339:   0x80000030	0x00000000 	nop
+K    5340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5341:   0x80000030	0x00000000 	nop
+K    5342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5343:   0x80000030	0x00000000 	nop
+K    5344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5345:   0x80000030	0x00000000 	nop
+K    5346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5347:   0x80000030	0x00000000 	nop
+K    5348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5349:   0x80000030	0x00000000 	nop
+K    5350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5351:   0x80000030	0x00000000 	nop
+K    5352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5353:   0x80000030	0x00000000 	nop
+K    5354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5355:   0x80000030	0x00000000 	nop
+K    5356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5357:   0x80000030	0x00000000 	nop
+K    5358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5359:   0x80000030	0x00000000 	nop
+K    5360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5361:   0x80000030	0x00000000 	nop
+K    5362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5363:   0x80000030	0x00000000 	nop
+K    5364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5365:   0x80000030	0x00000000 	nop
+K    5366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5367:   0x80000030	0x00000000 	nop
+K    5368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5369:   0x80000030	0x00000000 	nop
+K    5370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5371:   0x80000030	0x00000000 	nop
+K    5372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5373:   0x80000030	0x00000000 	nop
+K    5374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5375:   0x80000030	0x00000000 	nop
+K    5376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5377:   0x80000030	0x00000000 	nop
+K    5378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5379:   0x80000030	0x00000000 	nop
+K    5380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5381:   0x80000030	0x00000000 	nop
+K    5382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5383:   0x80000030	0x00000000 	nop
+K    5384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5385:   0x80000030	0x00000000 	nop
+K    5386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5387:   0x80000030	0x00000000 	nop
+K    5388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5389:   0x80000030	0x00000000 	nop
+K    5390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5391:   0x80000030	0x00000000 	nop
+K    5392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5393:   0x80000030	0x00000000 	nop
+K    5394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5395:   0x80000030	0x00000000 	nop
+K    5396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5397:   0x80000030	0x00000000 	nop
+K    5398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5399:   0x80000030	0x00000000 	nop
+K    5400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5401:   0x80000030	0x00000000 	nop
+K    5402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5403:   0x80000030	0x00000000 	nop
+K    5404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5405:   0x80000030	0x00000000 	nop
+K    5406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5407:   0x80000030	0x00000000 	nop
+K    5408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5409:   0x80000030	0x00000000 	nop
+K    5410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5411:   0x80000030	0x00000000 	nop
+K    5412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5413:   0x80000030	0x00000000 	nop
+K    5414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5415:   0x80000030	0x00000000 	nop
+K    5416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5417:   0x80000030	0x00000000 	nop
+K    5418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5419:   0x80000030	0x00000000 	nop
+K    5420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5421:   0x80000030	0x00000000 	nop
+K    5422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5423:   0x80000030	0x00000000 	nop
+K    5424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5425:   0x80000030	0x00000000 	nop
+K    5426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5427:   0x80000030	0x00000000 	nop
+K    5428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5429:   0x80000030	0x00000000 	nop
+K    5430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5431:   0x80000030	0x00000000 	nop
+K    5432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5433:   0x80000030	0x00000000 	nop
+K    5434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5435:   0x80000030	0x00000000 	nop
+K    5436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5437:   0x80000030	0x00000000 	nop
+K    5438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5439:   0x80000030	0x00000000 	nop
+K    5440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5441:   0x80000030	0x00000000 	nop
+K    5442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5443:   0x80000030	0x00000000 	nop
+K    5444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5445:   0x80000030	0x00000000 	nop
+K    5446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5447:   0x80000030	0x00000000 	nop
+K    5448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5449:   0x80000030	0x00000000 	nop
+K    5450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5451:   0x80000030	0x00000000 	nop
+K    5452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5453:   0x80000030	0x00000000 	nop
+K    5454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5455:   0x80000030	0x00000000 	nop
+K    5456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5457:   0x80000030	0x00000000 	nop
+K    5458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5459:   0x80000030	0x00000000 	nop
+K    5460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5461:   0x80000030	0x00000000 	nop
+K    5462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5463:   0x80000030	0x00000000 	nop
+K    5464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5465:   0x80000030	0x00000000 	nop
+K    5466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5467:   0x80000030	0x00000000 	nop
+K    5468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5469:   0x80000030	0x00000000 	nop
+K    5470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5471:   0x80000030	0x00000000 	nop
+K    5472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5473:   0x80000030	0x00000000 	nop
+K    5474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5475:   0x80000030	0x00000000 	nop
+K    5476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5477:   0x80000030	0x00000000 	nop
+K    5478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5479:   0x80000030	0x00000000 	nop
+K    5480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5481:   0x80000030	0x00000000 	nop
+K    5482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5483:   0x80000030	0x00000000 	nop
+K    5484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5485:   0x80000030	0x00000000 	nop
+K    5486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5487:   0x80000030	0x00000000 	nop
+K    5488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5489:   0x80000030	0x00000000 	nop
+K    5490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5491:   0x80000030	0x00000000 	nop
+K    5492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5493:   0x80000030	0x00000000 	nop
+K    5494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5495:   0x80000030	0x00000000 	nop
+K    5496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5497:   0x80000030	0x00000000 	nop
+K    5498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5499:   0x80000030	0x00000000 	nop
+K    5500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5501:   0x80000030	0x00000000 	nop
+K    5502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5503:   0x80000030	0x00000000 	nop
+K    5504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5505:   0x80000030	0x00000000 	nop
+K    5506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5507:   0x80000030	0x00000000 	nop
+K    5508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5509:   0x80000030	0x00000000 	nop
+K    5510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5511:   0x80000030	0x00000000 	nop
+K    5512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5513:   0x80000030	0x00000000 	nop
+K    5514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5515:   0x80000030	0x00000000 	nop
+K    5516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5517:   0x80000030	0x00000000 	nop
+K    5518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5519:   0x80000030	0x00000000 	nop
+K    5520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5521:   0x80000030	0x00000000 	nop
+K    5522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5523:   0x80000030	0x00000000 	nop
+K    5524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5525:   0x80000030	0x00000000 	nop
+K    5526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5527:   0x80000030	0x00000000 	nop
+K    5528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5529:   0x80000030	0x00000000 	nop
+K    5530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5531:   0x80000030	0x00000000 	nop
+K    5532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5533:   0x80000030	0x00000000 	nop
+K    5534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5535:   0x80000030	0x00000000 	nop
+K    5536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5537:   0x80000030	0x00000000 	nop
+K    5538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5539:   0x80000030	0x00000000 	nop
+K    5540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5541:   0x80000030	0x00000000 	nop
+K    5542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5543:   0x80000030	0x00000000 	nop
+K    5544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5545:   0x80000030	0x00000000 	nop
+K    5546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5547:   0x80000030	0x00000000 	nop
+K    5548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5549:   0x80000030	0x00000000 	nop
+K    5550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5551:   0x80000030	0x00000000 	nop
+K    5552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5553:   0x80000030	0x00000000 	nop
+K    5554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5555:   0x80000030	0x00000000 	nop
+K    5556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5557:   0x80000030	0x00000000 	nop
+K    5558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5559:   0x80000030	0x00000000 	nop
+K    5560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5561:   0x80000030	0x00000000 	nop
+K    5562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5563:   0x80000030	0x00000000 	nop
+K    5564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5565:   0x80000030	0x00000000 	nop
+K    5566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5567:   0x80000030	0x00000000 	nop
+K    5568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5569:   0x80000030	0x00000000 	nop
+K    5570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5571:   0x80000030	0x00000000 	nop
+K    5572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5573:   0x80000030	0x00000000 	nop
+K    5574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5575:   0x80000030	0x00000000 	nop
+K    5576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5577:   0x80000030	0x00000000 	nop
+K    5578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5579:   0x80000030	0x00000000 	nop
+K    5580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5581:   0x80000030	0x00000000 	nop
+K    5582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5583:   0x80000030	0x00000000 	nop
+K    5584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5585:   0x80000030	0x00000000 	nop
+K    5586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5587:   0x80000030	0x00000000 	nop
+K    5588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5589:   0x80000030	0x00000000 	nop
+K    5590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5591:   0x80000030	0x00000000 	nop
+K    5592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5593:   0x80000030	0x00000000 	nop
+K    5594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5595:   0x80000030	0x00000000 	nop
+K    5596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5597:   0x80000030	0x00000000 	nop
+K    5598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5599:   0x80000030	0x00000000 	nop
+K    5600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5601:   0x80000030	0x00000000 	nop
+K    5602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5603:   0x80000030	0x00000000 	nop
+K    5604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5605:   0x80000030	0x00000000 	nop
+K    5606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5607:   0x80000030	0x00000000 	nop
+K    5608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5609:   0x80000030	0x00000000 	nop
+K    5610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5611:   0x80000030	0x00000000 	nop
+K    5612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5613:   0x80000030	0x00000000 	nop
+K    5614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5615:   0x80000030	0x00000000 	nop
+K    5616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5617:   0x80000030	0x00000000 	nop
+K    5618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5619:   0x80000030	0x00000000 	nop
+K    5620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5621:   0x80000030	0x00000000 	nop
+K    5622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5623:   0x80000030	0x00000000 	nop
+K    5624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5625:   0x80000030	0x00000000 	nop
+K    5626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5627:   0x80000030	0x00000000 	nop
+K    5628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5629:   0x80000030	0x00000000 	nop
+K    5630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5631:   0x80000030	0x00000000 	nop
+K    5632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5633:   0x80000030	0x00000000 	nop
+K    5634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5635:   0x80000030	0x00000000 	nop
+K    5636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5637:   0x80000030	0x00000000 	nop
+K    5638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5639:   0x80000030	0x00000000 	nop
+K    5640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5641:   0x80000030	0x00000000 	nop
+K    5642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5643:   0x80000030	0x00000000 	nop
+K    5644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5645:   0x80000030	0x00000000 	nop
+K    5646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5647:   0x80000030	0x00000000 	nop
+K    5648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5649:   0x80000030	0x00000000 	nop
+K    5650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5651:   0x80000030	0x00000000 	nop
+K    5652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5653:   0x80000030	0x00000000 	nop
+K    5654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5655:   0x80000030	0x00000000 	nop
+K    5656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5657:   0x80000030	0x00000000 	nop
+K    5658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5659:   0x80000030	0x00000000 	nop
+K    5660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5661:   0x80000030	0x00000000 	nop
+K    5662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5663:   0x80000030	0x00000000 	nop
+K    5664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5665:   0x80000030	0x00000000 	nop
+K    5666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5667:   0x80000030	0x00000000 	nop
+K    5668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5669:   0x80000030	0x00000000 	nop
+K    5670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5671:   0x80000030	0x00000000 	nop
+K    5672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5673:   0x80000030	0x00000000 	nop
+K    5674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5675:   0x80000030	0x00000000 	nop
+K    5676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5677:   0x80000030	0x00000000 	nop
+K    5678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5679:   0x80000030	0x00000000 	nop
+K    5680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5681:   0x80000030	0x00000000 	nop
+K    5682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5683:   0x80000030	0x00000000 	nop
+K    5684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5685:   0x80000030	0x00000000 	nop
+K    5686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5687:   0x80000030	0x00000000 	nop
+K    5688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5689:   0x80000030	0x00000000 	nop
+K    5690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5691:   0x80000030	0x00000000 	nop
+K    5692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5693:   0x80000030	0x00000000 	nop
+K    5694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5695:   0x80000030	0x00000000 	nop
+K    5696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5697:   0x80000030	0x00000000 	nop
+K    5698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5699:   0x80000030	0x00000000 	nop
+K    5700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5701:   0x80000030	0x00000000 	nop
+K    5702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5703:   0x80000030	0x00000000 	nop
+K    5704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5705:   0x80000030	0x00000000 	nop
+K    5706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5707:   0x80000030	0x00000000 	nop
+K    5708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5709:   0x80000030	0x00000000 	nop
+K    5710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5711:   0x80000030	0x00000000 	nop
+K    5712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5713:   0x80000030	0x00000000 	nop
+K    5714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5715:   0x80000030	0x00000000 	nop
+K    5716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5717:   0x80000030	0x00000000 	nop
+K    5718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5719:   0x80000030	0x00000000 	nop
+K    5720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5721:   0x80000030	0x00000000 	nop
+K    5722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5723:   0x80000030	0x00000000 	nop
+K    5724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5725:   0x80000030	0x00000000 	nop
+K    5726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5727:   0x80000030	0x00000000 	nop
+K    5728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5729:   0x80000030	0x00000000 	nop
+K    5730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5731:   0x80000030	0x00000000 	nop
+K    5732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5733:   0x80000030	0x00000000 	nop
+K    5734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5735:   0x80000030	0x00000000 	nop
+K    5736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5737:   0x80000030	0x00000000 	nop
+K    5738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5739:   0x80000030	0x00000000 	nop
+K    5740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5741:   0x80000030	0x00000000 	nop
+K    5742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5743:   0x80000030	0x00000000 	nop
+K    5744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5745:   0x80000030	0x00000000 	nop
+K    5746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5747:   0x80000030	0x00000000 	nop
+K    5748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5749:   0x80000030	0x00000000 	nop
+K    5750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5751:   0x80000030	0x00000000 	nop
+K    5752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5753:   0x80000030	0x00000000 	nop
+K    5754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5755:   0x80000030	0x00000000 	nop
+K    5756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5757:   0x80000030	0x00000000 	nop
+K    5758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5759:   0x80000030	0x00000000 	nop
+K    5760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5761:   0x80000030	0x00000000 	nop
+K    5762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5763:   0x80000030	0x00000000 	nop
+K    5764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5765:   0x80000030	0x00000000 	nop
+K    5766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5767:   0x80000030	0x00000000 	nop
+K    5768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5769:   0x80000030	0x00000000 	nop
+K    5770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5771:   0x80000030	0x00000000 	nop
+K    5772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5773:   0x80000030	0x00000000 	nop
+K    5774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5775:   0x80000030	0x00000000 	nop
+K    5776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5777:   0x80000030	0x00000000 	nop
+K    5778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5779:   0x80000030	0x00000000 	nop
+K    5780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5781:   0x80000030	0x00000000 	nop
+K    5782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5783:   0x80000030	0x00000000 	nop
+K    5784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5785:   0x80000030	0x00000000 	nop
+K    5786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5787:   0x80000030	0x00000000 	nop
+K    5788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5789:   0x80000030	0x00000000 	nop
+K    5790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5791:   0x80000030	0x00000000 	nop
+K    5792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5793:   0x80000030	0x00000000 	nop
+K    5794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5795:   0x80000030	0x00000000 	nop
+K    5796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5797:   0x80000030	0x00000000 	nop
+K    5798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5799:   0x80000030	0x00000000 	nop
+K    5800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5801:   0x80000030	0x00000000 	nop
+K    5802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5803:   0x80000030	0x00000000 	nop
+K    5804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5805:   0x80000030	0x00000000 	nop
+K    5806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5807:   0x80000030	0x00000000 	nop
+K    5808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5809:   0x80000030	0x00000000 	nop
+K    5810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5811:   0x80000030	0x00000000 	nop
+K    5812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5813:   0x80000030	0x00000000 	nop
+K    5814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5815:   0x80000030	0x00000000 	nop
+K    5816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5817:   0x80000030	0x00000000 	nop
+K    5818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5819:   0x80000030	0x00000000 	nop
+K    5820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5821:   0x80000030	0x00000000 	nop
+K    5822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5823:   0x80000030	0x00000000 	nop
+K    5824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5825:   0x80000030	0x00000000 	nop
+K    5826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5827:   0x80000030	0x00000000 	nop
+K    5828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5829:   0x80000030	0x00000000 	nop
+K    5830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5831:   0x80000030	0x00000000 	nop
+K    5832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5833:   0x80000030	0x00000000 	nop
+K    5834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5835:   0x80000030	0x00000000 	nop
+K    5836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5837:   0x80000030	0x00000000 	nop
+K    5838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5839:   0x80000030	0x00000000 	nop
+K    5840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5841:   0x80000030	0x00000000 	nop
+K    5842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5843:   0x80000030	0x00000000 	nop
+K    5844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5845:   0x80000030	0x00000000 	nop
+K    5846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5847:   0x80000030	0x00000000 	nop
+K    5848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5849:   0x80000030	0x00000000 	nop
+K    5850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5851:   0x80000030	0x00000000 	nop
+K    5852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5853:   0x80000030	0x00000000 	nop
+K    5854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5855:   0x80000030	0x00000000 	nop
+K    5856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5857:   0x80000030	0x00000000 	nop
+K    5858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5859:   0x80000030	0x00000000 	nop
+K    5860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5861:   0x80000030	0x00000000 	nop
+K    5862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5863:   0x80000030	0x00000000 	nop
+K    5864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5865:   0x80000030	0x00000000 	nop
+K    5866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5867:   0x80000030	0x00000000 	nop
+K    5868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5869:   0x80000030	0x00000000 	nop
+K    5870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5871:   0x80000030	0x00000000 	nop
+K    5872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5873:   0x80000030	0x00000000 	nop
+K    5874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5875:   0x80000030	0x00000000 	nop
+K    5876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5877:   0x80000030	0x00000000 	nop
+K    5878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5879:   0x80000030	0x00000000 	nop
+K    5880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5881:   0x80000030	0x00000000 	nop
+K    5882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5883:   0x80000030	0x00000000 	nop
+K    5884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5885:   0x80000030	0x00000000 	nop
+K    5886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5887:   0x80000030	0x00000000 	nop
+K    5888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5889:   0x80000030	0x00000000 	nop
+K    5890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5891:   0x80000030	0x00000000 	nop
+K    5892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5893:   0x80000030	0x00000000 	nop
+K    5894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5895:   0x80000030	0x00000000 	nop
+K    5896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5897:   0x80000030	0x00000000 	nop
+K    5898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5899:   0x80000030	0x00000000 	nop
+K    5900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5901:   0x80000030	0x00000000 	nop
+K    5902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5903:   0x80000030	0x00000000 	nop
+K    5904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5905:   0x80000030	0x00000000 	nop
+K    5906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5907:   0x80000030	0x00000000 	nop
+K    5908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5909:   0x80000030	0x00000000 	nop
+K    5910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5911:   0x80000030	0x00000000 	nop
+K    5912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5913:   0x80000030	0x00000000 	nop
+K    5914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5915:   0x80000030	0x00000000 	nop
+K    5916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5917:   0x80000030	0x00000000 	nop
+K    5918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5919:   0x80000030	0x00000000 	nop
+K    5920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5921:   0x80000030	0x00000000 	nop
+K    5922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5923:   0x80000030	0x00000000 	nop
+K    5924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5925:   0x80000030	0x00000000 	nop
+K    5926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5927:   0x80000030	0x00000000 	nop
+K    5928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5929:   0x80000030	0x00000000 	nop
+K    5930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5931:   0x80000030	0x00000000 	nop
+K    5932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5933:   0x80000030	0x00000000 	nop
+K    5934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5935:   0x80000030	0x00000000 	nop
+K    5936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5937:   0x80000030	0x00000000 	nop
+K    5938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5939:   0x80000030	0x00000000 	nop
+K    5940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5941:   0x80000030	0x00000000 	nop
+K    5942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5943:   0x80000030	0x00000000 	nop
+K    5944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5945:   0x80000030	0x00000000 	nop
+K    5946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5947:   0x80000030	0x00000000 	nop
+K    5948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5949:   0x80000030	0x00000000 	nop
+K    5950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5951:   0x80000030	0x00000000 	nop
+K    5952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5953:   0x80000030	0x00000000 	nop
+K    5954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5955:   0x80000030	0x00000000 	nop
+K    5956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5957:   0x80000030	0x00000000 	nop
+K    5958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5959:   0x80000030	0x00000000 	nop
+K    5960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5961:   0x80000030	0x00000000 	nop
+K    5962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5963:   0x80000030	0x00000000 	nop
+K    5964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5965:   0x80000030	0x00000000 	nop
+K    5966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5967:   0x80000030	0x00000000 	nop
+K    5968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5969:   0x80000030	0x00000000 	nop
+K    5970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5971:   0x80000030	0x00000000 	nop
+K    5972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5973:   0x80000030	0x00000000 	nop
+K    5974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5975:   0x80000030	0x00000000 	nop
+K    5976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5977:   0x80000030	0x00000000 	nop
+K    5978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5979:   0x80000030	0x00000000 	nop
+K    5980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5981:   0x80000030	0x00000000 	nop
+K    5982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5983:   0x80000030	0x00000000 	nop
+K    5984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5985:   0x80000030	0x00000000 	nop
+K    5986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5987:   0x80000030	0x00000000 	nop
+K    5988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5989:   0x80000030	0x00000000 	nop
+K    5990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5991:   0x80000030	0x00000000 	nop
+K    5992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5993:   0x80000030	0x00000000 	nop
+K    5994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5995:   0x80000030	0x00000000 	nop
+K    5996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5997:   0x80000030	0x00000000 	nop
+K    5998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    5999:   0x80000030	0x00000000 	nop
+K    6000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6001:   0x80000030	0x00000000 	nop
+K    6002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6003:   0x80000030	0x00000000 	nop
+K    6004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6005:   0x80000030	0x00000000 	nop
+K    6006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6007:   0x80000030	0x00000000 	nop
+K    6008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6009:   0x80000030	0x00000000 	nop
+K    6010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6011:   0x80000030	0x00000000 	nop
+K    6012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6013:   0x80000030	0x00000000 	nop
+K    6014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6015:   0x80000030	0x00000000 	nop
+K    6016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6017:   0x80000030	0x00000000 	nop
+K    6018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6019:   0x80000030	0x00000000 	nop
+K    6020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6021:   0x80000030	0x00000000 	nop
+K    6022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6023:   0x80000030	0x00000000 	nop
+K    6024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6025:   0x80000030	0x00000000 	nop
+K    6026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6027:   0x80000030	0x00000000 	nop
+K    6028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6029:   0x80000030	0x00000000 	nop
+K    6030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6031:   0x80000030	0x00000000 	nop
+K    6032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6033:   0x80000030	0x00000000 	nop
+K    6034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6035:   0x80000030	0x00000000 	nop
+K    6036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6037:   0x80000030	0x00000000 	nop
+K    6038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6039:   0x80000030	0x00000000 	nop
+K    6040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6041:   0x80000030	0x00000000 	nop
+K    6042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6043:   0x80000030	0x00000000 	nop
+K    6044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6045:   0x80000030	0x00000000 	nop
+K    6046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6047:   0x80000030	0x00000000 	nop
+K    6048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6049:   0x80000030	0x00000000 	nop
+K    6050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6051:   0x80000030	0x00000000 	nop
+K    6052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6053:   0x80000030	0x00000000 	nop
+K    6054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6055:   0x80000030	0x00000000 	nop
+K    6056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6057:   0x80000030	0x00000000 	nop
+K    6058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6059:   0x80000030	0x00000000 	nop
+K    6060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6061:   0x80000030	0x00000000 	nop
+K    6062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6063:   0x80000030	0x00000000 	nop
+K    6064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6065:   0x80000030	0x00000000 	nop
+K    6066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6067:   0x80000030	0x00000000 	nop
+K    6068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6069:   0x80000030	0x00000000 	nop
+K    6070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6071:   0x80000030	0x00000000 	nop
+K    6072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6073:   0x80000030	0x00000000 	nop
+K    6074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6075:   0x80000030	0x00000000 	nop
+K    6076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6077:   0x80000030	0x00000000 	nop
+K    6078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6079:   0x80000030	0x00000000 	nop
+K    6080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6081:   0x80000030	0x00000000 	nop
+K    6082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6083:   0x80000030	0x00000000 	nop
+K    6084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6085:   0x80000030	0x00000000 	nop
+K    6086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6087:   0x80000030	0x00000000 	nop
+K    6088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6089:   0x80000030	0x00000000 	nop
+K    6090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6091:   0x80000030	0x00000000 	nop
+K    6092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6093:   0x80000030	0x00000000 	nop
+K    6094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6095:   0x80000030	0x00000000 	nop
+K    6096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6097:   0x80000030	0x00000000 	nop
+K    6098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6099:   0x80000030	0x00000000 	nop
+K    6100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6101:   0x80000030	0x00000000 	nop
+K    6102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6103:   0x80000030	0x00000000 	nop
+K    6104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6105:   0x80000030	0x00000000 	nop
+K    6106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6107:   0x80000030	0x00000000 	nop
+K    6108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6109:   0x80000030	0x00000000 	nop
+K    6110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6111:   0x80000030	0x00000000 	nop
+K    6112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6113:   0x80000030	0x00000000 	nop
+K    6114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6115:   0x80000030	0x00000000 	nop
+K    6116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6117:   0x80000030	0x00000000 	nop
+K    6118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6119:   0x80000030	0x00000000 	nop
+K    6120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6121:   0x80000030	0x00000000 	nop
+K    6122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6123:   0x80000030	0x00000000 	nop
+K    6124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6125:   0x80000030	0x00000000 	nop
+K    6126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6127:   0x80000030	0x00000000 	nop
+K    6128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6129:   0x80000030	0x00000000 	nop
+K    6130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6131:   0x80000030	0x00000000 	nop
+K    6132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6133:   0x80000030	0x00000000 	nop
+K    6134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6135:   0x80000030	0x00000000 	nop
+K    6136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6137:   0x80000030	0x00000000 	nop
+K    6138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6139:   0x80000030	0x00000000 	nop
+K    6140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6141:   0x80000030	0x00000000 	nop
+K    6142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6143:   0x80000030	0x00000000 	nop
+K    6144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6145:   0x80000030	0x00000000 	nop
+K    6146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6147:   0x80000030	0x00000000 	nop
+K    6148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6149:   0x80000030	0x00000000 	nop
+K    6150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6151:   0x80000030	0x00000000 	nop
+K    6152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6153:   0x80000030	0x00000000 	nop
+K    6154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6155:   0x80000030	0x00000000 	nop
+K    6156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6157:   0x80000030	0x00000000 	nop
+K    6158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6159:   0x80000030	0x00000000 	nop
+K    6160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6161:   0x80000030	0x00000000 	nop
+K    6162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6163:   0x80000030	0x00000000 	nop
+K    6164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6165:   0x80000030	0x00000000 	nop
+K    6166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6167:   0x80000030	0x00000000 	nop
+K    6168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6169:   0x80000030	0x00000000 	nop
+K    6170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6171:   0x80000030	0x00000000 	nop
+K    6172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6173:   0x80000030	0x00000000 	nop
+K    6174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6175:   0x80000030	0x00000000 	nop
+K    6176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6177:   0x80000030	0x00000000 	nop
+K    6178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6179:   0x80000030	0x00000000 	nop
+K    6180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6181:   0x80000030	0x00000000 	nop
+K    6182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6183:   0x80000030	0x00000000 	nop
+K    6184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6185:   0x80000030	0x00000000 	nop
+K    6186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6187:   0x80000030	0x00000000 	nop
+K    6188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6189:   0x80000030	0x00000000 	nop
+K    6190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6191:   0x80000030	0x00000000 	nop
+K    6192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6193:   0x80000030	0x00000000 	nop
+K    6194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6195:   0x80000030	0x00000000 	nop
+K    6196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6197:   0x80000030	0x00000000 	nop
+K    6198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6199:   0x80000030	0x00000000 	nop
+K    6200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6201:   0x80000030	0x00000000 	nop
+K    6202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6203:   0x80000030	0x00000000 	nop
+K    6204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6205:   0x80000030	0x00000000 	nop
+K    6206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6207:   0x80000030	0x00000000 	nop
+K    6208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6209:   0x80000030	0x00000000 	nop
+K    6210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6211:   0x80000030	0x00000000 	nop
+K    6212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6213:   0x80000030	0x00000000 	nop
+K    6214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6215:   0x80000030	0x00000000 	nop
+K    6216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6217:   0x80000030	0x00000000 	nop
+K    6218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6219:   0x80000030	0x00000000 	nop
+K    6220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6221:   0x80000030	0x00000000 	nop
+K    6222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6223:   0x80000030	0x00000000 	nop
+K    6224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6225:   0x80000030	0x00000000 	nop
+K    6226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6227:   0x80000030	0x00000000 	nop
+K    6228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6229:   0x80000030	0x00000000 	nop
+K    6230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6231:   0x80000030	0x00000000 	nop
+K    6232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6233:   0x80000030	0x00000000 	nop
+K    6234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6235:   0x80000030	0x00000000 	nop
+K    6236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6237:   0x80000030	0x00000000 	nop
+K    6238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6239:   0x80000030	0x00000000 	nop
+K    6240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6241:   0x80000030	0x00000000 	nop
+K    6242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6243:   0x80000030	0x00000000 	nop
+K    6244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6245:   0x80000030	0x00000000 	nop
+K    6246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6247:   0x80000030	0x00000000 	nop
+K    6248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6249:   0x80000030	0x00000000 	nop
+K    6250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6251:   0x80000030	0x00000000 	nop
+K    6252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6253:   0x80000030	0x00000000 	nop
+K    6254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6255:   0x80000030	0x00000000 	nop
+K    6256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6257:   0x80000030	0x00000000 	nop
+K    6258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6259:   0x80000030	0x00000000 	nop
+K    6260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6261:   0x80000030	0x00000000 	nop
+K    6262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6263:   0x80000030	0x00000000 	nop
+K    6264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6265:   0x80000030	0x00000000 	nop
+K    6266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6267:   0x80000030	0x00000000 	nop
+K    6268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6269:   0x80000030	0x00000000 	nop
+K    6270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6271:   0x80000030	0x00000000 	nop
+K    6272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6273:   0x80000030	0x00000000 	nop
+K    6274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6275:   0x80000030	0x00000000 	nop
+K    6276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6277:   0x80000030	0x00000000 	nop
+K    6278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6279:   0x80000030	0x00000000 	nop
+K    6280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6281:   0x80000030	0x00000000 	nop
+K    6282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6283:   0x80000030	0x00000000 	nop
+K    6284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6285:   0x80000030	0x00000000 	nop
+K    6286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6287:   0x80000030	0x00000000 	nop
+K    6288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6289:   0x80000030	0x00000000 	nop
+K    6290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6291:   0x80000030	0x00000000 	nop
+K    6292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6293:   0x80000030	0x00000000 	nop
+K    6294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6295:   0x80000030	0x00000000 	nop
+K    6296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6297:   0x80000030	0x00000000 	nop
+K    6298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6299:   0x80000030	0x00000000 	nop
+K    6300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6301:   0x80000030	0x00000000 	nop
+K    6302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6303:   0x80000030	0x00000000 	nop
+K    6304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6305:   0x80000030	0x00000000 	nop
+K    6306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6307:   0x80000030	0x00000000 	nop
+K    6308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6309:   0x80000030	0x00000000 	nop
+K    6310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6311:   0x80000030	0x00000000 	nop
+K    6312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6313:   0x80000030	0x00000000 	nop
+K    6314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6315:   0x80000030	0x00000000 	nop
+K    6316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6317:   0x80000030	0x00000000 	nop
+K    6318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6319:   0x80000030	0x00000000 	nop
+K    6320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6321:   0x80000030	0x00000000 	nop
+K    6322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6323:   0x80000030	0x00000000 	nop
+K    6324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6325:   0x80000030	0x00000000 	nop
+K    6326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6327:   0x80000030	0x00000000 	nop
+K    6328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6329:   0x80000030	0x00000000 	nop
+K    6330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6331:   0x80000030	0x00000000 	nop
+K    6332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6333:   0x80000030	0x00000000 	nop
+K    6334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6335:   0x80000030	0x00000000 	nop
+K    6336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6337:   0x80000030	0x00000000 	nop
+K    6338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6339:   0x80000030	0x00000000 	nop
+K    6340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6341:   0x80000030	0x00000000 	nop
+K    6342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6343:   0x80000030	0x00000000 	nop
+K    6344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6345:   0x80000030	0x00000000 	nop
+K    6346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6347:   0x80000030	0x00000000 	nop
+K    6348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6349:   0x80000030	0x00000000 	nop
+K    6350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6351:   0x80000030	0x00000000 	nop
+K    6352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6353:   0x80000030	0x00000000 	nop
+K    6354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6355:   0x80000030	0x00000000 	nop
+K    6356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6357:   0x80000030	0x00000000 	nop
+K    6358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6359:   0x80000030	0x00000000 	nop
+K    6360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6361:   0x80000030	0x00000000 	nop
+K    6362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6363:   0x80000030	0x00000000 	nop
+K    6364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6365:   0x80000030	0x00000000 	nop
+K    6366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6367:   0x80000030	0x00000000 	nop
+K    6368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6369:   0x80000030	0x00000000 	nop
+K    6370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6371:   0x80000030	0x00000000 	nop
+K    6372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6373:   0x80000030	0x00000000 	nop
+K    6374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6375:   0x80000030	0x00000000 	nop
+K    6376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6377:   0x80000030	0x00000000 	nop
+K    6378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6379:   0x80000030	0x00000000 	nop
+K    6380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6381:   0x80000030	0x00000000 	nop
+K    6382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6383:   0x80000030	0x00000000 	nop
+K    6384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6385:   0x80000030	0x00000000 	nop
+K    6386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6387:   0x80000030	0x00000000 	nop
+K    6388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6389:   0x80000030	0x00000000 	nop
+K    6390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6391:   0x80000030	0x00000000 	nop
+K    6392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6393:   0x80000030	0x00000000 	nop
+K    6394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6395:   0x80000030	0x00000000 	nop
+K    6396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6397:   0x80000030	0x00000000 	nop
+K    6398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6399:   0x80000030	0x00000000 	nop
+K    6400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6401:   0x80000030	0x00000000 	nop
+K    6402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6403:   0x80000030	0x00000000 	nop
+K    6404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6405:   0x80000030	0x00000000 	nop
+K    6406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6407:   0x80000030	0x00000000 	nop
+K    6408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6409:   0x80000030	0x00000000 	nop
+K    6410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6411:   0x80000030	0x00000000 	nop
+K    6412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6413:   0x80000030	0x00000000 	nop
+K    6414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6415:   0x80000030	0x00000000 	nop
+K    6416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6417:   0x80000030	0x00000000 	nop
+K    6418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6419:   0x80000030	0x00000000 	nop
+K    6420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6421:   0x80000030	0x00000000 	nop
+K    6422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6423:   0x80000030	0x00000000 	nop
+K    6424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6425:   0x80000030	0x00000000 	nop
+K    6426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6427:   0x80000030	0x00000000 	nop
+K    6428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6429:   0x80000030	0x00000000 	nop
+K    6430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6431:   0x80000030	0x00000000 	nop
+K    6432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6433:   0x80000030	0x00000000 	nop
+K    6434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6435:   0x80000030	0x00000000 	nop
+K    6436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6437:   0x80000030	0x00000000 	nop
+K    6438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6439:   0x80000030	0x00000000 	nop
+K    6440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6441:   0x80000030	0x00000000 	nop
+K    6442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6443:   0x80000030	0x00000000 	nop
+K    6444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6445:   0x80000030	0x00000000 	nop
+K    6446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6447:   0x80000030	0x00000000 	nop
+K    6448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6449:   0x80000030	0x00000000 	nop
+K    6450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6451:   0x80000030	0x00000000 	nop
+K    6452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6453:   0x80000030	0x00000000 	nop
+K    6454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6455:   0x80000030	0x00000000 	nop
+K    6456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6457:   0x80000030	0x00000000 	nop
+K    6458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6459:   0x80000030	0x00000000 	nop
+K    6460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6461:   0x80000030	0x00000000 	nop
+K    6462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6463:   0x80000030	0x00000000 	nop
+K    6464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6465:   0x80000030	0x00000000 	nop
+K    6466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6467:   0x80000030	0x00000000 	nop
+K    6468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6469:   0x80000030	0x00000000 	nop
+K    6470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6471:   0x80000030	0x00000000 	nop
+K    6472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6473:   0x80000030	0x00000000 	nop
+K    6474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6475:   0x80000030	0x00000000 	nop
+K    6476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6477:   0x80000030	0x00000000 	nop
+K    6478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6479:   0x80000030	0x00000000 	nop
+K    6480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6481:   0x80000030	0x00000000 	nop
+K    6482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6483:   0x80000030	0x00000000 	nop
+K    6484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6485:   0x80000030	0x00000000 	nop
+K    6486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6487:   0x80000030	0x00000000 	nop
+K    6488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6489:   0x80000030	0x00000000 	nop
+K    6490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6491:   0x80000030	0x00000000 	nop
+K    6492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6493:   0x80000030	0x00000000 	nop
+K    6494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6495:   0x80000030	0x00000000 	nop
+K    6496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6497:   0x80000030	0x00000000 	nop
+K    6498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6499:   0x80000030	0x00000000 	nop
+K    6500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6501:   0x80000030	0x00000000 	nop
+K    6502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6503:   0x80000030	0x00000000 	nop
+K    6504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6505:   0x80000030	0x00000000 	nop
+K    6506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6507:   0x80000030	0x00000000 	nop
+K    6508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6509:   0x80000030	0x00000000 	nop
+K    6510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6511:   0x80000030	0x00000000 	nop
+K    6512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6513:   0x80000030	0x00000000 	nop
+K    6514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6515:   0x80000030	0x00000000 	nop
+K    6516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6517:   0x80000030	0x00000000 	nop
+K    6518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6519:   0x80000030	0x00000000 	nop
+K    6520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6521:   0x80000030	0x00000000 	nop
+K    6522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6523:   0x80000030	0x00000000 	nop
+K    6524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6525:   0x80000030	0x00000000 	nop
+K    6526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6527:   0x80000030	0x00000000 	nop
+K    6528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6529:   0x80000030	0x00000000 	nop
+K    6530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6531:   0x80000030	0x00000000 	nop
+K    6532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6533:   0x80000030	0x00000000 	nop
+K    6534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6535:   0x80000030	0x00000000 	nop
+K    6536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6537:   0x80000030	0x00000000 	nop
+K    6538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6539:   0x80000030	0x00000000 	nop
+K    6540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6541:   0x80000030	0x00000000 	nop
+K    6542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6543:   0x80000030	0x00000000 	nop
+K    6544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6545:   0x80000030	0x00000000 	nop
+K    6546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6547:   0x80000030	0x00000000 	nop
+K    6548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6549:   0x80000030	0x00000000 	nop
+K    6550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6551:   0x80000030	0x00000000 	nop
+K    6552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6553:   0x80000030	0x00000000 	nop
+K    6554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6555:   0x80000030	0x00000000 	nop
+K    6556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6557:   0x80000030	0x00000000 	nop
+K    6558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6559:   0x80000030	0x00000000 	nop
+K    6560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6561:   0x80000030	0x00000000 	nop
+K    6562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6563:   0x80000030	0x00000000 	nop
+K    6564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6565:   0x80000030	0x00000000 	nop
+K    6566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6567:   0x80000030	0x00000000 	nop
+K    6568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6569:   0x80000030	0x00000000 	nop
+K    6570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6571:   0x80000030	0x00000000 	nop
+K    6572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6573:   0x80000030	0x00000000 	nop
+K    6574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6575:   0x80000030	0x00000000 	nop
+K    6576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6577:   0x80000030	0x00000000 	nop
+K    6578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6579:   0x80000030	0x00000000 	nop
+K    6580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6581:   0x80000030	0x00000000 	nop
+K    6582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6583:   0x80000030	0x00000000 	nop
+K    6584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6585:   0x80000030	0x00000000 	nop
+K    6586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6587:   0x80000030	0x00000000 	nop
+K    6588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6589:   0x80000030	0x00000000 	nop
+K    6590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6591:   0x80000030	0x00000000 	nop
+K    6592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6593:   0x80000030	0x00000000 	nop
+K    6594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6595:   0x80000030	0x00000000 	nop
+K    6596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6597:   0x80000030	0x00000000 	nop
+K    6598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6599:   0x80000030	0x00000000 	nop
+K    6600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6601:   0x80000030	0x00000000 	nop
+K    6602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6603:   0x80000030	0x00000000 	nop
+K    6604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6605:   0x80000030	0x00000000 	nop
+K    6606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6607:   0x80000030	0x00000000 	nop
+K    6608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6609:   0x80000030	0x00000000 	nop
+K    6610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6611:   0x80000030	0x00000000 	nop
+K    6612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6613:   0x80000030	0x00000000 	nop
+K    6614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6615:   0x80000030	0x00000000 	nop
+K    6616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6617:   0x80000030	0x00000000 	nop
+K    6618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6619:   0x80000030	0x00000000 	nop
+K    6620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6621:   0x80000030	0x00000000 	nop
+K    6622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6623:   0x80000030	0x00000000 	nop
+K    6624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6625:   0x80000030	0x00000000 	nop
+K    6626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6627:   0x80000030	0x00000000 	nop
+K    6628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6629:   0x80000030	0x00000000 	nop
+K    6630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6631:   0x80000030	0x00000000 	nop
+K    6632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6633:   0x80000030	0x00000000 	nop
+K    6634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6635:   0x80000030	0x00000000 	nop
+K    6636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6637:   0x80000030	0x00000000 	nop
+K    6638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6639:   0x80000030	0x00000000 	nop
+K    6640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6641:   0x80000030	0x00000000 	nop
+K    6642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6643:   0x80000030	0x00000000 	nop
+K    6644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6645:   0x80000030	0x00000000 	nop
+K    6646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6647:   0x80000030	0x00000000 	nop
+K    6648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6649:   0x80000030	0x00000000 	nop
+K    6650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6651:   0x80000030	0x00000000 	nop
+K    6652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6653:   0x80000030	0x00000000 	nop
+K    6654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6655:   0x80000030	0x00000000 	nop
+K    6656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6657:   0x80000030	0x00000000 	nop
+K    6658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6659:   0x80000030	0x00000000 	nop
+K    6660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6661:   0x80000030	0x00000000 	nop
+K    6662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6663:   0x80000030	0x00000000 	nop
+K    6664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6665:   0x80000030	0x00000000 	nop
+K    6666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6667:   0x80000030	0x00000000 	nop
+K    6668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6669:   0x80000030	0x00000000 	nop
+K    6670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6671:   0x80000030	0x00000000 	nop
+K    6672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6673:   0x80000030	0x00000000 	nop
+K    6674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6675:   0x80000030	0x00000000 	nop
+K    6676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6677:   0x80000030	0x00000000 	nop
+K    6678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6679:   0x80000030	0x00000000 	nop
+K    6680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6681:   0x80000030	0x00000000 	nop
+K    6682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6683:   0x80000030	0x00000000 	nop
+K    6684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6685:   0x80000030	0x00000000 	nop
+K    6686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6687:   0x80000030	0x00000000 	nop
+K    6688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6689:   0x80000030	0x00000000 	nop
+K    6690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6691:   0x80000030	0x00000000 	nop
+K    6692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6693:   0x80000030	0x00000000 	nop
+K    6694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6695:   0x80000030	0x00000000 	nop
+K    6696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6697:   0x80000030	0x00000000 	nop
+K    6698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6699:   0x80000030	0x00000000 	nop
+K    6700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6701:   0x80000030	0x00000000 	nop
+K    6702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6703:   0x80000030	0x00000000 	nop
+K    6704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6705:   0x80000030	0x00000000 	nop
+K    6706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6707:   0x80000030	0x00000000 	nop
+K    6708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6709:   0x80000030	0x00000000 	nop
+K    6710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6711:   0x80000030	0x00000000 	nop
+K    6712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6713:   0x80000030	0x00000000 	nop
+K    6714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6715:   0x80000030	0x00000000 	nop
+K    6716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6717:   0x80000030	0x00000000 	nop
+K    6718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6719:   0x80000030	0x00000000 	nop
+K    6720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6721:   0x80000030	0x00000000 	nop
+K    6722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6723:   0x80000030	0x00000000 	nop
+K    6724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6725:   0x80000030	0x00000000 	nop
+K    6726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6727:   0x80000030	0x00000000 	nop
+K    6728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6729:   0x80000030	0x00000000 	nop
+K    6730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6731:   0x80000030	0x00000000 	nop
+K    6732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6733:   0x80000030	0x00000000 	nop
+K    6734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6735:   0x80000030	0x00000000 	nop
+K    6736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6737:   0x80000030	0x00000000 	nop
+K    6738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6739:   0x80000030	0x00000000 	nop
+K    6740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6741:   0x80000030	0x00000000 	nop
+K    6742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6743:   0x80000030	0x00000000 	nop
+K    6744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6745:   0x80000030	0x00000000 	nop
+K    6746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6747:   0x80000030	0x00000000 	nop
+K    6748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6749:   0x80000030	0x00000000 	nop
+K    6750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6751:   0x80000030	0x00000000 	nop
+K    6752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6753:   0x80000030	0x00000000 	nop
+K    6754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6755:   0x80000030	0x00000000 	nop
+K    6756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6757:   0x80000030	0x00000000 	nop
+K    6758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6759:   0x80000030	0x00000000 	nop
+K    6760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6761:   0x80000030	0x00000000 	nop
+K    6762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6763:   0x80000030	0x00000000 	nop
+K    6764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6765:   0x80000030	0x00000000 	nop
+K    6766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6767:   0x80000030	0x00000000 	nop
+K    6768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6769:   0x80000030	0x00000000 	nop
+K    6770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6771:   0x80000030	0x00000000 	nop
+K    6772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6773:   0x80000030	0x00000000 	nop
+K    6774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6775:   0x80000030	0x00000000 	nop
+K    6776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6777:   0x80000030	0x00000000 	nop
+K    6778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6779:   0x80000030	0x00000000 	nop
+K    6780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6781:   0x80000030	0x00000000 	nop
+K    6782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6783:   0x80000030	0x00000000 	nop
+K    6784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6785:   0x80000030	0x00000000 	nop
+K    6786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6787:   0x80000030	0x00000000 	nop
+K    6788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6789:   0x80000030	0x00000000 	nop
+K    6790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6791:   0x80000030	0x00000000 	nop
+K    6792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6793:   0x80000030	0x00000000 	nop
+K    6794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6795:   0x80000030	0x00000000 	nop
+K    6796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6797:   0x80000030	0x00000000 	nop
+K    6798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6799:   0x80000030	0x00000000 	nop
+K    6800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6801:   0x80000030	0x00000000 	nop
+K    6802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6803:   0x80000030	0x00000000 	nop
+K    6804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6805:   0x80000030	0x00000000 	nop
+K    6806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6807:   0x80000030	0x00000000 	nop
+K    6808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6809:   0x80000030	0x00000000 	nop
+K    6810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6811:   0x80000030	0x00000000 	nop
+K    6812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6813:   0x80000030	0x00000000 	nop
+K    6814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6815:   0x80000030	0x00000000 	nop
+K    6816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6817:   0x80000030	0x00000000 	nop
+K    6818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6819:   0x80000030	0x00000000 	nop
+K    6820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6821:   0x80000030	0x00000000 	nop
+K    6822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6823:   0x80000030	0x00000000 	nop
+K    6824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6825:   0x80000030	0x00000000 	nop
+K    6826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6827:   0x80000030	0x00000000 	nop
+K    6828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6829:   0x80000030	0x00000000 	nop
+K    6830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6831:   0x80000030	0x00000000 	nop
+K    6832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6833:   0x80000030	0x00000000 	nop
+K    6834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6835:   0x80000030	0x00000000 	nop
+K    6836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6837:   0x80000030	0x00000000 	nop
+K    6838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6839:   0x80000030	0x00000000 	nop
+K    6840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6841:   0x80000030	0x00000000 	nop
+K    6842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6843:   0x80000030	0x00000000 	nop
+K    6844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6845:   0x80000030	0x00000000 	nop
+K    6846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6847:   0x80000030	0x00000000 	nop
+K    6848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6849:   0x80000030	0x00000000 	nop
+K    6850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6851:   0x80000030	0x00000000 	nop
+K    6852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6853:   0x80000030	0x00000000 	nop
+K    6854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6855:   0x80000030	0x00000000 	nop
+K    6856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6857:   0x80000030	0x00000000 	nop
+K    6858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6859:   0x80000030	0x00000000 	nop
+K    6860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6861:   0x80000030	0x00000000 	nop
+K    6862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6863:   0x80000030	0x00000000 	nop
+K    6864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6865:   0x80000030	0x00000000 	nop
+K    6866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6867:   0x80000030	0x00000000 	nop
+K    6868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6869:   0x80000030	0x00000000 	nop
+K    6870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6871:   0x80000030	0x00000000 	nop
+K    6872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6873:   0x80000030	0x00000000 	nop
+K    6874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6875:   0x80000030	0x00000000 	nop
+K    6876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6877:   0x80000030	0x00000000 	nop
+K    6878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6879:   0x80000030	0x00000000 	nop
+K    6880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6881:   0x80000030	0x00000000 	nop
+K    6882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6883:   0x80000030	0x00000000 	nop
+K    6884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6885:   0x80000030	0x00000000 	nop
+K    6886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6887:   0x80000030	0x00000000 	nop
+K    6888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6889:   0x80000030	0x00000000 	nop
+K    6890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6891:   0x80000030	0x00000000 	nop
+K    6892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6893:   0x80000030	0x00000000 	nop
+K    6894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6895:   0x80000030	0x00000000 	nop
+K    6896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6897:   0x80000030	0x00000000 	nop
+K    6898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6899:   0x80000030	0x00000000 	nop
+K    6900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6901:   0x80000030	0x00000000 	nop
+K    6902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6903:   0x80000030	0x00000000 	nop
+K    6904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6905:   0x80000030	0x00000000 	nop
+K    6906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6907:   0x80000030	0x00000000 	nop
+K    6908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6909:   0x80000030	0x00000000 	nop
+K    6910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6911:   0x80000030	0x00000000 	nop
+K    6912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6913:   0x80000030	0x00000000 	nop
+K    6914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6915:   0x80000030	0x00000000 	nop
+K    6916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6917:   0x80000030	0x00000000 	nop
+K    6918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6919:   0x80000030	0x00000000 	nop
+K    6920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6921:   0x80000030	0x00000000 	nop
+K    6922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6923:   0x80000030	0x00000000 	nop
+K    6924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6925:   0x80000030	0x00000000 	nop
+K    6926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6927:   0x80000030	0x00000000 	nop
+K    6928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6929:   0x80000030	0x00000000 	nop
+K    6930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6931:   0x80000030	0x00000000 	nop
+K    6932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6933:   0x80000030	0x00000000 	nop
+K    6934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6935:   0x80000030	0x00000000 	nop
+K    6936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6937:   0x80000030	0x00000000 	nop
+K    6938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6939:   0x80000030	0x00000000 	nop
+K    6940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6941:   0x80000030	0x00000000 	nop
+K    6942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6943:   0x80000030	0x00000000 	nop
+K    6944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6945:   0x80000030	0x00000000 	nop
+K    6946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6947:   0x80000030	0x00000000 	nop
+K    6948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6949:   0x80000030	0x00000000 	nop
+K    6950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6951:   0x80000030	0x00000000 	nop
+K    6952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6953:   0x80000030	0x00000000 	nop
+K    6954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6955:   0x80000030	0x00000000 	nop
+K    6956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6957:   0x80000030	0x00000000 	nop
+K    6958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6959:   0x80000030	0x00000000 	nop
+K    6960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6961:   0x80000030	0x00000000 	nop
+K    6962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6963:   0x80000030	0x00000000 	nop
+K    6964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6965:   0x80000030	0x00000000 	nop
+K    6966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6967:   0x80000030	0x00000000 	nop
+K    6968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6969:   0x80000030	0x00000000 	nop
+K    6970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6971:   0x80000030	0x00000000 	nop
+K    6972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6973:   0x80000030	0x00000000 	nop
+K    6974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6975:   0x80000030	0x00000000 	nop
+K    6976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6977:   0x80000030	0x00000000 	nop
+K    6978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6979:   0x80000030	0x00000000 	nop
+K    6980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6981:   0x80000030	0x00000000 	nop
+K    6982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6983:   0x80000030	0x00000000 	nop
+K    6984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6985:   0x80000030	0x00000000 	nop
+K    6986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6987:   0x80000030	0x00000000 	nop
+K    6988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6989:   0x80000030	0x00000000 	nop
+K    6990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6991:   0x80000030	0x00000000 	nop
+K    6992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6993:   0x80000030	0x00000000 	nop
+K    6994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6995:   0x80000030	0x00000000 	nop
+K    6996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6997:   0x80000030	0x00000000 	nop
+K    6998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    6999:   0x80000030	0x00000000 	nop
+K    7000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7001:   0x80000030	0x00000000 	nop
+K    7002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7003:   0x80000030	0x00000000 	nop
+K    7004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7005:   0x80000030	0x00000000 	nop
+K    7006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7007:   0x80000030	0x00000000 	nop
+K    7008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7009:   0x80000030	0x00000000 	nop
+K    7010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7011:   0x80000030	0x00000000 	nop
+K    7012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7013:   0x80000030	0x00000000 	nop
+K    7014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7015:   0x80000030	0x00000000 	nop
+K    7016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7017:   0x80000030	0x00000000 	nop
+K    7018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7019:   0x80000030	0x00000000 	nop
+K    7020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7021:   0x80000030	0x00000000 	nop
+K    7022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7023:   0x80000030	0x00000000 	nop
+K    7024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7025:   0x80000030	0x00000000 	nop
+K    7026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7027:   0x80000030	0x00000000 	nop
+K    7028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7029:   0x80000030	0x00000000 	nop
+K    7030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7031:   0x80000030	0x00000000 	nop
+K    7032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7033:   0x80000030	0x00000000 	nop
+K    7034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7035:   0x80000030	0x00000000 	nop
+K    7036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7037:   0x80000030	0x00000000 	nop
+K    7038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7039:   0x80000030	0x00000000 	nop
+K    7040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7041:   0x80000030	0x00000000 	nop
+K    7042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7043:   0x80000030	0x00000000 	nop
+K    7044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7045:   0x80000030	0x00000000 	nop
+K    7046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7047:   0x80000030	0x00000000 	nop
+K    7048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7049:   0x80000030	0x00000000 	nop
+K    7050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7051:   0x80000030	0x00000000 	nop
+K    7052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7053:   0x80000030	0x00000000 	nop
+K    7054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7055:   0x80000030	0x00000000 	nop
+K    7056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7057:   0x80000030	0x00000000 	nop
+K    7058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7059:   0x80000030	0x00000000 	nop
+K    7060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7061:   0x80000030	0x00000000 	nop
+K    7062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7063:   0x80000030	0x00000000 	nop
+K    7064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7065:   0x80000030	0x00000000 	nop
+K    7066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7067:   0x80000030	0x00000000 	nop
+K    7068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7069:   0x80000030	0x00000000 	nop
+K    7070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7071:   0x80000030	0x00000000 	nop
+K    7072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7073:   0x80000030	0x00000000 	nop
+K    7074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7075:   0x80000030	0x00000000 	nop
+K    7076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7077:   0x80000030	0x00000000 	nop
+K    7078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7079:   0x80000030	0x00000000 	nop
+K    7080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7081:   0x80000030	0x00000000 	nop
+K    7082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7083:   0x80000030	0x00000000 	nop
+K    7084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7085:   0x80000030	0x00000000 	nop
+K    7086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7087:   0x80000030	0x00000000 	nop
+K    7088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7089:   0x80000030	0x00000000 	nop
+K    7090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7091:   0x80000030	0x00000000 	nop
+K    7092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7093:   0x80000030	0x00000000 	nop
+K    7094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7095:   0x80000030	0x00000000 	nop
+K    7096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7097:   0x80000030	0x00000000 	nop
+K    7098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7099:   0x80000030	0x00000000 	nop
+K    7100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7101:   0x80000030	0x00000000 	nop
+K    7102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7103:   0x80000030	0x00000000 	nop
+K    7104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7105:   0x80000030	0x00000000 	nop
+K    7106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7107:   0x80000030	0x00000000 	nop
+K    7108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7109:   0x80000030	0x00000000 	nop
+K    7110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7111:   0x80000030	0x00000000 	nop
+K    7112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7113:   0x80000030	0x00000000 	nop
+K    7114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7115:   0x80000030	0x00000000 	nop
+K    7116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7117:   0x80000030	0x00000000 	nop
+K    7118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7119:   0x80000030	0x00000000 	nop
+K    7120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7121:   0x80000030	0x00000000 	nop
+K    7122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7123:   0x80000030	0x00000000 	nop
+K    7124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7125:   0x80000030	0x00000000 	nop
+K    7126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7127:   0x80000030	0x00000000 	nop
+K    7128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7129:   0x80000030	0x00000000 	nop
+K    7130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7131:   0x80000030	0x00000000 	nop
+K    7132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7133:   0x80000030	0x00000000 	nop
+K    7134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7135:   0x80000030	0x00000000 	nop
+K    7136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7137:   0x80000030	0x00000000 	nop
+K    7138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7139:   0x80000030	0x00000000 	nop
+K    7140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7141:   0x80000030	0x00000000 	nop
+K    7142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7143:   0x80000030	0x00000000 	nop
+K    7144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7145:   0x80000030	0x00000000 	nop
+K    7146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7147:   0x80000030	0x00000000 	nop
+K    7148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7149:   0x80000030	0x00000000 	nop
+K    7150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7151:   0x80000030	0x00000000 	nop
+K    7152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7153:   0x80000030	0x00000000 	nop
+K    7154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7155:   0x80000030	0x00000000 	nop
+K    7156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7157:   0x80000030	0x00000000 	nop
+K    7158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7159:   0x80000030	0x00000000 	nop
+K    7160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7161:   0x80000030	0x00000000 	nop
+K    7162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7163:   0x80000030	0x00000000 	nop
+K    7164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7165:   0x80000030	0x00000000 	nop
+K    7166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7167:   0x80000030	0x00000000 	nop
+K    7168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7169:   0x80000030	0x00000000 	nop
+K    7170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7171:   0x80000030	0x00000000 	nop
+K    7172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7173:   0x80000030	0x00000000 	nop
+K    7174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7175:   0x80000030	0x00000000 	nop
+K    7176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7177:   0x80000030	0x00000000 	nop
+K    7178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7179:   0x80000030	0x00000000 	nop
+K    7180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7181:   0x80000030	0x00000000 	nop
+K    7182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7183:   0x80000030	0x00000000 	nop
+K    7184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7185:   0x80000030	0x00000000 	nop
+K    7186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7187:   0x80000030	0x00000000 	nop
+K    7188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7189:   0x80000030	0x00000000 	nop
+K    7190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7191:   0x80000030	0x00000000 	nop
+K    7192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7193:   0x80000030	0x00000000 	nop
+K    7194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7195:   0x80000030	0x00000000 	nop
+K    7196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7197:   0x80000030	0x00000000 	nop
+K    7198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7199:   0x80000030	0x00000000 	nop
+K    7200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7201:   0x80000030	0x00000000 	nop
+K    7202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7203:   0x80000030	0x00000000 	nop
+K    7204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7205:   0x80000030	0x00000000 	nop
+K    7206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7207:   0x80000030	0x00000000 	nop
+K    7208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7209:   0x80000030	0x00000000 	nop
+K    7210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7211:   0x80000030	0x00000000 	nop
+K    7212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7213:   0x80000030	0x00000000 	nop
+K    7214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7215:   0x80000030	0x00000000 	nop
+K    7216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7217:   0x80000030	0x00000000 	nop
+K    7218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7219:   0x80000030	0x00000000 	nop
+K    7220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7221:   0x80000030	0x00000000 	nop
+K    7222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7223:   0x80000030	0x00000000 	nop
+K    7224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7225:   0x80000030	0x00000000 	nop
+K    7226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7227:   0x80000030	0x00000000 	nop
+K    7228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7229:   0x80000030	0x00000000 	nop
+K    7230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7231:   0x80000030	0x00000000 	nop
+K    7232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7233:   0x80000030	0x00000000 	nop
+K    7234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7235:   0x80000030	0x00000000 	nop
+K    7236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7237:   0x80000030	0x00000000 	nop
+K    7238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7239:   0x80000030	0x00000000 	nop
+K    7240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7241:   0x80000030	0x00000000 	nop
+K    7242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7243:   0x80000030	0x00000000 	nop
+K    7244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7245:   0x80000030	0x00000000 	nop
+K    7246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7247:   0x80000030	0x00000000 	nop
+K    7248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7249:   0x80000030	0x00000000 	nop
+K    7250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7251:   0x80000030	0x00000000 	nop
+K    7252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7253:   0x80000030	0x00000000 	nop
+K    7254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7255:   0x80000030	0x00000000 	nop
+K    7256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7257:   0x80000030	0x00000000 	nop
+K    7258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7259:   0x80000030	0x00000000 	nop
+K    7260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7261:   0x80000030	0x00000000 	nop
+K    7262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7263:   0x80000030	0x00000000 	nop
+K    7264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7265:   0x80000030	0x00000000 	nop
+K    7266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7267:   0x80000030	0x00000000 	nop
+K    7268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7269:   0x80000030	0x00000000 	nop
+K    7270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7271:   0x80000030	0x00000000 	nop
+K    7272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7273:   0x80000030	0x00000000 	nop
+K    7274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7275:   0x80000030	0x00000000 	nop
+K    7276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7277:   0x80000030	0x00000000 	nop
+K    7278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7279:   0x80000030	0x00000000 	nop
+K    7280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7281:   0x80000030	0x00000000 	nop
+K    7282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7283:   0x80000030	0x00000000 	nop
+K    7284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7285:   0x80000030	0x00000000 	nop
+K    7286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7287:   0x80000030	0x00000000 	nop
+K    7288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7289:   0x80000030	0x00000000 	nop
+K    7290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7291:   0x80000030	0x00000000 	nop
+K    7292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7293:   0x80000030	0x00000000 	nop
+K    7294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7295:   0x80000030	0x00000000 	nop
+K    7296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7297:   0x80000030	0x00000000 	nop
+K    7298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7299:   0x80000030	0x00000000 	nop
+K    7300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7301:   0x80000030	0x00000000 	nop
+K    7302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7303:   0x80000030	0x00000000 	nop
+K    7304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7305:   0x80000030	0x00000000 	nop
+K    7306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7307:   0x80000030	0x00000000 	nop
+K    7308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7309:   0x80000030	0x00000000 	nop
+K    7310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7311:   0x80000030	0x00000000 	nop
+K    7312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7313:   0x80000030	0x00000000 	nop
+K    7314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7315:   0x80000030	0x00000000 	nop
+K    7316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7317:   0x80000030	0x00000000 	nop
+K    7318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7319:   0x80000030	0x00000000 	nop
+K    7320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7321:   0x80000030	0x00000000 	nop
+K    7322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7323:   0x80000030	0x00000000 	nop
+K    7324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7325:   0x80000030	0x00000000 	nop
+K    7326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7327:   0x80000030	0x00000000 	nop
+K    7328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7329:   0x80000030	0x00000000 	nop
+K    7330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7331:   0x80000030	0x00000000 	nop
+K    7332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7333:   0x80000030	0x00000000 	nop
+K    7334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7335:   0x80000030	0x00000000 	nop
+K    7336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7337:   0x80000030	0x00000000 	nop
+K    7338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7339:   0x80000030	0x00000000 	nop
+K    7340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7341:   0x80000030	0x00000000 	nop
+K    7342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7343:   0x80000030	0x00000000 	nop
+K    7344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7345:   0x80000030	0x00000000 	nop
+K    7346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7347:   0x80000030	0x00000000 	nop
+K    7348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7349:   0x80000030	0x00000000 	nop
+K    7350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7351:   0x80000030	0x00000000 	nop
+K    7352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7353:   0x80000030	0x00000000 	nop
+K    7354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7355:   0x80000030	0x00000000 	nop
+K    7356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7357:   0x80000030	0x00000000 	nop
+K    7358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7359:   0x80000030	0x00000000 	nop
+K    7360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7361:   0x80000030	0x00000000 	nop
+K    7362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7363:   0x80000030	0x00000000 	nop
+K    7364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7365:   0x80000030	0x00000000 	nop
+K    7366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7367:   0x80000030	0x00000000 	nop
+K    7368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7369:   0x80000030	0x00000000 	nop
+K    7370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7371:   0x80000030	0x00000000 	nop
+K    7372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7373:   0x80000030	0x00000000 	nop
+K    7374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7375:   0x80000030	0x00000000 	nop
+K    7376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7377:   0x80000030	0x00000000 	nop
+K    7378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7379:   0x80000030	0x00000000 	nop
+K    7380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7381:   0x80000030	0x00000000 	nop
+K    7382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7383:   0x80000030	0x00000000 	nop
+K    7384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7385:   0x80000030	0x00000000 	nop
+K    7386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7387:   0x80000030	0x00000000 	nop
+K    7388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7389:   0x80000030	0x00000000 	nop
+K    7390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7391:   0x80000030	0x00000000 	nop
+K    7392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7393:   0x80000030	0x00000000 	nop
+K    7394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7395:   0x80000030	0x00000000 	nop
+K    7396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7397:   0x80000030	0x00000000 	nop
+K    7398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7399:   0x80000030	0x00000000 	nop
+K    7400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7401:   0x80000030	0x00000000 	nop
+K    7402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7403:   0x80000030	0x00000000 	nop
+K    7404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7405:   0x80000030	0x00000000 	nop
+K    7406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7407:   0x80000030	0x00000000 	nop
+K    7408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7409:   0x80000030	0x00000000 	nop
+K    7410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7411:   0x80000030	0x00000000 	nop
+K    7412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7413:   0x80000030	0x00000000 	nop
+K    7414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7415:   0x80000030	0x00000000 	nop
+K    7416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7417:   0x80000030	0x00000000 	nop
+K    7418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7419:   0x80000030	0x00000000 	nop
+K    7420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7421:   0x80000030	0x00000000 	nop
+K    7422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7423:   0x80000030	0x00000000 	nop
+K    7424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7425:   0x80000030	0x00000000 	nop
+K    7426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7427:   0x80000030	0x00000000 	nop
+K    7428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7429:   0x80000030	0x00000000 	nop
+K    7430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7431:   0x80000030	0x00000000 	nop
+K    7432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7433:   0x80000030	0x00000000 	nop
+K    7434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7435:   0x80000030	0x00000000 	nop
+K    7436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7437:   0x80000030	0x00000000 	nop
+K    7438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7439:   0x80000030	0x00000000 	nop
+K    7440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7441:   0x80000030	0x00000000 	nop
+K    7442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7443:   0x80000030	0x00000000 	nop
+K    7444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7445:   0x80000030	0x00000000 	nop
+K    7446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7447:   0x80000030	0x00000000 	nop
+K    7448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7449:   0x80000030	0x00000000 	nop
+K    7450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7451:   0x80000030	0x00000000 	nop
+K    7452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7453:   0x80000030	0x00000000 	nop
+K    7454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7455:   0x80000030	0x00000000 	nop
+K    7456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7457:   0x80000030	0x00000000 	nop
+K    7458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7459:   0x80000030	0x00000000 	nop
+K    7460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7461:   0x80000030	0x00000000 	nop
+K    7462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7463:   0x80000030	0x00000000 	nop
+K    7464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7465:   0x80000030	0x00000000 	nop
+K    7466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7467:   0x80000030	0x00000000 	nop
+K    7468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7469:   0x80000030	0x00000000 	nop
+K    7470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7471:   0x80000030	0x00000000 	nop
+K    7472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7473:   0x80000030	0x00000000 	nop
+K    7474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7475:   0x80000030	0x00000000 	nop
+K    7476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7477:   0x80000030	0x00000000 	nop
+K    7478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7479:   0x80000030	0x00000000 	nop
+K    7480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7481:   0x80000030	0x00000000 	nop
+K    7482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7483:   0x80000030	0x00000000 	nop
+K    7484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7485:   0x80000030	0x00000000 	nop
+K    7486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7487:   0x80000030	0x00000000 	nop
+K    7488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7489:   0x80000030	0x00000000 	nop
+K    7490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7491:   0x80000030	0x00000000 	nop
+K    7492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7493:   0x80000030	0x00000000 	nop
+K    7494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7495:   0x80000030	0x00000000 	nop
+K    7496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7497:   0x80000030	0x00000000 	nop
+K    7498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7499:   0x80000030	0x00000000 	nop
+K    7500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7501:   0x80000030	0x00000000 	nop
+K    7502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7503:   0x80000030	0x00000000 	nop
+K    7504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7505:   0x80000030	0x00000000 	nop
+K    7506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7507:   0x80000030	0x00000000 	nop
+K    7508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7509:   0x80000030	0x00000000 	nop
+K    7510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7511:   0x80000030	0x00000000 	nop
+K    7512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7513:   0x80000030	0x00000000 	nop
+K    7514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7515:   0x80000030	0x00000000 	nop
+K    7516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7517:   0x80000030	0x00000000 	nop
+K    7518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7519:   0x80000030	0x00000000 	nop
+K    7520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7521:   0x80000030	0x00000000 	nop
+K    7522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7523:   0x80000030	0x00000000 	nop
+K    7524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7525:   0x80000030	0x00000000 	nop
+K    7526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7527:   0x80000030	0x00000000 	nop
+K    7528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7529:   0x80000030	0x00000000 	nop
+K    7530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7531:   0x80000030	0x00000000 	nop
+K    7532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7533:   0x80000030	0x00000000 	nop
+K    7534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7535:   0x80000030	0x00000000 	nop
+K    7536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7537:   0x80000030	0x00000000 	nop
+K    7538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7539:   0x80000030	0x00000000 	nop
+K    7540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7541:   0x80000030	0x00000000 	nop
+K    7542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7543:   0x80000030	0x00000000 	nop
+K    7544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7545:   0x80000030	0x00000000 	nop
+K    7546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7547:   0x80000030	0x00000000 	nop
+K    7548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7549:   0x80000030	0x00000000 	nop
+K    7550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7551:   0x80000030	0x00000000 	nop
+K    7552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7553:   0x80000030	0x00000000 	nop
+K    7554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7555:   0x80000030	0x00000000 	nop
+K    7556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7557:   0x80000030	0x00000000 	nop
+K    7558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7559:   0x80000030	0x00000000 	nop
+K    7560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7561:   0x80000030	0x00000000 	nop
+K    7562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7563:   0x80000030	0x00000000 	nop
+K    7564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7565:   0x80000030	0x00000000 	nop
+K    7566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7567:   0x80000030	0x00000000 	nop
+K    7568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7569:   0x80000030	0x00000000 	nop
+K    7570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7571:   0x80000030	0x00000000 	nop
+K    7572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7573:   0x80000030	0x00000000 	nop
+K    7574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7575:   0x80000030	0x00000000 	nop
+K    7576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7577:   0x80000030	0x00000000 	nop
+K    7578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7579:   0x80000030	0x00000000 	nop
+K    7580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7581:   0x80000030	0x00000000 	nop
+K    7582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7583:   0x80000030	0x00000000 	nop
+K    7584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7585:   0x80000030	0x00000000 	nop
+K    7586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7587:   0x80000030	0x00000000 	nop
+K    7588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7589:   0x80000030	0x00000000 	nop
+K    7590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7591:   0x80000030	0x00000000 	nop
+K    7592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7593:   0x80000030	0x00000000 	nop
+K    7594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7595:   0x80000030	0x00000000 	nop
+K    7596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7597:   0x80000030	0x00000000 	nop
+K    7598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7599:   0x80000030	0x00000000 	nop
+K    7600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7601:   0x80000030	0x00000000 	nop
+K    7602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7603:   0x80000030	0x00000000 	nop
+K    7604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7605:   0x80000030	0x00000000 	nop
+K    7606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7607:   0x80000030	0x00000000 	nop
+K    7608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7609:   0x80000030	0x00000000 	nop
+K    7610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7611:   0x80000030	0x00000000 	nop
+K    7612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7613:   0x80000030	0x00000000 	nop
+K    7614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7615:   0x80000030	0x00000000 	nop
+K    7616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7617:   0x80000030	0x00000000 	nop
+K    7618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7619:   0x80000030	0x00000000 	nop
+K    7620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7621:   0x80000030	0x00000000 	nop
+K    7622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7623:   0x80000030	0x00000000 	nop
+K    7624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7625:   0x80000030	0x00000000 	nop
+K    7626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7627:   0x80000030	0x00000000 	nop
+K    7628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7629:   0x80000030	0x00000000 	nop
+K    7630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7631:   0x80000030	0x00000000 	nop
+K    7632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7633:   0x80000030	0x00000000 	nop
+K    7634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7635:   0x80000030	0x00000000 	nop
+K    7636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7637:   0x80000030	0x00000000 	nop
+K    7638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7639:   0x80000030	0x00000000 	nop
+K    7640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7641:   0x80000030	0x00000000 	nop
+K    7642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7643:   0x80000030	0x00000000 	nop
+K    7644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7645:   0x80000030	0x00000000 	nop
+K    7646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7647:   0x80000030	0x00000000 	nop
+K    7648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7649:   0x80000030	0x00000000 	nop
+K    7650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7651:   0x80000030	0x00000000 	nop
+K    7652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7653:   0x80000030	0x00000000 	nop
+K    7654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7655:   0x80000030	0x00000000 	nop
+K    7656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7657:   0x80000030	0x00000000 	nop
+K    7658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7659:   0x80000030	0x00000000 	nop
+K    7660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7661:   0x80000030	0x00000000 	nop
+K    7662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7663:   0x80000030	0x00000000 	nop
+K    7664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7665:   0x80000030	0x00000000 	nop
+K    7666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7667:   0x80000030	0x00000000 	nop
+K    7668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7669:   0x80000030	0x00000000 	nop
+K    7670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7671:   0x80000030	0x00000000 	nop
+K    7672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7673:   0x80000030	0x00000000 	nop
+K    7674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7675:   0x80000030	0x00000000 	nop
+K    7676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7677:   0x80000030	0x00000000 	nop
+K    7678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7679:   0x80000030	0x00000000 	nop
+K    7680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7681:   0x80000030	0x00000000 	nop
+K    7682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7683:   0x80000030	0x00000000 	nop
+K    7684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7685:   0x80000030	0x00000000 	nop
+K    7686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7687:   0x80000030	0x00000000 	nop
+K    7688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7689:   0x80000030	0x00000000 	nop
+K    7690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7691:   0x80000030	0x00000000 	nop
+K    7692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7693:   0x80000030	0x00000000 	nop
+K    7694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7695:   0x80000030	0x00000000 	nop
+K    7696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7697:   0x80000030	0x00000000 	nop
+K    7698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7699:   0x80000030	0x00000000 	nop
+K    7700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7701:   0x80000030	0x00000000 	nop
+K    7702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7703:   0x80000030	0x00000000 	nop
+K    7704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7705:   0x80000030	0x00000000 	nop
+K    7706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7707:   0x80000030	0x00000000 	nop
+K    7708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7709:   0x80000030	0x00000000 	nop
+K    7710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7711:   0x80000030	0x00000000 	nop
+K    7712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7713:   0x80000030	0x00000000 	nop
+K    7714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7715:   0x80000030	0x00000000 	nop
+K    7716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7717:   0x80000030	0x00000000 	nop
+K    7718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7719:   0x80000030	0x00000000 	nop
+K    7720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7721:   0x80000030	0x00000000 	nop
+K    7722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7723:   0x80000030	0x00000000 	nop
+K    7724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7725:   0x80000030	0x00000000 	nop
+K    7726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7727:   0x80000030	0x00000000 	nop
+K    7728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7729:   0x80000030	0x00000000 	nop
+K    7730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7731:   0x80000030	0x00000000 	nop
+K    7732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7733:   0x80000030	0x00000000 	nop
+K    7734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7735:   0x80000030	0x00000000 	nop
+K    7736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7737:   0x80000030	0x00000000 	nop
+K    7738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7739:   0x80000030	0x00000000 	nop
+K    7740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7741:   0x80000030	0x00000000 	nop
+K    7742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7743:   0x80000030	0x00000000 	nop
+K    7744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7745:   0x80000030	0x00000000 	nop
+K    7746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7747:   0x80000030	0x00000000 	nop
+K    7748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7749:   0x80000030	0x00000000 	nop
+K    7750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7751:   0x80000030	0x00000000 	nop
+K    7752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7753:   0x80000030	0x00000000 	nop
+K    7754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7755:   0x80000030	0x00000000 	nop
+K    7756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7757:   0x80000030	0x00000000 	nop
+K    7758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7759:   0x80000030	0x00000000 	nop
+K    7760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7761:   0x80000030	0x00000000 	nop
+K    7762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7763:   0x80000030	0x00000000 	nop
+K    7764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7765:   0x80000030	0x00000000 	nop
+K    7766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7767:   0x80000030	0x00000000 	nop
+K    7768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7769:   0x80000030	0x00000000 	nop
+K    7770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7771:   0x80000030	0x00000000 	nop
+K    7772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7773:   0x80000030	0x00000000 	nop
+K    7774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7775:   0x80000030	0x00000000 	nop
+K    7776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7777:   0x80000030	0x00000000 	nop
+K    7778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7779:   0x80000030	0x00000000 	nop
+K    7780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7781:   0x80000030	0x00000000 	nop
+K    7782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7783:   0x80000030	0x00000000 	nop
+K    7784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7785:   0x80000030	0x00000000 	nop
+K    7786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7787:   0x80000030	0x00000000 	nop
+K    7788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7789:   0x80000030	0x00000000 	nop
+K    7790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7791:   0x80000030	0x00000000 	nop
+K    7792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7793:   0x80000030	0x00000000 	nop
+K    7794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7795:   0x80000030	0x00000000 	nop
+K    7796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7797:   0x80000030	0x00000000 	nop
+K    7798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7799:   0x80000030	0x00000000 	nop
+K    7800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7801:   0x80000030	0x00000000 	nop
+K    7802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7803:   0x80000030	0x00000000 	nop
+K    7804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7805:   0x80000030	0x00000000 	nop
+K    7806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7807:   0x80000030	0x00000000 	nop
+K    7808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7809:   0x80000030	0x00000000 	nop
+K    7810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7811:   0x80000030	0x00000000 	nop
+K    7812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7813:   0x80000030	0x00000000 	nop
+K    7814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7815:   0x80000030	0x00000000 	nop
+K    7816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7817:   0x80000030	0x00000000 	nop
+K    7818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7819:   0x80000030	0x00000000 	nop
+K    7820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7821:   0x80000030	0x00000000 	nop
+K    7822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7823:   0x80000030	0x00000000 	nop
+K    7824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7825:   0x80000030	0x00000000 	nop
+K    7826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7827:   0x80000030	0x00000000 	nop
+K    7828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7829:   0x80000030	0x00000000 	nop
+K    7830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7831:   0x80000030	0x00000000 	nop
+K    7832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7833:   0x80000030	0x00000000 	nop
+K    7834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7835:   0x80000030	0x00000000 	nop
+K    7836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7837:   0x80000030	0x00000000 	nop
+K    7838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7839:   0x80000030	0x00000000 	nop
+K    7840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7841:   0x80000030	0x00000000 	nop
+K    7842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7843:   0x80000030	0x00000000 	nop
+K    7844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7845:   0x80000030	0x00000000 	nop
+K    7846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7847:   0x80000030	0x00000000 	nop
+K    7848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7849:   0x80000030	0x00000000 	nop
+K    7850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7851:   0x80000030	0x00000000 	nop
+K    7852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7853:   0x80000030	0x00000000 	nop
+K    7854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7855:   0x80000030	0x00000000 	nop
+K    7856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7857:   0x80000030	0x00000000 	nop
+K    7858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7859:   0x80000030	0x00000000 	nop
+K    7860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7861:   0x80000030	0x00000000 	nop
+K    7862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7863:   0x80000030	0x00000000 	nop
+K    7864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7865:   0x80000030	0x00000000 	nop
+K    7866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7867:   0x80000030	0x00000000 	nop
+K    7868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7869:   0x80000030	0x00000000 	nop
+K    7870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7871:   0x80000030	0x00000000 	nop
+K    7872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7873:   0x80000030	0x00000000 	nop
+K    7874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7875:   0x80000030	0x00000000 	nop
+K    7876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7877:   0x80000030	0x00000000 	nop
+K    7878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7879:   0x80000030	0x00000000 	nop
+K    7880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7881:   0x80000030	0x00000000 	nop
+K    7882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7883:   0x80000030	0x00000000 	nop
+K    7884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7885:   0x80000030	0x00000000 	nop
+K    7886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7887:   0x80000030	0x00000000 	nop
+K    7888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7889:   0x80000030	0x00000000 	nop
+K    7890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7891:   0x80000030	0x00000000 	nop
+K    7892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7893:   0x80000030	0x00000000 	nop
+K    7894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7895:   0x80000030	0x00000000 	nop
+K    7896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7897:   0x80000030	0x00000000 	nop
+K    7898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7899:   0x80000030	0x00000000 	nop
+K    7900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7901:   0x80000030	0x00000000 	nop
+K    7902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7903:   0x80000030	0x00000000 	nop
+K    7904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7905:   0x80000030	0x00000000 	nop
+K    7906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7907:   0x80000030	0x00000000 	nop
+K    7908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7909:   0x80000030	0x00000000 	nop
+K    7910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7911:   0x80000030	0x00000000 	nop
+K    7912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7913:   0x80000030	0x00000000 	nop
+K    7914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7915:   0x80000030	0x00000000 	nop
+K    7916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7917:   0x80000030	0x00000000 	nop
+K    7918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7919:   0x80000030	0x00000000 	nop
+K    7920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7921:   0x80000030	0x00000000 	nop
+K    7922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7923:   0x80000030	0x00000000 	nop
+K    7924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7925:   0x80000030	0x00000000 	nop
+K    7926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7927:   0x80000030	0x00000000 	nop
+K    7928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7929:   0x80000030	0x00000000 	nop
+K    7930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7931:   0x80000030	0x00000000 	nop
+K    7932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7933:   0x80000030	0x00000000 	nop
+K    7934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7935:   0x80000030	0x00000000 	nop
+K    7936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7937:   0x80000030	0x00000000 	nop
+K    7938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7939:   0x80000030	0x00000000 	nop
+K    7940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7941:   0x80000030	0x00000000 	nop
+K    7942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7943:   0x80000030	0x00000000 	nop
+K    7944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7945:   0x80000030	0x00000000 	nop
+K    7946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7947:   0x80000030	0x00000000 	nop
+K    7948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7949:   0x80000030	0x00000000 	nop
+K    7950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7951:   0x80000030	0x00000000 	nop
+K    7952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7953:   0x80000030	0x00000000 	nop
+K    7954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7955:   0x80000030	0x00000000 	nop
+K    7956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7957:   0x80000030	0x00000000 	nop
+K    7958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7959:   0x80000030	0x00000000 	nop
+K    7960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7961:   0x80000030	0x00000000 	nop
+K    7962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7963:   0x80000030	0x00000000 	nop
+K    7964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7965:   0x80000030	0x00000000 	nop
+K    7966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7967:   0x80000030	0x00000000 	nop
+K    7968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7969:   0x80000030	0x00000000 	nop
+K    7970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7971:   0x80000030	0x00000000 	nop
+K    7972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7973:   0x80000030	0x00000000 	nop
+K    7974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7975:   0x80000030	0x00000000 	nop
+K    7976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7977:   0x80000030	0x00000000 	nop
+K    7978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7979:   0x80000030	0x00000000 	nop
+K    7980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7981:   0x80000030	0x00000000 	nop
+K    7982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7983:   0x80000030	0x00000000 	nop
+K    7984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7985:   0x80000030	0x00000000 	nop
+K    7986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7987:   0x80000030	0x00000000 	nop
+K    7988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7989:   0x80000030	0x00000000 	nop
+K    7990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7991:   0x80000030	0x00000000 	nop
+K    7992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7993:   0x80000030	0x00000000 	nop
+K    7994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7995:   0x80000030	0x00000000 	nop
+K    7996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7997:   0x80000030	0x00000000 	nop
+K    7998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    7999:   0x80000030	0x00000000 	nop
+K    8000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8001:   0x80000030	0x00000000 	nop
+K    8002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8003:   0x80000030	0x00000000 	nop
+K    8004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8005:   0x80000030	0x00000000 	nop
+K    8006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8007:   0x80000030	0x00000000 	nop
+K    8008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8009:   0x80000030	0x00000000 	nop
+K    8010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8011:   0x80000030	0x00000000 	nop
+K    8012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8013:   0x80000030	0x00000000 	nop
+K    8014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8015:   0x80000030	0x00000000 	nop
+K    8016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8017:   0x80000030	0x00000000 	nop
+K    8018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8019:   0x80000030	0x00000000 	nop
+K    8020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8021:   0x80000030	0x00000000 	nop
+K    8022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8023:   0x80000030	0x00000000 	nop
+K    8024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8025:   0x80000030	0x00000000 	nop
+K    8026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8027:   0x80000030	0x00000000 	nop
+K    8028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8029:   0x80000030	0x00000000 	nop
+K    8030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8031:   0x80000030	0x00000000 	nop
+K    8032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8033:   0x80000030	0x00000000 	nop
+K    8034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8035:   0x80000030	0x00000000 	nop
+K    8036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8037:   0x80000030	0x00000000 	nop
+K    8038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8039:   0x80000030	0x00000000 	nop
+K    8040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8041:   0x80000030	0x00000000 	nop
+K    8042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8043:   0x80000030	0x00000000 	nop
+K    8044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8045:   0x80000030	0x00000000 	nop
+K    8046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8047:   0x80000030	0x00000000 	nop
+K    8048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8049:   0x80000030	0x00000000 	nop
+K    8050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8051:   0x80000030	0x00000000 	nop
+K    8052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8053:   0x80000030	0x00000000 	nop
+K    8054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8055:   0x80000030	0x00000000 	nop
+K    8056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8057:   0x80000030	0x00000000 	nop
+K    8058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8059:   0x80000030	0x00000000 	nop
+K    8060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8061:   0x80000030	0x00000000 	nop
+K    8062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8063:   0x80000030	0x00000000 	nop
+K    8064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8065:   0x80000030	0x00000000 	nop
+K    8066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8067:   0x80000030	0x00000000 	nop
+K    8068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8069:   0x80000030	0x00000000 	nop
+K    8070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8071:   0x80000030	0x00000000 	nop
+K    8072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8073:   0x80000030	0x00000000 	nop
+K    8074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8075:   0x80000030	0x00000000 	nop
+K    8076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8077:   0x80000030	0x00000000 	nop
+K    8078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8079:   0x80000030	0x00000000 	nop
+K    8080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8081:   0x80000030	0x00000000 	nop
+K    8082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8083:   0x80000030	0x00000000 	nop
+K    8084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8085:   0x80000030	0x00000000 	nop
+K    8086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8087:   0x80000030	0x00000000 	nop
+K    8088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8089:   0x80000030	0x00000000 	nop
+K    8090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8091:   0x80000030	0x00000000 	nop
+K    8092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8093:   0x80000030	0x00000000 	nop
+K    8094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8095:   0x80000030	0x00000000 	nop
+K    8096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8097:   0x80000030	0x00000000 	nop
+K    8098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8099:   0x80000030	0x00000000 	nop
+K    8100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8101:   0x80000030	0x00000000 	nop
+K    8102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8103:   0x80000030	0x00000000 	nop
+K    8104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8105:   0x80000030	0x00000000 	nop
+K    8106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8107:   0x80000030	0x00000000 	nop
+K    8108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8109:   0x80000030	0x00000000 	nop
+K    8110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8111:   0x80000030	0x00000000 	nop
+K    8112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8113:   0x80000030	0x00000000 	nop
+K    8114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8115:   0x80000030	0x00000000 	nop
+K    8116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8117:   0x80000030	0x00000000 	nop
+K    8118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8119:   0x80000030	0x00000000 	nop
+K    8120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8121:   0x80000030	0x00000000 	nop
+K    8122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8123:   0x80000030	0x00000000 	nop
+K    8124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8125:   0x80000030	0x00000000 	nop
+K    8126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8127:   0x80000030	0x00000000 	nop
+K    8128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8129:   0x80000030	0x00000000 	nop
+K    8130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8131:   0x80000030	0x00000000 	nop
+K    8132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8133:   0x80000030	0x00000000 	nop
+K    8134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8135:   0x80000030	0x00000000 	nop
+K    8136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8137:   0x80000030	0x00000000 	nop
+K    8138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8139:   0x80000030	0x00000000 	nop
+K    8140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8141:   0x80000030	0x00000000 	nop
+K    8142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8143:   0x80000030	0x00000000 	nop
+K    8144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8145:   0x80000030	0x00000000 	nop
+K    8146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8147:   0x80000030	0x00000000 	nop
+K    8148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8149:   0x80000030	0x00000000 	nop
+K    8150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8151:   0x80000030	0x00000000 	nop
+K    8152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8153:   0x80000030	0x00000000 	nop
+K    8154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8155:   0x80000030	0x00000000 	nop
+K    8156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8157:   0x80000030	0x00000000 	nop
+K    8158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8159:   0x80000030	0x00000000 	nop
+K    8160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8161:   0x80000030	0x00000000 	nop
+K    8162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8163:   0x80000030	0x00000000 	nop
+K    8164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8165:   0x80000030	0x00000000 	nop
+K    8166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8167:   0x80000030	0x00000000 	nop
+K    8168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8169:   0x80000030	0x00000000 	nop
+K    8170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8171:   0x80000030	0x00000000 	nop
+K    8172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8173:   0x80000030	0x00000000 	nop
+K    8174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8175:   0x80000030	0x00000000 	nop
+K    8176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8177:   0x80000030	0x00000000 	nop
+K    8178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8179:   0x80000030	0x00000000 	nop
+K    8180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8181:   0x80000030	0x00000000 	nop
+K    8182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8183:   0x80000030	0x00000000 	nop
+K    8184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8185:   0x80000030	0x00000000 	nop
+K    8186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8187:   0x80000030	0x00000000 	nop
+K    8188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8189:   0x80000030	0x00000000 	nop
+K    8190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8191:   0x80000030	0x00000000 	nop
+K    8192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8193:   0x80000030	0x00000000 	nop
+K    8194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8195:   0x80000030	0x00000000 	nop
+K    8196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8197:   0x80000030	0x00000000 	nop
+K    8198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8199:   0x80000030	0x00000000 	nop
+K    8200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8201:   0x80000030	0x00000000 	nop
+K    8202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8203:   0x80000030	0x00000000 	nop
+K    8204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8205:   0x80000030	0x00000000 	nop
+K    8206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8207:   0x80000030	0x00000000 	nop
+K    8208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8209:   0x80000030	0x00000000 	nop
+K    8210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8211:   0x80000030	0x00000000 	nop
+K    8212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8213:   0x80000030	0x00000000 	nop
+K    8214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8215:   0x80000030	0x00000000 	nop
+K    8216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8217:   0x80000030	0x00000000 	nop
+K    8218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8219:   0x80000030	0x00000000 	nop
+K    8220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8221:   0x80000030	0x00000000 	nop
+K    8222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8223:   0x80000030	0x00000000 	nop
+K    8224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8225:   0x80000030	0x00000000 	nop
+K    8226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8227:   0x80000030	0x00000000 	nop
+K    8228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8229:   0x80000030	0x00000000 	nop
+K    8230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8231:   0x80000030	0x00000000 	nop
+K    8232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8233:   0x80000030	0x00000000 	nop
+K    8234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8235:   0x80000030	0x00000000 	nop
+K    8236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8237:   0x80000030	0x00000000 	nop
+K    8238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8239:   0x80000030	0x00000000 	nop
+K    8240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8241:   0x80000030	0x00000000 	nop
+K    8242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8243:   0x80000030	0x00000000 	nop
+K    8244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8245:   0x80000030	0x00000000 	nop
+K    8246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8247:   0x80000030	0x00000000 	nop
+K    8248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8249:   0x80000030	0x00000000 	nop
+K    8250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8251:   0x80000030	0x00000000 	nop
+K    8252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8253:   0x80000030	0x00000000 	nop
+K    8254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8255:   0x80000030	0x00000000 	nop
+K    8256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8257:   0x80000030	0x00000000 	nop
+K    8258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8259:   0x80000030	0x00000000 	nop
+K    8260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8261:   0x80000030	0x00000000 	nop
+K    8262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8263:   0x80000030	0x00000000 	nop
+K    8264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8265:   0x80000030	0x00000000 	nop
+K    8266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8267:   0x80000030	0x00000000 	nop
+K    8268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8269:   0x80000030	0x00000000 	nop
+K    8270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8271:   0x80000030	0x00000000 	nop
+K    8272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8273:   0x80000030	0x00000000 	nop
+K    8274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8275:   0x80000030	0x00000000 	nop
+K    8276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8277:   0x80000030	0x00000000 	nop
+K    8278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8279:   0x80000030	0x00000000 	nop
+K    8280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8281:   0x80000030	0x00000000 	nop
+K    8282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8283:   0x80000030	0x00000000 	nop
+K    8284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8285:   0x80000030	0x00000000 	nop
+K    8286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8287:   0x80000030	0x00000000 	nop
+K    8288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8289:   0x80000030	0x00000000 	nop
+K    8290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8291:   0x80000030	0x00000000 	nop
+K    8292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8293:   0x80000030	0x00000000 	nop
+K    8294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8295:   0x80000030	0x00000000 	nop
+K    8296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8297:   0x80000030	0x00000000 	nop
+K    8298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8299:   0x80000030	0x00000000 	nop
+K    8300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8301:   0x80000030	0x00000000 	nop
+K    8302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8303:   0x80000030	0x00000000 	nop
+K    8304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8305:   0x80000030	0x00000000 	nop
+K    8306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8307:   0x80000030	0x00000000 	nop
+K    8308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8309:   0x80000030	0x00000000 	nop
+K    8310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8311:   0x80000030	0x00000000 	nop
+K    8312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8313:   0x80000030	0x00000000 	nop
+K    8314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8315:   0x80000030	0x00000000 	nop
+K    8316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8317:   0x80000030	0x00000000 	nop
+K    8318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8319:   0x80000030	0x00000000 	nop
+K    8320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8321:   0x80000030	0x00000000 	nop
+K    8322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8323:   0x80000030	0x00000000 	nop
+K    8324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8325:   0x80000030	0x00000000 	nop
+K    8326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8327:   0x80000030	0x00000000 	nop
+K    8328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8329:   0x80000030	0x00000000 	nop
+K    8330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8331:   0x80000030	0x00000000 	nop
+K    8332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8333:   0x80000030	0x00000000 	nop
+K    8334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8335:   0x80000030	0x00000000 	nop
+K    8336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8337:   0x80000030	0x00000000 	nop
+K    8338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8339:   0x80000030	0x00000000 	nop
+K    8340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8341:   0x80000030	0x00000000 	nop
+K    8342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8343:   0x80000030	0x00000000 	nop
+K    8344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8345:   0x80000030	0x00000000 	nop
+K    8346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8347:   0x80000030	0x00000000 	nop
+K    8348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8349:   0x80000030	0x00000000 	nop
+K    8350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8351:   0x80000030	0x00000000 	nop
+K    8352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8353:   0x80000030	0x00000000 	nop
+K    8354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8355:   0x80000030	0x00000000 	nop
+K    8356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8357:   0x80000030	0x00000000 	nop
+K    8358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8359:   0x80000030	0x00000000 	nop
+K    8360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8361:   0x80000030	0x00000000 	nop
+K    8362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8363:   0x80000030	0x00000000 	nop
+K    8364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8365:   0x80000030	0x00000000 	nop
+K    8366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8367:   0x80000030	0x00000000 	nop
+K    8368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8369:   0x80000030	0x00000000 	nop
+K    8370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8371:   0x80000030	0x00000000 	nop
+K    8372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8373:   0x80000030	0x00000000 	nop
+K    8374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8375:   0x80000030	0x00000000 	nop
+K    8376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8377:   0x80000030	0x00000000 	nop
+K    8378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8379:   0x80000030	0x00000000 	nop
+K    8380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8381:   0x80000030	0x00000000 	nop
+K    8382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8383:   0x80000030	0x00000000 	nop
+K    8384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8385:   0x80000030	0x00000000 	nop
+K    8386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8387:   0x80000030	0x00000000 	nop
+K    8388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8389:   0x80000030	0x00000000 	nop
+K    8390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8391:   0x80000030	0x00000000 	nop
+K    8392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8393:   0x80000030	0x00000000 	nop
+K    8394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8395:   0x80000030	0x00000000 	nop
+K    8396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8397:   0x80000030	0x00000000 	nop
+K    8398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8399:   0x80000030	0x00000000 	nop
+K    8400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8401:   0x80000030	0x00000000 	nop
+K    8402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8403:   0x80000030	0x00000000 	nop
+K    8404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8405:   0x80000030	0x00000000 	nop
+K    8406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8407:   0x80000030	0x00000000 	nop
+K    8408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8409:   0x80000030	0x00000000 	nop
+K    8410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8411:   0x80000030	0x00000000 	nop
+K    8412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8413:   0x80000030	0x00000000 	nop
+K    8414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8415:   0x80000030	0x00000000 	nop
+K    8416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8417:   0x80000030	0x00000000 	nop
+K    8418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8419:   0x80000030	0x00000000 	nop
+K    8420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8421:   0x80000030	0x00000000 	nop
+K    8422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8423:   0x80000030	0x00000000 	nop
+K    8424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8425:   0x80000030	0x00000000 	nop
+K    8426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8427:   0x80000030	0x00000000 	nop
+K    8428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8429:   0x80000030	0x00000000 	nop
+K    8430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8431:   0x80000030	0x00000000 	nop
+K    8432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8433:   0x80000030	0x00000000 	nop
+K    8434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8435:   0x80000030	0x00000000 	nop
+K    8436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8437:   0x80000030	0x00000000 	nop
+K    8438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8439:   0x80000030	0x00000000 	nop
+K    8440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8441:   0x80000030	0x00000000 	nop
+K    8442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8443:   0x80000030	0x00000000 	nop
+K    8444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8445:   0x80000030	0x00000000 	nop
+K    8446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8447:   0x80000030	0x00000000 	nop
+K    8448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8449:   0x80000030	0x00000000 	nop
+K    8450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8451:   0x80000030	0x00000000 	nop
+K    8452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8453:   0x80000030	0x00000000 	nop
+K    8454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8455:   0x80000030	0x00000000 	nop
+K    8456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8457:   0x80000030	0x00000000 	nop
+K    8458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8459:   0x80000030	0x00000000 	nop
+K    8460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8461:   0x80000030	0x00000000 	nop
+K    8462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8463:   0x80000030	0x00000000 	nop
+K    8464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8465:   0x80000030	0x00000000 	nop
+K    8466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8467:   0x80000030	0x00000000 	nop
+K    8468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8469:   0x80000030	0x00000000 	nop
+K    8470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8471:   0x80000030	0x00000000 	nop
+K    8472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8473:   0x80000030	0x00000000 	nop
+K    8474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8475:   0x80000030	0x00000000 	nop
+K    8476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8477:   0x80000030	0x00000000 	nop
+K    8478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8479:   0x80000030	0x00000000 	nop
+K    8480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8481:   0x80000030	0x00000000 	nop
+K    8482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8483:   0x80000030	0x00000000 	nop
+K    8484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8485:   0x80000030	0x00000000 	nop
+K    8486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8487:   0x80000030	0x00000000 	nop
+K    8488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8489:   0x80000030	0x00000000 	nop
+K    8490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8491:   0x80000030	0x00000000 	nop
+K    8492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8493:   0x80000030	0x00000000 	nop
+K    8494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8495:   0x80000030	0x00000000 	nop
+K    8496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8497:   0x80000030	0x00000000 	nop
+K    8498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8499:   0x80000030	0x00000000 	nop
+K    8500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8501:   0x80000030	0x00000000 	nop
+K    8502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8503:   0x80000030	0x00000000 	nop
+K    8504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8505:   0x80000030	0x00000000 	nop
+K    8506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8507:   0x80000030	0x00000000 	nop
+K    8508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8509:   0x80000030	0x00000000 	nop
+K    8510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8511:   0x80000030	0x00000000 	nop
+K    8512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8513:   0x80000030	0x00000000 	nop
+K    8514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8515:   0x80000030	0x00000000 	nop
+K    8516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8517:   0x80000030	0x00000000 	nop
+K    8518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8519:   0x80000030	0x00000000 	nop
+K    8520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8521:   0x80000030	0x00000000 	nop
+K    8522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8523:   0x80000030	0x00000000 	nop
+K    8524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8525:   0x80000030	0x00000000 	nop
+K    8526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8527:   0x80000030	0x00000000 	nop
+K    8528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8529:   0x80000030	0x00000000 	nop
+K    8530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8531:   0x80000030	0x00000000 	nop
+K    8532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8533:   0x80000030	0x00000000 	nop
+K    8534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8535:   0x80000030	0x00000000 	nop
+K    8536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8537:   0x80000030	0x00000000 	nop
+K    8538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8539:   0x80000030	0x00000000 	nop
+K    8540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8541:   0x80000030	0x00000000 	nop
+K    8542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8543:   0x80000030	0x00000000 	nop
+K    8544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8545:   0x80000030	0x00000000 	nop
+K    8546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8547:   0x80000030	0x00000000 	nop
+K    8548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8549:   0x80000030	0x00000000 	nop
+K    8550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8551:   0x80000030	0x00000000 	nop
+K    8552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8553:   0x80000030	0x00000000 	nop
+K    8554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8555:   0x80000030	0x00000000 	nop
+K    8556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8557:   0x80000030	0x00000000 	nop
+K    8558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8559:   0x80000030	0x00000000 	nop
+K    8560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8561:   0x80000030	0x00000000 	nop
+K    8562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8563:   0x80000030	0x00000000 	nop
+K    8564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8565:   0x80000030	0x00000000 	nop
+K    8566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8567:   0x80000030	0x00000000 	nop
+K    8568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8569:   0x80000030	0x00000000 	nop
+K    8570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8571:   0x80000030	0x00000000 	nop
+K    8572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8573:   0x80000030	0x00000000 	nop
+K    8574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8575:   0x80000030	0x00000000 	nop
+K    8576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8577:   0x80000030	0x00000000 	nop
+K    8578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8579:   0x80000030	0x00000000 	nop
+K    8580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8581:   0x80000030	0x00000000 	nop
+K    8582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8583:   0x80000030	0x00000000 	nop
+K    8584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8585:   0x80000030	0x00000000 	nop
+K    8586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8587:   0x80000030	0x00000000 	nop
+K    8588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8589:   0x80000030	0x00000000 	nop
+K    8590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8591:   0x80000030	0x00000000 	nop
+K    8592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8593:   0x80000030	0x00000000 	nop
+K    8594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8595:   0x80000030	0x00000000 	nop
+K    8596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8597:   0x80000030	0x00000000 	nop
+K    8598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8599:   0x80000030	0x00000000 	nop
+K    8600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8601:   0x80000030	0x00000000 	nop
+K    8602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8603:   0x80000030	0x00000000 	nop
+K    8604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8605:   0x80000030	0x00000000 	nop
+K    8606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8607:   0x80000030	0x00000000 	nop
+K    8608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8609:   0x80000030	0x00000000 	nop
+K    8610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8611:   0x80000030	0x00000000 	nop
+K    8612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8613:   0x80000030	0x00000000 	nop
+K    8614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8615:   0x80000030	0x00000000 	nop
+K    8616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8617:   0x80000030	0x00000000 	nop
+K    8618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8619:   0x80000030	0x00000000 	nop
+K    8620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8621:   0x80000030	0x00000000 	nop
+K    8622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8623:   0x80000030	0x00000000 	nop
+K    8624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8625:   0x80000030	0x00000000 	nop
+K    8626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8627:   0x80000030	0x00000000 	nop
+K    8628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8629:   0x80000030	0x00000000 	nop
+K    8630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8631:   0x80000030	0x00000000 	nop
+K    8632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8633:   0x80000030	0x00000000 	nop
+K    8634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8635:   0x80000030	0x00000000 	nop
+K    8636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8637:   0x80000030	0x00000000 	nop
+K    8638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8639:   0x80000030	0x00000000 	nop
+K    8640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8641:   0x80000030	0x00000000 	nop
+K    8642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8643:   0x80000030	0x00000000 	nop
+K    8644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8645:   0x80000030	0x00000000 	nop
+K    8646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8647:   0x80000030	0x00000000 	nop
+K    8648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8649:   0x80000030	0x00000000 	nop
+K    8650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8651:   0x80000030	0x00000000 	nop
+K    8652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8653:   0x80000030	0x00000000 	nop
+K    8654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8655:   0x80000030	0x00000000 	nop
+K    8656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8657:   0x80000030	0x00000000 	nop
+K    8658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8659:   0x80000030	0x00000000 	nop
+K    8660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8661:   0x80000030	0x00000000 	nop
+K    8662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8663:   0x80000030	0x00000000 	nop
+K    8664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8665:   0x80000030	0x00000000 	nop
+K    8666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8667:   0x80000030	0x00000000 	nop
+K    8668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8669:   0x80000030	0x00000000 	nop
+K    8670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8671:   0x80000030	0x00000000 	nop
+K    8672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8673:   0x80000030	0x00000000 	nop
+K    8674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8675:   0x80000030	0x00000000 	nop
+K    8676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8677:   0x80000030	0x00000000 	nop
+K    8678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8679:   0x80000030	0x00000000 	nop
+K    8680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8681:   0x80000030	0x00000000 	nop
+K    8682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8683:   0x80000030	0x00000000 	nop
+K    8684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8685:   0x80000030	0x00000000 	nop
+K    8686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8687:   0x80000030	0x00000000 	nop
+K    8688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8689:   0x80000030	0x00000000 	nop
+K    8690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8691:   0x80000030	0x00000000 	nop
+K    8692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8693:   0x80000030	0x00000000 	nop
+K    8694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8695:   0x80000030	0x00000000 	nop
+K    8696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8697:   0x80000030	0x00000000 	nop
+K    8698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8699:   0x80000030	0x00000000 	nop
+K    8700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8701:   0x80000030	0x00000000 	nop
+K    8702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8703:   0x80000030	0x00000000 	nop
+K    8704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8705:   0x80000030	0x00000000 	nop
+K    8706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8707:   0x80000030	0x00000000 	nop
+K    8708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8709:   0x80000030	0x00000000 	nop
+K    8710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8711:   0x80000030	0x00000000 	nop
+K    8712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8713:   0x80000030	0x00000000 	nop
+K    8714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8715:   0x80000030	0x00000000 	nop
+K    8716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8717:   0x80000030	0x00000000 	nop
+K    8718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8719:   0x80000030	0x00000000 	nop
+K    8720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8721:   0x80000030	0x00000000 	nop
+K    8722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8723:   0x80000030	0x00000000 	nop
+K    8724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8725:   0x80000030	0x00000000 	nop
+K    8726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8727:   0x80000030	0x00000000 	nop
+K    8728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8729:   0x80000030	0x00000000 	nop
+K    8730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8731:   0x80000030	0x00000000 	nop
+K    8732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8733:   0x80000030	0x00000000 	nop
+K    8734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8735:   0x80000030	0x00000000 	nop
+K    8736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8737:   0x80000030	0x00000000 	nop
+K    8738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8739:   0x80000030	0x00000000 	nop
+K    8740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8741:   0x80000030	0x00000000 	nop
+K    8742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8743:   0x80000030	0x00000000 	nop
+K    8744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8745:   0x80000030	0x00000000 	nop
+K    8746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8747:   0x80000030	0x00000000 	nop
+K    8748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8749:   0x80000030	0x00000000 	nop
+K    8750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8751:   0x80000030	0x00000000 	nop
+K    8752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8753:   0x80000030	0x00000000 	nop
+K    8754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8755:   0x80000030	0x00000000 	nop
+K    8756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8757:   0x80000030	0x00000000 	nop
+K    8758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8759:   0x80000030	0x00000000 	nop
+K    8760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8761:   0x80000030	0x00000000 	nop
+K    8762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8763:   0x80000030	0x00000000 	nop
+K    8764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8765:   0x80000030	0x00000000 	nop
+K    8766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8767:   0x80000030	0x00000000 	nop
+K    8768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8769:   0x80000030	0x00000000 	nop
+K    8770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8771:   0x80000030	0x00000000 	nop
+K    8772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8773:   0x80000030	0x00000000 	nop
+K    8774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8775:   0x80000030	0x00000000 	nop
+K    8776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8777:   0x80000030	0x00000000 	nop
+K    8778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8779:   0x80000030	0x00000000 	nop
+K    8780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8781:   0x80000030	0x00000000 	nop
+K    8782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8783:   0x80000030	0x00000000 	nop
+K    8784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8785:   0x80000030	0x00000000 	nop
+K    8786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8787:   0x80000030	0x00000000 	nop
+K    8788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8789:   0x80000030	0x00000000 	nop
+K    8790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8791:   0x80000030	0x00000000 	nop
+K    8792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8793:   0x80000030	0x00000000 	nop
+K    8794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8795:   0x80000030	0x00000000 	nop
+K    8796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8797:   0x80000030	0x00000000 	nop
+K    8798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8799:   0x80000030	0x00000000 	nop
+K    8800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8801:   0x80000030	0x00000000 	nop
+K    8802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8803:   0x80000030	0x00000000 	nop
+K    8804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8805:   0x80000030	0x00000000 	nop
+K    8806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8807:   0x80000030	0x00000000 	nop
+K    8808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8809:   0x80000030	0x00000000 	nop
+K    8810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8811:   0x80000030	0x00000000 	nop
+K    8812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8813:   0x80000030	0x00000000 	nop
+K    8814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8815:   0x80000030	0x00000000 	nop
+K    8816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8817:   0x80000030	0x00000000 	nop
+K    8818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8819:   0x80000030	0x00000000 	nop
+K    8820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8821:   0x80000030	0x00000000 	nop
+K    8822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8823:   0x80000030	0x00000000 	nop
+K    8824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8825:   0x80000030	0x00000000 	nop
+K    8826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8827:   0x80000030	0x00000000 	nop
+K    8828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8829:   0x80000030	0x00000000 	nop
+K    8830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8831:   0x80000030	0x00000000 	nop
+K    8832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8833:   0x80000030	0x00000000 	nop
+K    8834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8835:   0x80000030	0x00000000 	nop
+K    8836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8837:   0x80000030	0x00000000 	nop
+K    8838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8839:   0x80000030	0x00000000 	nop
+K    8840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8841:   0x80000030	0x00000000 	nop
+K    8842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8843:   0x80000030	0x00000000 	nop
+K    8844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8845:   0x80000030	0x00000000 	nop
+K    8846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8847:   0x80000030	0x00000000 	nop
+K    8848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8849:   0x80000030	0x00000000 	nop
+K    8850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8851:   0x80000030	0x00000000 	nop
+K    8852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8853:   0x80000030	0x00000000 	nop
+K    8854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8855:   0x80000030	0x00000000 	nop
+K    8856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8857:   0x80000030	0x00000000 	nop
+K    8858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8859:   0x80000030	0x00000000 	nop
+K    8860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8861:   0x80000030	0x00000000 	nop
+K    8862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8863:   0x80000030	0x00000000 	nop
+K    8864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8865:   0x80000030	0x00000000 	nop
+K    8866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8867:   0x80000030	0x00000000 	nop
+K    8868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8869:   0x80000030	0x00000000 	nop
+K    8870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8871:   0x80000030	0x00000000 	nop
+K    8872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8873:   0x80000030	0x00000000 	nop
+K    8874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8875:   0x80000030	0x00000000 	nop
+K    8876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8877:   0x80000030	0x00000000 	nop
+K    8878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8879:   0x80000030	0x00000000 	nop
+K    8880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8881:   0x80000030	0x00000000 	nop
+K    8882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8883:   0x80000030	0x00000000 	nop
+K    8884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8885:   0x80000030	0x00000000 	nop
+K    8886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8887:   0x80000030	0x00000000 	nop
+K    8888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8889:   0x80000030	0x00000000 	nop
+K    8890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8891:   0x80000030	0x00000000 	nop
+K    8892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8893:   0x80000030	0x00000000 	nop
+K    8894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8895:   0x80000030	0x00000000 	nop
+K    8896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8897:   0x80000030	0x00000000 	nop
+K    8898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8899:   0x80000030	0x00000000 	nop
+K    8900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8901:   0x80000030	0x00000000 	nop
+K    8902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8903:   0x80000030	0x00000000 	nop
+K    8904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8905:   0x80000030	0x00000000 	nop
+K    8906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8907:   0x80000030	0x00000000 	nop
+K    8908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8909:   0x80000030	0x00000000 	nop
+K    8910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8911:   0x80000030	0x00000000 	nop
+K    8912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8913:   0x80000030	0x00000000 	nop
+K    8914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8915:   0x80000030	0x00000000 	nop
+K    8916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8917:   0x80000030	0x00000000 	nop
+K    8918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8919:   0x80000030	0x00000000 	nop
+K    8920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8921:   0x80000030	0x00000000 	nop
+K    8922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8923:   0x80000030	0x00000000 	nop
+K    8924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8925:   0x80000030	0x00000000 	nop
+K    8926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8927:   0x80000030	0x00000000 	nop
+K    8928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8929:   0x80000030	0x00000000 	nop
+K    8930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8931:   0x80000030	0x00000000 	nop
+K    8932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8933:   0x80000030	0x00000000 	nop
+K    8934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8935:   0x80000030	0x00000000 	nop
+K    8936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8937:   0x80000030	0x00000000 	nop
+K    8938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8939:   0x80000030	0x00000000 	nop
+K    8940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8941:   0x80000030	0x00000000 	nop
+K    8942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8943:   0x80000030	0x00000000 	nop
+K    8944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8945:   0x80000030	0x00000000 	nop
+K    8946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8947:   0x80000030	0x00000000 	nop
+K    8948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8949:   0x80000030	0x00000000 	nop
+K    8950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8951:   0x80000030	0x00000000 	nop
+K    8952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8953:   0x80000030	0x00000000 	nop
+K    8954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8955:   0x80000030	0x00000000 	nop
+K    8956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8957:   0x80000030	0x00000000 	nop
+K    8958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8959:   0x80000030	0x00000000 	nop
+K    8960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8961:   0x80000030	0x00000000 	nop
+K    8962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8963:   0x80000030	0x00000000 	nop
+K    8964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8965:   0x80000030	0x00000000 	nop
+K    8966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8967:   0x80000030	0x00000000 	nop
+K    8968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8969:   0x80000030	0x00000000 	nop
+K    8970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8971:   0x80000030	0x00000000 	nop
+K    8972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8973:   0x80000030	0x00000000 	nop
+K    8974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8975:   0x80000030	0x00000000 	nop
+K    8976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8977:   0x80000030	0x00000000 	nop
+K    8978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8979:   0x80000030	0x00000000 	nop
+K    8980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8981:   0x80000030	0x00000000 	nop
+K    8982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8983:   0x80000030	0x00000000 	nop
+K    8984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8985:   0x80000030	0x00000000 	nop
+K    8986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8987:   0x80000030	0x00000000 	nop
+K    8988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8989:   0x80000030	0x00000000 	nop
+K    8990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8991:   0x80000030	0x00000000 	nop
+K    8992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8993:   0x80000030	0x00000000 	nop
+K    8994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8995:   0x80000030	0x00000000 	nop
+K    8996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8997:   0x80000030	0x00000000 	nop
+K    8998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    8999:   0x80000030	0x00000000 	nop
+K    9000:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9001:   0x80000030	0x00000000 	nop
+K    9002:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9003:   0x80000030	0x00000000 	nop
+K    9004:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9005:   0x80000030	0x00000000 	nop
+K    9006:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9007:   0x80000030	0x00000000 	nop
+K    9008:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9009:   0x80000030	0x00000000 	nop
+K    9010:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9011:   0x80000030	0x00000000 	nop
+K    9012:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9013:   0x80000030	0x00000000 	nop
+K    9014:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9015:   0x80000030	0x00000000 	nop
+K    9016:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9017:   0x80000030	0x00000000 	nop
+K    9018:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9019:   0x80000030	0x00000000 	nop
+K    9020:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9021:   0x80000030	0x00000000 	nop
+K    9022:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9023:   0x80000030	0x00000000 	nop
+K    9024:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9025:   0x80000030	0x00000000 	nop
+K    9026:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9027:   0x80000030	0x00000000 	nop
+K    9028:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9029:   0x80000030	0x00000000 	nop
+K    9030:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9031:   0x80000030	0x00000000 	nop
+K    9032:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9033:   0x80000030	0x00000000 	nop
+K    9034:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9035:   0x80000030	0x00000000 	nop
+K    9036:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9037:   0x80000030	0x00000000 	nop
+K    9038:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9039:   0x80000030	0x00000000 	nop
+K    9040:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9041:   0x80000030	0x00000000 	nop
+K    9042:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9043:   0x80000030	0x00000000 	nop
+K    9044:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9045:   0x80000030	0x00000000 	nop
+K    9046:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9047:   0x80000030	0x00000000 	nop
+K    9048:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9049:   0x80000030	0x00000000 	nop
+K    9050:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9051:   0x80000030	0x00000000 	nop
+K    9052:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9053:   0x80000030	0x00000000 	nop
+K    9054:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9055:   0x80000030	0x00000000 	nop
+K    9056:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9057:   0x80000030	0x00000000 	nop
+K    9058:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9059:   0x80000030	0x00000000 	nop
+K    9060:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9061:   0x80000030	0x00000000 	nop
+K    9062:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9063:   0x80000030	0x00000000 	nop
+K    9064:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9065:   0x80000030	0x00000000 	nop
+K    9066:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9067:   0x80000030	0x00000000 	nop
+K    9068:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9069:   0x80000030	0x00000000 	nop
+K    9070:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9071:   0x80000030	0x00000000 	nop
+K    9072:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9073:   0x80000030	0x00000000 	nop
+K    9074:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9075:   0x80000030	0x00000000 	nop
+K    9076:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9077:   0x80000030	0x00000000 	nop
+K    9078:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9079:   0x80000030	0x00000000 	nop
+K    9080:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9081:   0x80000030	0x00000000 	nop
+K    9082:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9083:   0x80000030	0x00000000 	nop
+K    9084:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9085:   0x80000030	0x00000000 	nop
+K    9086:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9087:   0x80000030	0x00000000 	nop
+K    9088:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9089:   0x80000030	0x00000000 	nop
+K    9090:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9091:   0x80000030	0x00000000 	nop
+K    9092:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9093:   0x80000030	0x00000000 	nop
+K    9094:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9095:   0x80000030	0x00000000 	nop
+K    9096:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9097:   0x80000030	0x00000000 	nop
+K    9098:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9099:   0x80000030	0x00000000 	nop
+K    9100:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9101:   0x80000030	0x00000000 	nop
+K    9102:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9103:   0x80000030	0x00000000 	nop
+K    9104:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9105:   0x80000030	0x00000000 	nop
+K    9106:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9107:   0x80000030	0x00000000 	nop
+K    9108:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9109:   0x80000030	0x00000000 	nop
+K    9110:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9111:   0x80000030	0x00000000 	nop
+K    9112:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9113:   0x80000030	0x00000000 	nop
+K    9114:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9115:   0x80000030	0x00000000 	nop
+K    9116:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9117:   0x80000030	0x00000000 	nop
+K    9118:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9119:   0x80000030	0x00000000 	nop
+K    9120:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9121:   0x80000030	0x00000000 	nop
+K    9122:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9123:   0x80000030	0x00000000 	nop
+K    9124:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9125:   0x80000030	0x00000000 	nop
+K    9126:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9127:   0x80000030	0x00000000 	nop
+K    9128:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9129:   0x80000030	0x00000000 	nop
+K    9130:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9131:   0x80000030	0x00000000 	nop
+K    9132:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9133:   0x80000030	0x00000000 	nop
+K    9134:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9135:   0x80000030	0x00000000 	nop
+K    9136:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9137:   0x80000030	0x00000000 	nop
+K    9138:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9139:   0x80000030	0x00000000 	nop
+K    9140:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9141:   0x80000030	0x00000000 	nop
+K    9142:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9143:   0x80000030	0x00000000 	nop
+K    9144:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9145:   0x80000030	0x00000000 	nop
+K    9146:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9147:   0x80000030	0x00000000 	nop
+K    9148:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9149:   0x80000030	0x00000000 	nop
+K    9150:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9151:   0x80000030	0x00000000 	nop
+K    9152:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9153:   0x80000030	0x00000000 	nop
+K    9154:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9155:   0x80000030	0x00000000 	nop
+K    9156:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9157:   0x80000030	0x00000000 	nop
+K    9158:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9159:   0x80000030	0x00000000 	nop
+K    9160:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9161:   0x80000030	0x00000000 	nop
+K    9162:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9163:   0x80000030	0x00000000 	nop
+K    9164:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9165:   0x80000030	0x00000000 	nop
+K    9166:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9167:   0x80000030	0x00000000 	nop
+K    9168:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9169:   0x80000030	0x00000000 	nop
+K    9170:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9171:   0x80000030	0x00000000 	nop
+K    9172:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9173:   0x80000030	0x00000000 	nop
+K    9174:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9175:   0x80000030	0x00000000 	nop
+K    9176:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9177:   0x80000030	0x00000000 	nop
+K    9178:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9179:   0x80000030	0x00000000 	nop
+K    9180:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9181:   0x80000030	0x00000000 	nop
+K    9182:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9183:   0x80000030	0x00000000 	nop
+K    9184:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9185:   0x80000030	0x00000000 	nop
+K    9186:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9187:   0x80000030	0x00000000 	nop
+K    9188:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9189:   0x80000030	0x00000000 	nop
+K    9190:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9191:   0x80000030	0x00000000 	nop
+K    9192:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9193:   0x80000030	0x00000000 	nop
+K    9194:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9195:   0x80000030	0x00000000 	nop
+K    9196:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9197:   0x80000030	0x00000000 	nop
+K    9198:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9199:   0x80000030	0x00000000 	nop
+K    9200:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9201:   0x80000030	0x00000000 	nop
+K    9202:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9203:   0x80000030	0x00000000 	nop
+K    9204:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9205:   0x80000030	0x00000000 	nop
+K    9206:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9207:   0x80000030	0x00000000 	nop
+K    9208:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9209:   0x80000030	0x00000000 	nop
+K    9210:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9211:   0x80000030	0x00000000 	nop
+K    9212:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9213:   0x80000030	0x00000000 	nop
+K    9214:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9215:   0x80000030	0x00000000 	nop
+K    9216:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9217:   0x80000030	0x00000000 	nop
+K    9218:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9219:   0x80000030	0x00000000 	nop
+K    9220:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9221:   0x80000030	0x00000000 	nop
+K    9222:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9223:   0x80000030	0x00000000 	nop
+K    9224:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9225:   0x80000030	0x00000000 	nop
+K    9226:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9227:   0x80000030	0x00000000 	nop
+K    9228:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9229:   0x80000030	0x00000000 	nop
+K    9230:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9231:   0x80000030	0x00000000 	nop
+K    9232:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9233:   0x80000030	0x00000000 	nop
+K    9234:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9235:   0x80000030	0x00000000 	nop
+K    9236:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9237:   0x80000030	0x00000000 	nop
+K    9238:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9239:   0x80000030	0x00000000 	nop
+K    9240:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9241:   0x80000030	0x00000000 	nop
+K    9242:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9243:   0x80000030	0x00000000 	nop
+K    9244:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9245:   0x80000030	0x00000000 	nop
+K    9246:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9247:   0x80000030	0x00000000 	nop
+K    9248:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9249:   0x80000030	0x00000000 	nop
+K    9250:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9251:   0x80000030	0x00000000 	nop
+K    9252:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9253:   0x80000030	0x00000000 	nop
+K    9254:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9255:   0x80000030	0x00000000 	nop
+K    9256:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9257:   0x80000030	0x00000000 	nop
+K    9258:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9259:   0x80000030	0x00000000 	nop
+K    9260:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9261:   0x80000030	0x00000000 	nop
+K    9262:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9263:   0x80000030	0x00000000 	nop
+K    9264:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9265:   0x80000030	0x00000000 	nop
+K    9266:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9267:   0x80000030	0x00000000 	nop
+K    9268:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9269:   0x80000030	0x00000000 	nop
+K    9270:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9271:   0x80000030	0x00000000 	nop
+K    9272:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9273:   0x80000030	0x00000000 	nop
+K    9274:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9275:   0x80000030	0x00000000 	nop
+K    9276:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9277:   0x80000030	0x00000000 	nop
+K    9278:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9279:   0x80000030	0x00000000 	nop
+K    9280:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9281:   0x80000030	0x00000000 	nop
+K    9282:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9283:   0x80000030	0x00000000 	nop
+K    9284:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9285:   0x80000030	0x00000000 	nop
+K    9286:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9287:   0x80000030	0x00000000 	nop
+K    9288:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9289:   0x80000030	0x00000000 	nop
+K    9290:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9291:   0x80000030	0x00000000 	nop
+K    9292:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9293:   0x80000030	0x00000000 	nop
+K    9294:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9295:   0x80000030	0x00000000 	nop
+K    9296:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9297:   0x80000030	0x00000000 	nop
+K    9298:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9299:   0x80000030	0x00000000 	nop
+K    9300:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9301:   0x80000030	0x00000000 	nop
+K    9302:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9303:   0x80000030	0x00000000 	nop
+K    9304:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9305:   0x80000030	0x00000000 	nop
+K    9306:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9307:   0x80000030	0x00000000 	nop
+K    9308:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9309:   0x80000030	0x00000000 	nop
+K    9310:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9311:   0x80000030	0x00000000 	nop
+K    9312:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9313:   0x80000030	0x00000000 	nop
+K    9314:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9315:   0x80000030	0x00000000 	nop
+K    9316:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9317:   0x80000030	0x00000000 	nop
+K    9318:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9319:   0x80000030	0x00000000 	nop
+K    9320:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9321:   0x80000030	0x00000000 	nop
+K    9322:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9323:   0x80000030	0x00000000 	nop
+K    9324:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9325:   0x80000030	0x00000000 	nop
+K    9326:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9327:   0x80000030	0x00000000 	nop
+K    9328:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9329:   0x80000030	0x00000000 	nop
+K    9330:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9331:   0x80000030	0x00000000 	nop
+K    9332:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9333:   0x80000030	0x00000000 	nop
+K    9334:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9335:   0x80000030	0x00000000 	nop
+K    9336:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9337:   0x80000030	0x00000000 	nop
+K    9338:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9339:   0x80000030	0x00000000 	nop
+K    9340:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9341:   0x80000030	0x00000000 	nop
+K    9342:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9343:   0x80000030	0x00000000 	nop
+K    9344:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9345:   0x80000030	0x00000000 	nop
+K    9346:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9347:   0x80000030	0x00000000 	nop
+K    9348:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9349:   0x80000030	0x00000000 	nop
+K    9350:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9351:   0x80000030	0x00000000 	nop
+K    9352:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9353:   0x80000030	0x00000000 	nop
+K    9354:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9355:   0x80000030	0x00000000 	nop
+K    9356:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9357:   0x80000030	0x00000000 	nop
+K    9358:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9359:   0x80000030	0x00000000 	nop
+K    9360:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9361:   0x80000030	0x00000000 	nop
+K    9362:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9363:   0x80000030	0x00000000 	nop
+K    9364:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9365:   0x80000030	0x00000000 	nop
+K    9366:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9367:   0x80000030	0x00000000 	nop
+K    9368:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9369:   0x80000030	0x00000000 	nop
+K    9370:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9371:   0x80000030	0x00000000 	nop
+K    9372:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9373:   0x80000030	0x00000000 	nop
+K    9374:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9375:   0x80000030	0x00000000 	nop
+K    9376:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9377:   0x80000030	0x00000000 	nop
+K    9378:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9379:   0x80000030	0x00000000 	nop
+K    9380:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9381:   0x80000030	0x00000000 	nop
+K    9382:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9383:   0x80000030	0x00000000 	nop
+K    9384:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9385:   0x80000030	0x00000000 	nop
+K    9386:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9387:   0x80000030	0x00000000 	nop
+K    9388:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9389:   0x80000030	0x00000000 	nop
+K    9390:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9391:   0x80000030	0x00000000 	nop
+K    9392:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9393:   0x80000030	0x00000000 	nop
+K    9394:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9395:   0x80000030	0x00000000 	nop
+K    9396:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9397:   0x80000030	0x00000000 	nop
+K    9398:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9399:   0x80000030	0x00000000 	nop
+K    9400:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9401:   0x80000030	0x00000000 	nop
+K    9402:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9403:   0x80000030	0x00000000 	nop
+K    9404:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9405:   0x80000030	0x00000000 	nop
+K    9406:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9407:   0x80000030	0x00000000 	nop
+K    9408:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9409:   0x80000030	0x00000000 	nop
+K    9410:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9411:   0x80000030	0x00000000 	nop
+K    9412:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9413:   0x80000030	0x00000000 	nop
+K    9414:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9415:   0x80000030	0x00000000 	nop
+K    9416:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9417:   0x80000030	0x00000000 	nop
+K    9418:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9419:   0x80000030	0x00000000 	nop
+K    9420:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9421:   0x80000030	0x00000000 	nop
+K    9422:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9423:   0x80000030	0x00000000 	nop
+K    9424:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9425:   0x80000030	0x00000000 	nop
+K    9426:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9427:   0x80000030	0x00000000 	nop
+K    9428:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9429:   0x80000030	0x00000000 	nop
+K    9430:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9431:   0x80000030	0x00000000 	nop
+K    9432:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9433:   0x80000030	0x00000000 	nop
+K    9434:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9435:   0x80000030	0x00000000 	nop
+K    9436:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9437:   0x80000030	0x00000000 	nop
+K    9438:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9439:   0x80000030	0x00000000 	nop
+K    9440:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9441:   0x80000030	0x00000000 	nop
+K    9442:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9443:   0x80000030	0x00000000 	nop
+K    9444:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9445:   0x80000030	0x00000000 	nop
+K    9446:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9447:   0x80000030	0x00000000 	nop
+K    9448:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9449:   0x80000030	0x00000000 	nop
+K    9450:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9451:   0x80000030	0x00000000 	nop
+K    9452:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9453:   0x80000030	0x00000000 	nop
+K    9454:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9455:   0x80000030	0x00000000 	nop
+K    9456:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9457:   0x80000030	0x00000000 	nop
+K    9458:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9459:   0x80000030	0x00000000 	nop
+K    9460:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9461:   0x80000030	0x00000000 	nop
+K    9462:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9463:   0x80000030	0x00000000 	nop
+K    9464:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9465:   0x80000030	0x00000000 	nop
+K    9466:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9467:   0x80000030	0x00000000 	nop
+K    9468:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9469:   0x80000030	0x00000000 	nop
+K    9470:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9471:   0x80000030	0x00000000 	nop
+K    9472:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9473:   0x80000030	0x00000000 	nop
+K    9474:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9475:   0x80000030	0x00000000 	nop
+K    9476:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9477:   0x80000030	0x00000000 	nop
+K    9478:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9479:   0x80000030	0x00000000 	nop
+K    9480:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9481:   0x80000030	0x00000000 	nop
+K    9482:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9483:   0x80000030	0x00000000 	nop
+K    9484:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9485:   0x80000030	0x00000000 	nop
+K    9486:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9487:   0x80000030	0x00000000 	nop
+K    9488:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9489:   0x80000030	0x00000000 	nop
+K    9490:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9491:   0x80000030	0x00000000 	nop
+K    9492:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9493:   0x80000030	0x00000000 	nop
+K    9494:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9495:   0x80000030	0x00000000 	nop
+K    9496:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9497:   0x80000030	0x00000000 	nop
+K    9498:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9499:   0x80000030	0x00000000 	nop
+K    9500:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9501:   0x80000030	0x00000000 	nop
+K    9502:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9503:   0x80000030	0x00000000 	nop
+K    9504:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9505:   0x80000030	0x00000000 	nop
+K    9506:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9507:   0x80000030	0x00000000 	nop
+K    9508:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9509:   0x80000030	0x00000000 	nop
+K    9510:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9511:   0x80000030	0x00000000 	nop
+K    9512:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9513:   0x80000030	0x00000000 	nop
+K    9514:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9515:   0x80000030	0x00000000 	nop
+K    9516:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9517:   0x80000030	0x00000000 	nop
+K    9518:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9519:   0x80000030	0x00000000 	nop
+K    9520:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9521:   0x80000030	0x00000000 	nop
+K    9522:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9523:   0x80000030	0x00000000 	nop
+K    9524:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9525:   0x80000030	0x00000000 	nop
+K    9526:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9527:   0x80000030	0x00000000 	nop
+K    9528:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9529:   0x80000030	0x00000000 	nop
+K    9530:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9531:   0x80000030	0x00000000 	nop
+K    9532:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9533:   0x80000030	0x00000000 	nop
+K    9534:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9535:   0x80000030	0x00000000 	nop
+K    9536:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9537:   0x80000030	0x00000000 	nop
+K    9538:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9539:   0x80000030	0x00000000 	nop
+K    9540:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9541:   0x80000030	0x00000000 	nop
+K    9542:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9543:   0x80000030	0x00000000 	nop
+K    9544:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9545:   0x80000030	0x00000000 	nop
+K    9546:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9547:   0x80000030	0x00000000 	nop
+K    9548:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9549:   0x80000030	0x00000000 	nop
+K    9550:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9551:   0x80000030	0x00000000 	nop
+K    9552:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9553:   0x80000030	0x00000000 	nop
+K    9554:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9555:   0x80000030	0x00000000 	nop
+K    9556:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9557:   0x80000030	0x00000000 	nop
+K    9558:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9559:   0x80000030	0x00000000 	nop
+K    9560:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9561:   0x80000030	0x00000000 	nop
+K    9562:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9563:   0x80000030	0x00000000 	nop
+K    9564:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9565:   0x80000030	0x00000000 	nop
+K    9566:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9567:   0x80000030	0x00000000 	nop
+K    9568:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9569:   0x80000030	0x00000000 	nop
+K    9570:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9571:   0x80000030	0x00000000 	nop
+K    9572:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9573:   0x80000030	0x00000000 	nop
+K    9574:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9575:   0x80000030	0x00000000 	nop
+K    9576:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9577:   0x80000030	0x00000000 	nop
+K    9578:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9579:   0x80000030	0x00000000 	nop
+K    9580:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9581:   0x80000030	0x00000000 	nop
+K    9582:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9583:   0x80000030	0x00000000 	nop
+K    9584:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9585:   0x80000030	0x00000000 	nop
+K    9586:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9587:   0x80000030	0x00000000 	nop
+K    9588:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9589:   0x80000030	0x00000000 	nop
+K    9590:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9591:   0x80000030	0x00000000 	nop
+K    9592:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9593:   0x80000030	0x00000000 	nop
+K    9594:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9595:   0x80000030	0x00000000 	nop
+K    9596:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9597:   0x80000030	0x00000000 	nop
+K    9598:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9599:   0x80000030	0x00000000 	nop
+K    9600:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9601:   0x80000030	0x00000000 	nop
+K    9602:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9603:   0x80000030	0x00000000 	nop
+K    9604:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9605:   0x80000030	0x00000000 	nop
+K    9606:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9607:   0x80000030	0x00000000 	nop
+K    9608:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9609:   0x80000030	0x00000000 	nop
+K    9610:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9611:   0x80000030	0x00000000 	nop
+K    9612:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9613:   0x80000030	0x00000000 	nop
+K    9614:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9615:   0x80000030	0x00000000 	nop
+K    9616:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9617:   0x80000030	0x00000000 	nop
+K    9618:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9619:   0x80000030	0x00000000 	nop
+K    9620:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9621:   0x80000030	0x00000000 	nop
+K    9622:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9623:   0x80000030	0x00000000 	nop
+K    9624:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9625:   0x80000030	0x00000000 	nop
+K    9626:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9627:   0x80000030	0x00000000 	nop
+K    9628:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9629:   0x80000030	0x00000000 	nop
+K    9630:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9631:   0x80000030	0x00000000 	nop
+K    9632:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9633:   0x80000030	0x00000000 	nop
+K    9634:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9635:   0x80000030	0x00000000 	nop
+K    9636:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9637:   0x80000030	0x00000000 	nop
+K    9638:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9639:   0x80000030	0x00000000 	nop
+K    9640:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9641:   0x80000030	0x00000000 	nop
+K    9642:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9643:   0x80000030	0x00000000 	nop
+K    9644:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9645:   0x80000030	0x00000000 	nop
+K    9646:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9647:   0x80000030	0x00000000 	nop
+K    9648:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9649:   0x80000030	0x00000000 	nop
+K    9650:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9651:   0x80000030	0x00000000 	nop
+K    9652:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9653:   0x80000030	0x00000000 	nop
+K    9654:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9655:   0x80000030	0x00000000 	nop
+K    9656:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9657:   0x80000030	0x00000000 	nop
+K    9658:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9659:   0x80000030	0x00000000 	nop
+K    9660:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9661:   0x80000030	0x00000000 	nop
+K    9662:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9663:   0x80000030	0x00000000 	nop
+K    9664:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9665:   0x80000030	0x00000000 	nop
+K    9666:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9667:   0x80000030	0x00000000 	nop
+K    9668:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9669:   0x80000030	0x00000000 	nop
+K    9670:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9671:   0x80000030	0x00000000 	nop
+K    9672:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9673:   0x80000030	0x00000000 	nop
+K    9674:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9675:   0x80000030	0x00000000 	nop
+K    9676:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9677:   0x80000030	0x00000000 	nop
+K    9678:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9679:   0x80000030	0x00000000 	nop
+K    9680:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9681:   0x80000030	0x00000000 	nop
+K    9682:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9683:   0x80000030	0x00000000 	nop
+K    9684:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9685:   0x80000030	0x00000000 	nop
+K    9686:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9687:   0x80000030	0x00000000 	nop
+K    9688:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9689:   0x80000030	0x00000000 	nop
+K    9690:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9691:   0x80000030	0x00000000 	nop
+K    9692:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9693:   0x80000030	0x00000000 	nop
+K    9694:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9695:   0x80000030	0x00000000 	nop
+K    9696:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9697:   0x80000030	0x00000000 	nop
+K    9698:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9699:   0x80000030	0x00000000 	nop
+K    9700:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9701:   0x80000030	0x00000000 	nop
+K    9702:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9703:   0x80000030	0x00000000 	nop
+K    9704:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9705:   0x80000030	0x00000000 	nop
+K    9706:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9707:   0x80000030	0x00000000 	nop
+K    9708:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9709:   0x80000030	0x00000000 	nop
+K    9710:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9711:   0x80000030	0x00000000 	nop
+K    9712:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9713:   0x80000030	0x00000000 	nop
+K    9714:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9715:   0x80000030	0x00000000 	nop
+K    9716:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9717:   0x80000030	0x00000000 	nop
+K    9718:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9719:   0x80000030	0x00000000 	nop
+K    9720:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9721:   0x80000030	0x00000000 	nop
+K    9722:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9723:   0x80000030	0x00000000 	nop
+K    9724:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9725:   0x80000030	0x00000000 	nop
+K    9726:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9727:   0x80000030	0x00000000 	nop
+K    9728:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9729:   0x80000030	0x00000000 	nop
+K    9730:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9731:   0x80000030	0x00000000 	nop
+K    9732:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9733:   0x80000030	0x00000000 	nop
+K    9734:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9735:   0x80000030	0x00000000 	nop
+K    9736:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9737:   0x80000030	0x00000000 	nop
+K    9738:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9739:   0x80000030	0x00000000 	nop
+K    9740:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9741:   0x80000030	0x00000000 	nop
+K    9742:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9743:   0x80000030	0x00000000 	nop
+K    9744:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9745:   0x80000030	0x00000000 	nop
+K    9746:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9747:   0x80000030	0x00000000 	nop
+K    9748:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9749:   0x80000030	0x00000000 	nop
+K    9750:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9751:   0x80000030	0x00000000 	nop
+K    9752:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9753:   0x80000030	0x00000000 	nop
+K    9754:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9755:   0x80000030	0x00000000 	nop
+K    9756:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9757:   0x80000030	0x00000000 	nop
+K    9758:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9759:   0x80000030	0x00000000 	nop
+K    9760:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9761:   0x80000030	0x00000000 	nop
+K    9762:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9763:   0x80000030	0x00000000 	nop
+K    9764:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9765:   0x80000030	0x00000000 	nop
+K    9766:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9767:   0x80000030	0x00000000 	nop
+K    9768:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9769:   0x80000030	0x00000000 	nop
+K    9770:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9771:   0x80000030	0x00000000 	nop
+K    9772:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9773:   0x80000030	0x00000000 	nop
+K    9774:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9775:   0x80000030	0x00000000 	nop
+K    9776:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9777:   0x80000030	0x00000000 	nop
+K    9778:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9779:   0x80000030	0x00000000 	nop
+K    9780:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9781:   0x80000030	0x00000000 	nop
+K    9782:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9783:   0x80000030	0x00000000 	nop
+K    9784:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9785:   0x80000030	0x00000000 	nop
+K    9786:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9787:   0x80000030	0x00000000 	nop
+K    9788:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9789:   0x80000030	0x00000000 	nop
+K    9790:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9791:   0x80000030	0x00000000 	nop
+K    9792:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9793:   0x80000030	0x00000000 	nop
+K    9794:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9795:   0x80000030	0x00000000 	nop
+K    9796:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9797:   0x80000030	0x00000000 	nop
+K    9798:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9799:   0x80000030	0x00000000 	nop
+K    9800:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9801:   0x80000030	0x00000000 	nop
+K    9802:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9803:   0x80000030	0x00000000 	nop
+K    9804:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9805:   0x80000030	0x00000000 	nop
+K    9806:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9807:   0x80000030	0x00000000 	nop
+K    9808:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9809:   0x80000030	0x00000000 	nop
+K    9810:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9811:   0x80000030	0x00000000 	nop
+K    9812:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9813:   0x80000030	0x00000000 	nop
+K    9814:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9815:   0x80000030	0x00000000 	nop
+K    9816:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9817:   0x80000030	0x00000000 	nop
+K    9818:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9819:   0x80000030	0x00000000 	nop
+K    9820:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9821:   0x80000030	0x00000000 	nop
+K    9822:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9823:   0x80000030	0x00000000 	nop
+K    9824:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9825:   0x80000030	0x00000000 	nop
+K    9826:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9827:   0x80000030	0x00000000 	nop
+K    9828:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9829:   0x80000030	0x00000000 	nop
+K    9830:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9831:   0x80000030	0x00000000 	nop
+K    9832:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9833:   0x80000030	0x00000000 	nop
+K    9834:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9835:   0x80000030	0x00000000 	nop
+K    9836:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9837:   0x80000030	0x00000000 	nop
+K    9838:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9839:   0x80000030	0x00000000 	nop
+K    9840:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9841:   0x80000030	0x00000000 	nop
+K    9842:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9843:   0x80000030	0x00000000 	nop
+K    9844:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9845:   0x80000030	0x00000000 	nop
+K    9846:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9847:   0x80000030	0x00000000 	nop
+K    9848:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9849:   0x80000030	0x00000000 	nop
+K    9850:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9851:   0x80000030	0x00000000 	nop
+K    9852:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9853:   0x80000030	0x00000000 	nop
+K    9854:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9855:   0x80000030	0x00000000 	nop
+K    9856:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9857:   0x80000030	0x00000000 	nop
+K    9858:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9859:   0x80000030	0x00000000 	nop
+K    9860:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9861:   0x80000030	0x00000000 	nop
+K    9862:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9863:   0x80000030	0x00000000 	nop
+K    9864:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9865:   0x80000030	0x00000000 	nop
+K    9866:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9867:   0x80000030	0x00000000 	nop
+K    9868:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9869:   0x80000030	0x00000000 	nop
+K    9870:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9871:   0x80000030	0x00000000 	nop
+K    9872:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9873:   0x80000030	0x00000000 	nop
+K    9874:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9875:   0x80000030	0x00000000 	nop
+K    9876:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9877:   0x80000030	0x00000000 	nop
+K    9878:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9879:   0x80000030	0x00000000 	nop
+K    9880:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9881:   0x80000030	0x00000000 	nop
+K    9882:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9883:   0x80000030	0x00000000 	nop
+K    9884:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9885:   0x80000030	0x00000000 	nop
+K    9886:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9887:   0x80000030	0x00000000 	nop
+K    9888:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9889:   0x80000030	0x00000000 	nop
+K    9890:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9891:   0x80000030	0x00000000 	nop
+K    9892:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9893:   0x80000030	0x00000000 	nop
+K    9894:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9895:   0x80000030	0x00000000 	nop
+K    9896:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9897:   0x80000030	0x00000000 	nop
+K    9898:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9899:   0x80000030	0x00000000 	nop
+K    9900:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9901:   0x80000030	0x00000000 	nop
+K    9902:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9903:   0x80000030	0x00000000 	nop
+K    9904:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9905:   0x80000030	0x00000000 	nop
+K    9906:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9907:   0x80000030	0x00000000 	nop
+K    9908:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9909:   0x80000030	0x00000000 	nop
+K    9910:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9911:   0x80000030	0x00000000 	nop
+K    9912:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9913:   0x80000030	0x00000000 	nop
+K    9914:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9915:   0x80000030	0x00000000 	nop
+K    9916:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9917:   0x80000030	0x00000000 	nop
+K    9918:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9919:   0x80000030	0x00000000 	nop
+K    9920:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9921:   0x80000030	0x00000000 	nop
+K    9922:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9923:   0x80000030	0x00000000 	nop
+K    9924:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9925:   0x80000030	0x00000000 	nop
+K    9926:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9927:   0x80000030	0x00000000 	nop
+K    9928:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9929:   0x80000030	0x00000000 	nop
+K    9930:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9931:   0x80000030	0x00000000 	nop
+K    9932:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9933:   0x80000030	0x00000000 	nop
+K    9934:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9935:   0x80000030	0x00000000 	nop
+K    9936:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9937:   0x80000030	0x00000000 	nop
+K    9938:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9939:   0x80000030	0x00000000 	nop
+K    9940:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9941:   0x80000030	0x00000000 	nop
+K    9942:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9943:   0x80000030	0x00000000 	nop
+K    9944:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9945:   0x80000030	0x00000000 	nop
+K    9946:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9947:   0x80000030	0x00000000 	nop
+K    9948:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9949:   0x80000030	0x00000000 	nop
+K    9950:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9951:   0x80000030	0x00000000 	nop
+K    9952:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9953:   0x80000030	0x00000000 	nop
+K    9954:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9955:   0x80000030	0x00000000 	nop
+K    9956:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9957:   0x80000030	0x00000000 	nop
+K    9958:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9959:   0x80000030	0x00000000 	nop
+K    9960:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9961:   0x80000030	0x00000000 	nop
+K    9962:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9963:   0x80000030	0x00000000 	nop
+K    9964:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9965:   0x80000030	0x00000000 	nop
+K    9966:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9967:   0x80000030	0x00000000 	nop
+K    9968:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9969:   0x80000030	0x00000000 	nop
+K    9970:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9971:   0x80000030	0x00000000 	nop
+K    9972:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9973:   0x80000030	0x00000000 	nop
+K    9974:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9975:   0x80000030	0x00000000 	nop
+K    9976:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9977:   0x80000030	0x00000000 	nop
+K    9978:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9979:   0x80000030	0x00000000 	nop
+K    9980:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9981:   0x80000030	0x00000000 	nop
+K    9982:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9983:   0x80000030	0x00000000 	nop
+K    9984:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9985:   0x80000030	0x00000000 	nop
+K    9986:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9987:   0x80000030	0x00000000 	nop
+K    9988:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9989:   0x80000030	0x00000000 	nop
+K    9990:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9991:   0x80000030	0x00000000 	nop
+K    9992:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9993:   0x80000030	0x00000000 	nop
+K    9994:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9995:   0x80000030	0x00000000 	nop
+K    9996:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9997:   0x80000030	0x00000000 	nop
+K    9998:   0x8000002c	0x1000ffff 	b	8000002c <kinit+0x2c>
+K    9999:   0x80000030	0x00000000 	nop

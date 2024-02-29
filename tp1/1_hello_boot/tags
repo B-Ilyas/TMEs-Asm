@@ -1,0 +1,5 @@
+.text	hcpua.S	/^.text                                   \/\/ section/
+boot	hcpua.S	/^boot:                                   \/\/ must be/
+dead	hcpua.S	/^dead:                                   \/\/ infinit/
+hello	hcpua.S	/^hello:$/
+print	hcpua.S	/^print:$/
